@@ -1,0 +1,20 @@
+
+uniform vec3 camera_position;
+
+varying vec3 normal;
+varying vec3 position;
+
+varying vec3 override_color;
+
+void main() {
+	float diff_coeff = max( 0.0, dot( normal, normalize(gl_LightSource[0].position.xyz - position) ) );
+	
+	vec3 light_refl = normalize( reflect( position - gl_LightSource[0].position.xyz, normal ) );
+	float spec_coeff = max( 0.0, dot( normalize(camera_position  - position), light_refl ) );
+	spec_coeff = pow( spec_coeff, 20.0 );
+	
+	gl_FragColor = gl_LightSource[0].diffuse * diff_coeff + gl_LightSource[0].specular * spec_coeff;
+	gl_FragColor = clamp( gl_FragColor, 0.0, 1.0 );
+	
+	//gl_FragColor = vec4( override_color, 0.0 );
+}

@@ -1,0 +1,27 @@
+@article{:/content/aip/journal/adva/4/5/10.1063/1.4879817,
+   author = "Graham, R. D. and Chen, S.-P. and Sakrejda, T. and Wright, J. and Zhou, Z. and Blinov, B. B.",
+   title = "A system for trapping barium ions in a microfabricated surface trap",
+   journal = "AIP Advances",
+   year = "2014",
+   volume = "4",
+   number = "5", 
+   eid = 057124,
+   pages = "-",
+   url = "http://scitation.aip.org/content/aip/journal/adva/4/5/10.1063/1.4879817",
+   doi = "http://dx.doi.org/10.1063/1.4879817" 
+}
+
+@article{PhysRevA.85.023401,
+  title = {Adiabatic passage in the presence of noise},
+  author = {Noel, T. and Dietrich, M. and Kurz, N. and Shu, G. and Wright, J. and Blinov, B.},
+  journal = {Phys. Rev. A},
+  volume = {85},
+  issue = {2},
+  pages = {023401},
+  numpages = {4},
+  year = {2012},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.85.023401},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.85.023401}
+}

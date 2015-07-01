@@ -1,0 +1,735 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Our Papers
+
+@article{Auchter:14, 
+author = {Carolyn Auchter and Chen-Kuan Chou and Thomas W. Noel and Boris B. Blinov}, 
+journal = {J. Opt. Soc. Am. B}, 
+keywords = {Atomic and molecular physics; Quantum optics; Quantum information and processing},
+number = {7}, 
+pages = {1568--1572}, 
+publisher = {OSA},
+title = {Ion-photon entanglement and Bell inequality violation with 138{B}a$+$}, 
+volume = {31}, 
+month = {Jul},
+year = {2014},
+url = {http://josab.osa.org/abstract.cfm?URI=josab-31-7-1568},
+doi = {10.1364/JOSAB.31.001568},
+abstract = {We report on the demonstration of ion-photon entanglement and Bell inequality violation in a system of trapped Ba138$+$ ions. Entanglement between the Zeeman sublevels of the ground state of a single Ba138$+$ ion and the polarization state of a single 493\&\#xA0;nm photon emitted by the ion with a fidelity of 0.84\&\#xB1;0.01 was achieved, along with a Bell signal of 2.3, exceeding the classical limit of 2 by more than eight standard deviations. This system is a promising candidate for a loophole-free Bell inequality violation test using long-range ion\&\#x2013;ion entanglement as the wavelengths of the transitions of Ba138$+$ are in the visible region and thus suitable for long-range transmission over fiber optic cable.},
+}
+
+@article{Graham:14,
+   author = "Graham, R. D. and Chen, S.-P. and Sakrejda, T. and Wright, J. and Zhou, Z. and Blinov, B. B.",
+   title = "A system for trapping barium ions in a microfabricated surface trap",
+   journal = "AIP Advances",
+   year = "2014",
+   volume = "4",
+   number = "5", 
+   eid = 057124,
+   url = "http://scitation.aip.org/content/aip/journal/adva/4/5/10.1063/1.4879817",
+   doi = "http://dx.doi.org/10.1063/1.4879817" 
+}
+
+@article{Shu:11, 
+author = {Gang Shu and Chen-Kuan Chou and Nathan Kurz and Matthew R. Dietrich and Boris B. Blinov}, 
+journal = {J. Opt. Soc. Am. B}, 
+keywords = {Quantum information and processing ; Micro-optical devices},
+number = {12}, 
+pages = {2865--2870}, 
+publisher = {OSA},
+title = {Efficient fluorescence collection and ion imaging with the ``tack'' ion trap}, 
+volume = {28}, 
+month = {Dec},
+year = {2011},
+url = {http://josab.osa.org/abstract.cfm?URI=josab-28-12-2865},
+doi = {10.1364/JOSAB.28.002865},
+abstract = {Trapped, laser-cooled atoms and ions produce intense fluorescence of the order 107~108 photons per second. Detection of this fluorescence enables efficient measurement of the quantum state of qubits based on trapped atoms. It is desirable to collect a large fraction of the photons to make the detection faster and more reliable. Additionally, efficient fluorescence collection can improve the speed and fidelity of remote ion entanglement and quantum gates. Refractive and reflective optics, and optical cavities have all been used to collect the trapped ion fluorescence with up to about 10\% efficiency. Here we show a novel ion trap design that incorporates a metallic spherical mirror as the integral part of the trap itself, being its RF electrode. The mirror geometry enables up to 35\% solid angle collection of trapped ion fluorescence. The movable central pin electrode of this trap allows precise placement of the ion at the focus of the reflector. We characterize the performance of the mirror, and measure 25\% collection efficiency, likely limited by the imperfections of the mirror surface. We also study the properties of the images of single ions formed by the spherical mirror and apply aberration correction with an aspherical element placed outside the vacuum system. Owing to the simplicity of its design, this trap structure can be adapted for microfabrication and integration into more complex trap architectures.},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% QComp
+
+@article {DiVincenzo:00,
+	author = {DiVincenzo, David P.},
+	title = {The Physical Implementation of Quantum Computation},
+	journal = {Fortschritte der Physik},
+	volume = {48},
+	number = {9-11},
+	publisher = {WILEY-VCH Verlag Berlin GmbH},
+	issn = {1521-3978},
+	url = {http://dx.doi.org/10.1002/1521-3978(200009)48:9/11<771::AID-PROP771>3.0.CO;2-E},
+	doi = {10.1002/1521-3978(200009)48:9/11<771::AID-PROP771>3.0.CO;2-E},
+	pages = {771--783},
+	year = {2000},
+}
+@article{Devoret:13,
+	author = {Devoret, M. H. and Schoelkopf, R. J.}, 
+	title = {Superconducting Circuits for Quantum Information: An Outlook},
+	volume = {339}, 
+	number = {6124}, 
+	pages = {1169-1174}, 
+	year = {2013}, 
+	doi = {10.1126/science.1231930}, 
+	abstract ={The performance of superconducting qubits has improved by several orders of magnitude in the past decade. These circuits benefit from the robustness of superconductivity and the Josephson effect, and at present they have not encountered any hard physical limits. However, building an error-corrected information processor with many such qubits will require solving specific architecture problems that constitute a new field of research. For the first time, physicists will have to master quantum error correction to design and operate complex active systems that are dissipative in nature, yet remain coherent indefinitely. We offer a view on some directions for the field and speculate on its future.}, 
+	URL = {http://www.sciencemag.org/content/339/6124/1169.abstract}, 
+	eprint = {http://www.sciencemag.org/content/339/6124/1169.full.pdf}, 
+	journal = {Science} 
+}
+
+@article{Kloeffell:13,
+	author = {Kloeffel, Christoph and Loss, Daniel},
+	title = {Prospects for Spin-Based Quantum Computing in Quantum Dots},
+	journal = {Annual Review of Condensed Matter Physics},
+	volume = {4},
+	number = {1},
+	pages = {51-81},
+	year = {2013},
+	doi = {10.1146/annurev-conmatphys-030212-184248},
+
+	URL = { http://dx.doi.org/10.1146/annurev-conmatphys-030212-184248 },
+	eprint = { http://dx.doi.org/10.1146/annurev-conmatphys-030212-184248 } ,
+	abstract = { Experimental and theoretical progress toward quantum computation with spins in quantum dots (QDs) is reviewed, with particular focus on QDs formed in GaAs heterostructures, on nanowire-based QDs, and on self-assembled QDs. We report on a remarkable evolution of the field, where decoherence—one of the main challenges for realizing quantum computers—no longer seems to be the stumbling block it had originally been considered. General concepts, relevant quantities, and basic requirements for spin-based quantum computing are explained; opportunities and challenges of spin-orbit interaction and nuclear spins are reviewed. We discuss recent achievements, present current theoretical proposals, and make several suggestions for further experiments. }
+}
+
+@article{Saffman:10,
+	title = {Quantum information with Rydberg atoms},
+	author = {Saffman, M. and Walker, T. G. and M\o{}lmer, K.},
+	journal = {Rev. Mod. Phys.},
+	volume = {82},
+	issue = {3},
+	pages = {2313--2363},
+	numpages = {0},
+	year = {2010},
+	month = {Aug},
+	publisher = {American Physical Society},
+	doi = {10.1103/RevModPhys.82.2313},
+	url = {http://link.aps.org/doi/10.1103/RevModPhys.82.2313}
+}
+
+@article{Islam:13,
+	author = {Islam, R. and Senko, C. and Campbell, W. C. and Korenblit, S. and Smith, J. and Lee, A. and Edwards, E. E. and Wang, C.-C. J. and Freericks, J. K. and Monroe, C.}, 
+	title = {Emergence and Frustration of Magnetism with Variable-Range Interactions in a Quantum Simulator},
+	volume = {340}, 
+	number = {6132}, 
+	pages = {583-587}, 
+	year = {2013}, 
+	doi = {10.1126/science.1232296}, 
+	abstract ={Frustration, or the competition between interacting components of a network, is often responsible for the emergent complexity of many-body systems. For instance, frustrated magnetism is a hallmark of poorly understood systems such as quantum spin liquids, spin glasses, and spin ices, whose ground states can be massively degenerate and carry high degrees of quantum entanglement. Here, we engineer frustrated antiferromagnetic interactions between spins stored in a crystal of up to 16 trapped 171Yb+ atoms. We control the amount of frustration by continuously tuning the range of interaction and directly measure spin correlation functions and their coherent dynamics. This prototypical quantum simulation points the way toward a new probe of frustrated quantum magnetism and perhaps the design of new quantum materials.}, 
+	URL = {http://www.sciencemag.org/content/340/6132/583.abstract}, 
+	eprint = {http://www.sciencemag.org/content/340/6132/583.full.pdf}, 
+	journal = {Science} 
+}
+
+@article{Monz:11,
+  title = {14-Qubit Entanglement: Creation and Coherence},
+  author = {Monz, Thomas and Schindler, Philipp and Barreiro, Julio T. and Chwalla, Michael and Nigg, Daniel and Coish, William A. and Harlander, Maximilian and H\"ansel, Wolfgang and Hennrich, Markus and Blatt, Rainer},
+  journal = {Phys. Rev. Lett.},
+  volume = {106},
+  issue = {13},
+  pages = {130506},
+  numpages = {4},
+  year = {2011},
+  month = {Mar},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.106.130506},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.106.130506}
+}
+
+@article{Olmschenk:07,
+  title = {Manipulation and detection of a trapped ${\mathrm{Yb}}^{+}$ hyperfine qubit},
+  author = {Olmschenk, S. and Younge, K. C. and Moehring, D. L. and Matsukevich, D. N. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. A},
+  volume = {76},
+  issue = {5},
+  pages = {052314},
+  numpages = {9},
+  year = {2007},
+  month = {Nov},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.76.052314},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.76.052314}
+}
+  	
+@article{Mount:13,
+  author={Emily Mount and So-Young Baek and Matthew Blain and Daniel Stick and Daniel Gaultney and Stephen Crain and Rachel
+Noek and Taehyun Kim and Peter Maunz and Jungsang Kim},
+  title={Single qubit manipulation in a microfabricated surface electrode ion trap},
+  journal={New Journal of Physics},
+  volume={15},
+  number={9},
+  pages={093018},
+  url={http://stacks.iop.org/1367-2630/15/i=9/a=093018},
+  year={2013},
+  abstract={We trap individual 171 Yb + ions in a surface trap microfabricated on a silicon substrate, and demonstrate a complete set of high fidelity single qubit operations for the hyperfine qubit. Trapping times exceeding 20 min without laser cooling, and heating rates as low as 0.8 quanta ms -1 , indicate stable trapping conditions in these microtraps. A coherence time of more than 1 s, high fidelity qubit state detection and single qubit rotations are demonstrated. The observation of low heating rates and demonstration of high quality single qubit gates at room temperature are critical steps toward scalable quantum information processing in microfabricated surface traps.}
+}
+
+@article{Noek:13, 
+	author = {Rachel Noek and Geert Vrijsen and Daniel Gaultney and Emily Mount and Taehyun Kim and Peter Maunz and Jungsang Kim}, 
+	journal = {Opt. Lett.}, 
+	keywords = {Optical systems; Quantum information and processing},
+	number = {22}, 
+	pages = {4735--4738}, 
+	publisher = {OSA},
+	title = {High speed, high fidelity detection of an atomic hyperfine qubit}, 
+	volume = {38}, 
+	month = {Nov},
+	year = {2013},
+	url = {http://ol.osa.org/abstract.cfm?URI=ol-38-22-4735},
+	doi = {10.1364/OL.38.004735},
+	abstract = {Fast and efficient detection of the qubit state in trapped ion systems is critical for implementing quantum error correction and performing fundamental tests such as a loophole-free Bell test. In this work we present a simple qubit state detection protocol for a Yb171$+$ hyperfine atomic qubit trapped in a microfabricated surface trap, enabled by high collection efficiency of the scattered photons and low background photon count rate. We demonstrate average detection times of 10.5, 28.1, and 99.8\&\#xA0;\&\#x3BC;s, corresponding to state detection fidelities of 99\%, 99.856(8)\%, and 99.915(7)\%, respectively.},
+}
+
+@article{Cirac:95,
+	title = {Quantum Computations with Cold Trapped Ions},
+	author = {Cirac, J. I. and Zoller, P.},
+	journal = {Phys. Rev. Lett.},
+	volume = {74},
+	issue = {20},
+	pages = {4091--4094},
+	numpages = {0},
+	year = {1995},
+	month = {May},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevLett.74.4091},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.74.4091}
+}
+
+
+@article{Sorensen:00,
+	title = {Entanglement and quantum computation with ions in thermal motion},
+	author = {S\o{}rensen, Anders and M\o{}lmer, Klaus},
+	journal = {Phys. Rev. A},
+	volume = {62},
+	issue = {2},
+	pages = {022311},
+	numpages = {11},
+	year = {2000},
+	month = {Jul},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevA.62.022311},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.62.022311}
+}
+
+@article{GarciaRipoll:03,
+	title = {Speed Optimized Two-Qubit Gates with Laser Coherent Control Techniques for Ion Trap Quantum Computing},
+	author = {Garc\'{i}a-Ripoll, J. J. and Zoller, P. and Cirac, J. I.},
+	journal = {Phys. Rev. Lett.},
+	volume = {91},
+	issue = {15},
+	pages = {157901},
+	numpages = {4},
+	year = {2003},
+	month = {Oct},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevLett.91.157901},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.91.157901}
+}
+
+@article{Shor:95,
+	title = {Scheme for reducing decoherence in quantum computer memory},
+	author = {Shor, Peter W.},
+	journal = {Phys. Rev. A},
+	volume = {52},
+	issue = {4},
+	pages = {R2493--R2496},
+	numpages = {0},
+	year = {1995},
+	month = {Oct},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevA.52.R2493},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.52.R2493}
+}
+
+@article{Oi:06,
+	title = {Scalable error correction in distributed ion trap computers},
+	author = {Oi, Daniel K. L. and Devitt, Simon J. and Hollenberg, Lloyd C. L.},
+	journal = {Phys. Rev. A},
+	volume = {74},
+	issue = {5},
+	pages = {052313},
+	numpages = {9},
+	year = {2006},
+	month = {Nov},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevA.74.052313},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.74.052313}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MUSIQC
+
+@article{Sterk:12,
+  title = {Photon collection from a trapped ion-cavity system},
+  author = {Sterk, J. D. and Luo, L. and Manning, T. A. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. A},
+  volume = {85},
+  issue = {6},
+  pages = {062308},
+  numpages = {8},
+  year = {2012},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.85.062308},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.85.062308}
+}
+
+@article{Clark:14,
+  title = {Characterization of Fluorescence Collection Optics Integrated with a Microfabricated Surface Electrode Ion Trap},
+  author = {Clark, Craig R. and Chou, Chin-wen and Ellis, A.\,R. and Hunker, Jeff and Kemme, Shanalyn A. and Maunz, Peter and Tabakov, Boyan and Tigges, Chris and Stick, Daniel L.},
+  journal = {Phys. Rev. Applied},
+  volume = {1},
+  issue = {2},
+  pages = {024004},
+  numpages = {5},
+  year = {2014},
+  month = {Mar},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevApplied.1.024004},
+  url = {http://link.aps.org/doi/10.1103/PhysRevApplied.1.024004}
+}
+
+@article{Moehring:11,
+  author={D L Moehring and C Highstrete and D Stick and K M Fortier and R Haltli and C Tigges and M G Blain},
+  title={Design, fabrication and experimental demonstration of junction surface ion traps},
+  journal={New Journal of Physics},
+  volume={13},
+  number={7},
+  pages={075018},
+  url={http://stacks.iop.org/1367-2630/13/i=7/a=075018},
+  year={2011},
+  abstract={We present the design, fabrication and experimental implementation of surface ion traps with Y-shaped junctions. The traps are designed to minimize the pseudopotential variations in the junction region at the symmetric intersection of three linear segments. We experimentally demonstrate robust linear and junction shuttling with greater than 10 6 round-trip shuttles without ion loss. By minimizing the direct line of sight between trapped ions and dielectric surfaces, negligible day-to-day and trap-to-trap variations are observed. In addition to high-fidelity single-ion shuttling, multiple-ion chains survive splitting, ion-position swapping and recombining routines. The development of two-dimensional trapping structures is an important milestone for ion-trap quantum computing and quantum simulations.}
+}
+
+@article{Bowler:12,
+  title = {Coherent Diabatic Ion Transport and Separation in a Multizone Trap Array},
+  author = {Bowler, R. and Gaebler, J. and Lin, Y. and Tan, T. R. and Hanneke, D. and Jost, J. D. and Home, J. P. and Leibfried, D. and Wineland, D. J.},
+  journal = {Phys. Rev. Lett.},
+  volume = {109},
+  issue = {8},
+  pages = {080502},
+  numpages = {4},
+  year = {2012},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.109.080502},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.109.080502}
+}
+
+@article{Olkhovets:04, 
+	author={Olkhovets, A. and Phanaphat, P. and Nuzman, C. and Shin, D.J. and Lichtenwalner, C. and Kozhevnikov, M. and Kim, J.}, 
+	journal={Photonics Technology Letters, IEEE}, 
+	title={Performance of an optical switch based on 3-D MEMS crossconnect}, 
+	year={2004}, 
+	month={March}, 
+	volume={16}, 
+	number={3}, 
+	pages={780-782}, 
+	abstract={We demonstrate a fully functional microelectromechanical system-based optical crossconnect switch with advanced close-loop feedback control architecture for the mirrors. The system architecture was designed for handling multiple connections in parallel. The switch features rapid restoration of multiple connections at the switching element level opening up the path to synchronous optical network-like performance for mesh networks, and power equalization capability for each port.}, 
+	doi={10.1109/LPT.2004.823703}, 
+	ISSN={1041-1135}
+}	
+
+@article{Monroe:14,
+  title = {Large-scale modular quantum-computer architecture with atomic memory and photonic interconnects},
+  author = {Monroe, C. and Raussendorf, R. and Ruthven, A. and Brown, K. R. and Maunz, P. and Duan, L.-M. and Kim, J.},
+  journal = {Phys. Rev. A},
+  volume = {89},
+  issue = {2},
+  pages = {022317},
+  numpages = {16},
+  year = {2014},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.89.022317},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.89.022317}
+}
+
+@article{Lin:13,
+  title = {Sympathetic Electromagnetically-Induced-Transparency Laser Cooling of Motional Modes in an Ion Chain},
+  author = {Lin, Y. and Gaebler, J. P. and Tan, T. R. and Bowler, R. and Jost, J. D. and Leibfried, D. and Wineland, D. J.},
+  journal = {Phys. Rev. Lett.},
+  volume = {110},
+  issue = {15},
+  pages = {153002},
+  numpages = {5},
+  year = {2013},
+  month = {Apr},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.110.153002},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.110.153002}
+}
+
+@article{Roos:00,
+  title = {Experimental Demonstration of Ground State Laser Cooling with Electromagnetically Induced Transparency},
+  author = {Roos, C. F. and Leibfried, D. and Mundt, A. and Schmidt-Kaler, F. and Eschner, J. and Blatt, R.},
+  journal = {Phys. Rev. Lett.},
+  volume = {85},
+  issue = {26},
+  pages = {5547--5550},
+  numpages = {0},
+  year = {2000},
+  month = {Dec},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.85.5547},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.85.5547}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Traps
+
+@article{Sawyer:12,
+  title = {Spectroscopy and Thermometry of Drumhead Modes in a Mesoscopic Trapped-Ion Crystal Using Entanglement},
+  author = {Sawyer, Brian C. and Britton, Joseph W. and Keith, Adam C. and Wang, C.-C. Joseph and Freericks, James K. and Uys, Hermann and Biercuk, Michael J. and Bollinger, John J.},
+  journal = {Phys. Rev. Lett.},
+  volume = {108},
+  issue = {21},
+  pages = {213003},
+  numpages = {5},
+  year = {2012},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.108.213003},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.108.213003}
+}
+
+@article{Britton:12,
+  author = {Joseph W. Britton and Brian C. Sawyer and Adam C. Keith and C. .-C. Joseph Wang and James K. Freericks and Hermann Uys and Michael J. Biercuk and John J. Bollinger},
+  title = {Engineered two-dimensional Ising interactions in a
+     trapped-ion quantum simulator with hundreds of spins},
+  journal = {Nature},
+  volume = {484},
+  number = {7395},
+  pages = {489--492},
+  year = {2012},
+  publisher = {Nature Publishing Group, a division of Macmillan Publishers Limited. All Rights Reserved.},
+  abstract = {},
+  url = {http://dx.doi.org/10.1038/nature10981},
+  doi = {10.1038/nature10981}
+}
+
+@article{Paul:90,
+  title = {Electromagnetic traps for charged and neutral particles},
+  author = {Paul, Wolfgang},
+  journal = {Rev. Mod. Phys.},
+  volume = {62},
+  issue = {3},
+  pages = {531--540},
+  numpages = {0},
+  year = {1990},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/RevModPhys.62.531},
+  url = {http://link.aps.org/doi/10.1103/RevModPhys.62.531}
+}
+
+@article{Wright:13,
+  author={Kenneth Wright and Jason M Amini and Daniel L Faircloth and Curtis Volin and S Charles Doret and Harley Hayden and C-S
+Pai and David W Landgren and Douglas Denison and Tyler Killian and Richart E Slusher and Alexa W Harter},
+  title={Reliable transport through a microfabricated {X}-junction surface-electrode ion trap},
+  journal={New Journal of Physics},
+  volume={15},
+  number={3},
+  pages={033004},
+  url={http://stacks.iop.org/1367-2630/15/i=3/a=033004},
+  year={2013},
+  abstract={We report the design, fabrication and characterization of a microfabricated surface-electrode ion trap that supports controlled transport through the two-dimensional intersection of linear trapping zones arranged in a 90° cross. The trap is fabricated with very large scalable integration techniques which are compatible with scaling to a large quantum information processor. The shape of the radio-frequency electrodes is optimized with a genetic algorithm to reduce axial pseudopotential barriers and minimize ion heating during transport. Seventy-eight independent dc control electrodes enable fine control of the trapping potentials. We demonstrate reliable ion transport between junction legs and determine the rate of ion loss due to transport. Doppler-cooled ions survive more than 10 5 round-trip transits between junction legs without loss and more than 65 consecutive round trips without laser cooling.}
+}
+
+@article{Allcock:12,
+year={2012},
+issn={0946-2171},
+journal={Applied Physics B},
+volume={107},
+number={4},
+doi={10.1007/s00340-011-4788-5},
+title={Heating rate and electrode charging measurements in a scalable, microfabricated, surface-electrode ion trap},
+url={http://dx.doi.org/10.1007/s00340-011-4788-5},
+publisher={Springer-Verlag},
+author={Allcock, D.T.C. and Harty, T.P. and Janacek, H.A. and Linke, N.M. and Ballance, C.J. and Steane, A.M. and Lucas, D.M. and Jarecki, R.L., Jr. and Habermehl, S.D. and Blain, M.G. and Stick, D. and Moehring, D.L.},
+pages={913-919},
+language={English}
+}
+
+@article{Daniilidis:11,
+  author={N Daniilidis and S Narayanan and S A Möller and R Clark and T E Lee and P J Leek and A Wallraff and St Schulz and F Schmidt-Kaler and H
+Häffner},
+  title={Fabrication and heating rate study of microscopic surface electrode ion traps},
+  journal={New Journal of Physics},
+  volume={13},
+  number={1},
+  pages={013032},
+  url={http://stacks.iop.org/1367-2630/13/i=1/a=013032},
+  year={2011},
+  abstract={We report heating rate measurements in a microfabricated gold-on-sapphire surface electrode ion trap with a trapping height of approximately 240 μm. Using the Doppler recooling method, we characterize the trap heating rates over an extended region of the trap. The noise spectral density of the trap falls in the range of noise spectra reported in ion traps at room temperature. We find that during the first months of operation, the heating rates increase by approximately one order of magnitude. The increase in heating rates is largest in the ion-loading region of the trap, providing a strong hint that surface contamination plays a major role for excessive heating rates. We discuss data found in the literature and the possible relation of anomalous heating to sources of noise and dissipation in other systems, namely impurity atoms adsorbed onto metal surfaces and amorphous dielectrics.}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ionization/Cooling/Spectroscopy Papers
+@article{Harter:14,
+	year={2014},
+	issn={0946-2171},
+	journal={Applied Physics B},
+	volume={114},
+	number={1-2},
+	doi={10.1007/s00340-013-5688-7},
+	title={Long-term drifts of stray electric fields in a Paul trap},
+	url={http://dx.doi.org/10.1007/s00340-013-5688-7},
+	publisher={Springer Berlin Heidelberg},
+	author={Härter, A. and Krükow, A. and Brunner, A. and Hecker Denschlag, J.},
+	pages={275-281},
+	language={English}
+}
+
+@article{Karlsson:99,
+  author={Hans Karlsson and Ulf Litzén},
+  title={Revised Ba I and Ba II Wavelengths and Energy Levels Derived by Fourier Transform Spectroscopy},
+  journal={Physica Scripta},
+  volume={60},
+  number={4},
+  pages={321},
+  url={http://stacks.iop.org/1402-4896/60/i=4/a=006},
+  year={1999},
+  abstract={Barium spectra emitted from hollow cathode discharges and recorded with Fourier transform spectrometers in the region 170031 000 Å have been used for measuring 294 Ba I lines and 52 Ba II lines with uncertainties in the range ±0.001 cm -1 to ±0.01 cm -1 . Energy level values have been derived from the measurements. The energy levels have been used for an improved determination of the Ba II ionization limit, giving the value 80686.30 ± 0.10 cm -1 .}
+}
+	
+@article{Gurell:07,
+  title = {Laser-probing measurements and calculations of lifetimes of the $5d\phantom{\rule{0.2em}{0ex}}^{2}D_{3∕2}$ and $5d\phantom{\rule{0.2em}{0ex}}^{2}D_{5∕2}$ metastable levels in $\mathrm{Ba}\phantom{\rule{0.2em}{0ex}}II$},
+  author = {Gurell, J. and Bi\'emont, E. and Blagoev, K. and Fivet, V. and Lundin, P. and Mannervik, S. and Norlin, L.-O. and Quinet, P. and Rostohar, D. and Royen, P. and Schef, P.},
+  journal = {Phys. Rev. A},
+  volume = {75},
+  issue = {5},
+  pages = {052506},
+  numpages = {6},
+  year = {2007},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.75.052506},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.75.052506}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Surface trap measurements
+
+@article{Blakestad:09,
+	title = {High-Fidelity Transport of Trapped-Ion Qubits through an $\mathbf{X}$-Junction Trap Array},
+	author = {Blakestad, R. B. and Ospelkaus, C. and VanDevender, A. P. and Amini, J. M. and Britton, J. and Leibfried, D. and Wineland, D. J.},
+	journal = {Phys. Rev. Lett.},
+	volume = {102},
+	issue = {15},
+	pages = {153002},
+	numpages = {4},
+	year = {2009},
+	month = {Apr},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevLett.102.153002},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.102.153002}
+}
+
+@article{Blakestad:11,
+	title = {Near-ground-state transport of trapped-ion qubits through a multidimensional array},
+	author = {Blakestad, R. B and Ospelkaus, C. and VanDevender, A. P and Wesenberg, J. H and Biercuk, M. J and Leibfried, D. and Wineland, D. J},
+	journal = {Phys. Rev. A},
+	volume = {84},
+	issue = {3},
+	pages = {032314},
+	numpages = {14},
+	year = {2011},
+	month = {Sep},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevA.84.032314},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.84.032314}
+}
+
+@article{Labaziewicz:08,
+	title = {Suppression of Heating Rates in Cryogenic Surface-Electrode Ion Traps},
+	author = {Labaziewicz, Jaroslaw and Ge, Yufei and Antohi, Paul and Leibrandt, David and Brown, Kenneth R. and Chuang, Isaac L.},
+	journal = {Phys. Rev. Lett.},
+	volume = {100},
+	issue = {1},
+	pages = {013001},
+	numpages = {4},
+	year = {2008},
+	month = {Jan},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevLett.100.013001},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.100.013001}
+}
+
+@article{Chiaverini:14,
+	title = {Insensitivity of the rate of ion motional heating to trap-electrode material over a large temperature range},
+	author = {Chiaverini, J. and Sage, J. M.},
+	journal = {Phys. Rev. A},
+	volume = {89},
+	issue = {1},
+	pages = {012318},
+	numpages = {6},
+	year = {2014},
+	month = {Jan},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevA.89.012318},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.89.012318}
+}
+
+@article{Niedermayr:14,
+	author={Michael Niedermayr and Kirill Lakhmanskiy and Muir Kumph and Stefan Partel and Jonannes Edlinger and Michael Brownnutt and Rainer Blatt},
+	title={Cryogenic surface ion trap based on intrinsic silicon},
+	journal={New Journal of Physics},
+	volume={16},
+	number={11},
+	pages={113068},
+	url={http://stacks.iop.org/1367-2630/16/i=11/a=113068},
+	year={2014},
+	abstract={Trapped ions are pre-eminent candidates for building quantum information processors and quantum simulators. To scale such systems to more than a few tens of ions it is important to tackle the observed high ion-heating rates and create scalable trap structures which can be simply and reliably produced. Here, we report on cryogenically operated intrinsic-silicon ion traps which can be rapidly and easily fabricated using standard semiconductor technologies. Single 40 Ca + ions have been trapped and used to characterize the trap operation. Long ion lifetimes were observed with the traps exhibiting heating rates as low as ##IMG## [http://ej.iop.org/images/1367-2630/16/11/113068/njp504196ieqn1.gif] {$\mathop{{\bar{n}}}\limits^{.}\;=\;$} 0.33 phonons s −1 at an ion-electrode distance of 230 μm. These results open many new avenues to arrays of micro-fabricated ion traps.}
+}
+
+@article{Shu:14,
+  title = {Heating rates and ion-motion control in a $\mathsf{Y}$-junction surface-electrode trap},
+  author = {Shu, G. and Vittorini, G. and Buikema, A. and Nichols, C. S. and Volin, C. and Stick, D. and Brown, Kenneth R.},
+  journal = {Phys. Rev. A},
+  volume = {89},
+  issue = {6},
+  pages = {062308},
+  numpages = {8},
+  year = {2014},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.89.062308},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.89.062308}
+}
+
+@article{Ibaraki:11,
+	year={2011},
+	issn={0946-2171},
+	journal={Applied Physics B},
+	volume={105},
+	number={2},
+	doi={10.1007/s00340-011-4463-x},
+	title={Detection of parametric resonance of trapped ions for micromotion compensation},
+	url={http://dx.doi.org/10.1007/s00340-011-4463-x},
+	publisher={Springer-Verlag},
+	author={Ibaraki, Y. and Tanaka, U. and Urabe, S.},
+	pages={219-223},
+	language={English}
+}
+
+@article{Safavi:11,
+  title = {Microscopic model of electric-field-noise heating in ion traps},
+  author = {Safavi-Naini, A. and Rabl, P. and Weck, P. F. and Sadeghpour, H. R.},
+  journal = {Phys. Rev. A},
+  volume = {84},
+  issue = {2},
+  pages = {023412},
+  numpages = {7},
+  year = {2011},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.84.023412},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.84.023412}
+}
+
+@article{Hite:12,
+  title = {100-Fold Reduction of Electric-Field Noise in an Ion Trap Cleaned with     \textit{In~Situ}   Argon-Ion-Beam Bombardment},
+  author = {Hite, D. A. and Colombe, Y. and Wilson, A. C. and Brown, K. R. and Warring, U. and J\"ordens, R. and Jost, J. D. and McKay, K. S. and Pappas, D. P. and Leibfried, D. and Wineland, D. J.},
+  journal = {Phys. Rev. Lett.},
+  volume = {109},
+  issue = {10},
+  pages = {103001},
+  numpages = {5},
+  year = {2012},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.109.103001},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.109.103001}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Raman
+
+@article{Hayes:10,
+	title = {Entanglement of Atomic Qubits Using an Optical Frequency Comb},
+	author = {Hayes, D. and Matsukevich, D. N. and Maunz, P. and Hucul, D. and Quraishi, Q. and Olmschenk, S. and Campbell, W. and Mizrahi, J. and Senko, C. and Monroe, C.},
+	journal = {Phys. Rev. Lett.},
+	volume = {104},
+	issue = {14},
+	pages = {140501},
+	numpages = {4},
+	year = {2010},
+	month = {Apr},
+	publisher = {American Physical Society},
+	doi = {10.1103/PhysRevLett.104.140501},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.104.140501}
+}
+
+@article{Campbell:10,
+  title = {Ultrafast Gates for Single Atomic Qubits},
+  author = {Campbell, W. C. and Mizrahi, J. and Quraishi, Q. and Senko, C. and Hayes, D. and Hucul, D. and Matsukevich, D. N. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. Lett.},
+  volume = {105},
+  issue = {9},
+  pages = {090502},
+  numpages = {4},
+  year = {2010},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.105.090502},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.105.090502}
+}
+
+@article{Schlatter:04, 
+	author = {Adrian Schlatter and S. C. Zeller and R. Grange and R. Paschotta and U. Keller}, 
+	journal = {J. Opt. Soc. Am. B}, 
+	keywords = {Lasers, Q-switched; Lasers, solid-state; Mode-locked lasers},
+	number = {8}, 
+	pages = {1469--1478}, 
+	publisher = {OSA},
+	title = {Pulse-energy dynamics of passively mode-locked solid-state lasers above the Q-switching threshold}, 
+	volume = {21}, 
+	month = {Aug},
+	year = {2004},
+	url = {http://josab.osa.org/abstract.cfm?URI=josab-21-8-1469},
+	doi = {10.1364/JOSAB.21.001469},
+	abstract = {We have investigated the dynamical behavior of various passively mode-locked solid-state lasers by measuring how a modulation of the pump power affects the output power. We show theoretically and experimentally how the damping of the relaxation oscillations is reduced and finally becomes zero when the pump power is reduced so that the threshold for Q-switched mode locking is approached. For the first time to our knowledge, this method provides important information on the stability of mode locking above the Q-switched mode-locking threshold. It is applicable to lasers that are mode locked with slow-saturable absorbers. The results helped to explain the cause of unexpectedly low Q-switching thresholds in two cases. Also we obtain some useful spectroscopic information.},
+}
+
+@article{Sun:10,
+  author={L Sun and L Zhang and H J Yu and L Guo and J L Ma and J Zhang and W Hou and X C Lin and J M Li},
+  title={880 nm LD pumped passive mode-locked {TEM} 00 {Nd:YVO} 4 laser based on SESAM},
+  journal={Laser Physics Letters},
+  volume={7},
+  number={10},
+  pages={711},
+  url={http://stacks.iop.org/1612-202X/7/i=10/a=004},
+  year={2010},
+  abstract={We report on an 880 nm LD pumped passive mode-locked TEM 00 Nd:YVO 4 laser based on a semiconductor saturable absorber mirror (SESAM) for the first time. When the incident pump power was 16 W, 4.76 W average output power of continuous-wave mode-locked laser with an optical-to-optical conversion efficiency of 30% was achieved. The repetition rate of mode-locked pulse was 80 MHz with 25 ps pulse width. The maximum pulse energy and peak power were 60 nJ and 2.4 kW, respectively.}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Books
+
+@book{Jackson,
+	author = {John David Jackson},
+	publisher = {John Wiley and Sons},
+	title = {Classical Electrodynamics},
+	isbn = {0-471-30932-X},
+	address = {Hoboken, NJ},
+	year = {1999}
+}
+
+
+@book{Foot,
+	author = {Christopher J. Foot},
+	title = {Atomic Physics},
+	year = {2005},
+	publisher = {Oxford University Press},
+	isbn = {0-19-850696-1},
+	address = {New York, NY}
+}
+
+@book{Sakurai,
+	author = {J. J. Sakurai},
+	title = {Modern Quantum Mechanics},
+	publisher = {Addison-Wesley},
+	year = {1994},
+	isbn = {0-201-53929-2}
+}
+

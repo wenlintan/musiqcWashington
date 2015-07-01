@@ -1,0 +1,11 @@
+
+project rabi_flop : requirements <include>boost ;
+
+lib rabi_flop :
+    monte_carlo_rabi_flop.cpp /boost//date_time/<link>static
+		/boost//thread/<link>static /boost//system/<link>static
+    :  <link>shared <threading>multi
+    ;
+
+install install-bin : rabi_flop : <location>"." ;
+

@@ -1,0 +1,7 @@
+
+from mpl_toolkits.basemap import Basemap
+
+map = basemap( projection='ortho', lat_0 = 45, lon_0 = 45,
+		resolution = '1', area_thresh = 1000. )
+map.drawmapboundar()
+

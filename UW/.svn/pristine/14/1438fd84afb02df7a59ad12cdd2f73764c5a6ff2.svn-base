@@ -1,0 +1,194 @@
+#!/usr/bin/env python
+
+import numpy
+import numpy.linalg
+import scipy.optimize
+import argparse
+import pickle
+from sympy import *
+
+from matplotlib import pyplot
+
+amu = 1.6e-27
+e = 1.6e-19
+oofpez= 9e9
+
+class TrapFrequencies:
+    def __init__( self, measured_mass, wx, wy, waxial ):
+        self.mass = float(measured_mass)
+        self.ws = (wx, wy, waxial)
+
+    def wx( self, mass ):
+        scale = (self.mass / mass)
+        return self.ws[0] * scale
+    def wy( self, mass ):
+        scale = (self.mass / mass)
+        return self.ws[1] * scale
+    def waxial( self, mass ):
+        scale = (self.mass / mass) ** 0.5
+        return self.ws[2] * scale
+
+    
+def radial_scan( masses, trap_freqs, width, freqs, strengths ):
+    nions = len( masses )
+    wx, wy, waxial = trap_freqs.wx, trap_freqs.wy, trap_freqs.waxial
+    zpos = symbols( ' '.join( 'z'+str(i) for i in range(nions) ) )
+    axial_trap = sum( m * amu * waxial(m)**2 / 2 * zpos[i]**2 
+        for i, m in enumerate( masses ) )
+    coulomb = sum( oofpez * e**2 / 2 * sqrt( 1 / (zpos[j] - zpos[k])**2 ) 
+        for k in range(1, nions) for j in range(k) )
+
+    eqns = [ diff( axial_trap + coulomb, zpos[i] ) for i in range(nions) ]
+    initial = [10e-6 * (i - (nions-1) / 2.0) for i in range(nions)]
+    axial_positions = nsolve( eqns, zpos, initial )
+    #print( axial_positions )
+    
+    xpos = symbols( ' '.join( 'x'+str(i) for i in range(nions) ) )
+    ypos = symbols( ' '.join( 'y'+str(i) for i in range(nions) ) )
+    radial_trap = sum( 
+        m*amu*wx(m)**2 / 2 * xpos[i]**2 + m*amu*wy(m)**2 / 2 * ypos[i]**2
+        for i, m in enumerate( masses ) )
+    full_coulomb = sum( oofpez * e**2 / 2 * 
+        sqrt( 1 / ((xpos[i] - xpos[j])**2 + (ypos[i] - ypos[j])**2 +
+            (zpos[i] - zpos[j])**2) )
+        for j in range(1, nions) for i in range(j) )
+
+    rpos = xpos + ypos
+    Vx = numpy.array([[ 
+        ( diff( diff(1 / sqrt( amu*masses[i] * amu*masses[j] ) * 
+        (axial_trap + radial_trap + full_coulomb), xpos[i]), xpos[j] )
+        .subs( zip( rpos, [0.0]*2*nions ) )
+        .subs( zip( zpos, axial_positions ) )).evalf()
+        for j in range(nions)] for i in range(nions)], dtype=float)
+    wsx, vsx = numpy.linalg.eig( Vx )
+    wsx = numpy.sqrt( wsx )
+    #print( numpy.sqrt(wsx) / 2 / numpy.pi )
+    #print( vsx )
+
+    Vy = numpy.array([[ 
+        ( diff( diff(1 / sqrt( amu*masses[i] * amu*masses[j] ) * 
+        (axial_trap + radial_trap + full_coulomb), ypos[i]), ypos[j] )
+        .subs( zip( rpos, [0.0]*2*nions ) )
+        .subs( zip( zpos, axial_positions ) )).evalf()
+        for j in range(nions)] for i in range(nions)], dtype=float)
+    wsy, vsy = numpy.linalg.eig( Vy )
+    wsy = numpy.sqrt( wsy )
+    #print( numpy.sqrt(wsy)/ 2 / numpy.pi )
+    #print( vsy )
+
+    output = []
+    for i in range( nions ):
+        shelves = []
+        for f in freqs:
+            res = 0.0
+            for j, s, w in zip( range(nions), strengths[:nions], wsx ):
+                v = vsx[i,j]
+                res += (s * v ** 2 * numpy.sin( (f-w)/width ) ** 2 /
+                    ((f-w)/width) ** 2)
+            for j, s, w in zip( range(nions), strengths[nions:], wsy ):
+                v = vsy[i,j]
+                res += (s * v ** 2 * numpy.sin( (f-w)/width ) ** 2 /
+                    ((f-w)/width) ** 2)
+            shelves.append( res )
+        output.append( numpy.array(shelves) )
+    return output
+
+
+def fit_scan( fitparamfile, filename, carrier_freq, masses, trap_freqs ):
+    data = numpy.loadtxt( filename )
+    freqs = (data[:,0] - carrier_freq) * 2*numpy.pi*1e6
+    nions = int( (len( data[0] ) - 1) / 2 )
+    bright = list( map( lambda x: x!=0, data[0,1+nions:] ) )
+
+    wz = trap_freqs.ws[2]
+    initial = [trap_freqs.ws[0], trap_freqs.ws[1], 2*numpy.pi*20e3]
+    initial.extend( [0.5] * 2 * nions )
+
+    def fit_fn( params, freqs, *shelves ):
+        wx, wy, width = params[:3]
+        strengths = params[3:]
+
+        tf = TrapFrequencies( trap_freqs.mass, wx, wy, wz )
+        theory = radial_scan( masses, tf, width, freqs, strengths )
+
+        tshelves = []
+        for b, t in zip( bright, theory ):
+            if b:   tshelves.append( t )
+        print( "Params: {}".format( params ) )
+
+        err = []
+        for s, t in zip( shelves, tshelves ):
+            err = numpy.concatenate( (err, s - t) )
+        print( "Error: {}".format( (err**2).sum( axis=0 ) ) )
+        return err
+
+    args = [freqs]
+    for i in range( nions ):
+        if not bright[i]: continue
+        args.append( data[:,1+i] )
+
+    print(initial)
+    params, _ = scipy.optimize.leastsq( fit_fn, initial, 
+        args=tuple(args) )
+    print( "Final params: {}".format( params ) )
+
+
+    wx, wy, width = params[:3]
+    strengths = params[3:]
+
+    tf = TrapFrequencies( trap_freqs.mass, wx, wy, wz )
+    theory = radial_scan( masses, tf, width, freqs, strengths )
+    
+    storedinfo = [freqs, data, theory] 
+    file = open(fitparamfile, 'wb')
+    pickle.dump(storedinfo, file)
+    file.close()
+
+    pyplot.plot( freqs, data[:,2], 'r+' )
+    pyplot.plot( freqs, data[:,3], 'g+' )
+    pyplot.plot( freqs, theory[1], 'r' )
+    pyplot.plot( freqs, theory[2], 'g' )
+    pyplot.show()
+
+def draw_plot(storeddata):
+    fitfile = open(storeddata, 'rb')
+    opendata = pickle.load(fitfile)
+    fitfile.close()
+
+    freqs = opendata[0]
+    data = opendata[1]
+    theory = opendata[2]
+#    print(freqs)
+#    print(data)
+#    print(theory)
+    pyplot.plot( freqs, data[:,2], 'r+' )
+    pyplot.plot( freqs, data[:,3], 'g+' )
+    pyplot.plot( freqs, theory[1], 'r' )
+    pyplot.plot( freqs, theory[2], 'g' )
+    pyplot.show()
+
+
+if __name__ == "__main__":
+    #radial_scan( [174, 138, 138],#, 138, 138, 138], 
+    #    TrapFrequencies( 138, 2*pi*1.3e6, 2*pi*1.3e6, 2*pi*0.3e6 ), 
+    #    0.0, [], [] )
+    parser = argparse.ArgumentParser(description='Normal Mode Fits & Plotting')
+    parser.add_argument('-fit', nargs = 4, help = 'Do Fit, save to file. Params: Fit Filename, wx, wy, wz (MHz)')
+    parser.add_argument('-plot', nargs = 1, help = 'Plot Theory and data. Param: Fit filename')
+    parser.add_argument('data', help='Raw data to be fitted/plotted')
+
+    args = parser.parse_args()
+    carrier_freq = 84.7
+
+    if args.fit:
+        args.fit[1:] = map(lambda x: 2*numpy.pi*x*1e6, map(float,args.fit[1:]))
+        fitparamfile = args.fit[0]
+        fit_scan(fitparamfile, args.data, carrier_freq, [174, 138, 138, 138, 138, 138],
+                TrapFrequencies(138, args.fit[1], args.fit[2], args.fit[3]))
+
+    if args.plot:
+        draw_plot(args.plot[0])
+
+#    fit_scan( "YBBBBBtmp.txt", 84.7, [174, 138, 138, 138, 138, 138], 
+#        TrapFrequencies( 138, 2*numpy.pi*1.23e6, 2*numpy.pi*1.13e6, 2*numpy.pi*0.14e6 ) )
+

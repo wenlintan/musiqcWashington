@@ -1,0 +1,339 @@
+
+<html><head>
+<script>
+
+function draw_lens( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.strokeStyle = "#000000";
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	ctx.beginPath();
+	ctx.moveTo( 0, 12 );
+	ctx.arcTo( 6, 0, 0, -12, 24 );
+	ctx.arcTo( -6, 0, 0, 12, 24 );
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_mirror( x, y, angle, pickoff, ctx ) {
+	ctx.save();
+	ctx.strokeStyle = "#000000";
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	var offset = 0, size = 5;
+	if( pickoff == "left" ) offset = 5;
+	else if( pickoff == "right" ) offset = -5;
+	else size = 10
+
+	ctx.beginPath();
+	ctx.moveTo( 0, offset + size );
+	ctx.lineTo( 0, offset + -size );
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_pbs( x, y, opp, ctx ) {
+	ctx.strokeRect( x-5, y-5, 10, 10 );
+	ctx.beginPath();
+	ctx.moveTo( x+5, y+5 );
+	ctx.lineTo( x-5, y-5 );
+	ctx.stroke()
+	ctx.fillText( "PBS", x-5, y-15 );
+}
+
+function draw_rightangle( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.translate( x, y );
+	ctx.rotate(angle);
+
+	ctx.beginPath();
+	ctx.moveTo( 0, +10 );
+	ctx.lineTo( 0, -10 );
+	ctx.lineTo( -8, 0 );
+	ctx.closePath();
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_cavity( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	ctx.beginPath();
+	ctx.moveTo( -30, -10 );
+	ctx.lineTo( -30, 10 );
+	ctx.lineTo( -20, 10 );
+	ctx.arcTo( -25, 0, -20, -10, 23 );
+	ctx.closePath();
+	ctx.stroke()
+
+	ctx.rotate( Math.PI );
+	ctx.beginPath();
+	ctx.moveTo( -30, -10 );
+	ctx.lineTo( -30, 10 );
+	ctx.lineTo( -20, 10 );
+	ctx.arcTo( -25, 0, -20, -10, 23 );
+	ctx.closePath();
+	ctx.stroke()
+	ctx.restore();
+}
+
+function arrow( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+	ctx.lineTo( 0, 0 );
+	ctx.lineTo( 5, 5 );
+	ctx.lineTo( 0, 0 );
+	ctx.lineTo( 5, -5 );
+	ctx.lineTo( 0, 0 );
+	ctx.restore();
+}
+
+function draw_ba_lasers( canvas, ctx ) {
+	ctx.strokeRect( 40, 110, 100, 50 );
+	ctx.textBaseline = "middle";
+	ctx.font = "20px Times New Roman";
+	ctx.fillText( "650 nm", 45, 135 );
+	ctx.font = "12px Times New Roman";
+
+	// Separate two beams
+	ctx.strokeRect( 160, 120, 10, 30 );
+	ctx.fillText( "HWP", 160, 110 );
+	draw_pbs( 190, 135, false, ctx );
+
+	// First beam, double pass to fiber
+	draw_mirror( 190, 180, Math.PI / 4, "left", ctx );
+	draw_lens( 160, 180, 0, ctx );
+	ctx.strokeRect( 105, 165, 10, 30 );
+	ctx.fillText( "DPAOM", 105, 205 );
+	draw_lens( 60, 180, 0, ctx );
+	draw_rightangle( 40, 180, 0, ctx );
+	draw_mirror( 230, 180, Math.PI / 4, 0, ctx );
+	draw_mirror( 230, 90, Math.PI / 4, 0, ctx );
+	ctx.fillText( "To Trap 2", 260, 75 )
+
+	//First beam, double pass to cavity
+	draw_mirror( 50, 180, Math.PI / 4, "left", ctx );
+	draw_mirror( 50, 240, -Math.PI / 4, "right", ctx );
+	draw_lens( 160, 240, 0, ctx );
+	ctx.strokeRect( 105, 225, 10, 30 );
+	ctx.fillText( "DPAOM", 105, 265 );
+	draw_lens( 60, 240, 0, ctx );
+	draw_rightangle( 190, 240, Math.PI, ctx );
+	draw_mirror( 30, 240, Math.PI / 4, 0, ctx );
+	draw_mirror( 30, 270, -Math.PI / 4, 0, ctx );
+	draw_cavity( 210, 270, 0, ctx );
+	ctx.fillText( "Cavity", 210, 250 );
+	ctx.beginPath();
+	ctx.arc( 250, 270, 5, -Math.PI / 2, Math.PI / 2 );
+	ctx.moveTo( 250, 265 );
+	ctx.lineTo( 250, 275 );
+	ctx.moveTo( 255, 270 );
+	ctx.arc( 255, 275, 5, 0, Math.PI / 2 );
+	ctx.stroke();
+
+	// Second beam, single pass to fiber
+	draw_mirror( 210, 135, Math.PI / 4, 0, ctx );
+	draw_mirror( 210, 90, -Math.PI / 4, 0, ctx );
+	draw_lens( 160, 90, 0, ctx );
+	ctx.strokeRect( 105, 75, 10, 30 );
+	ctx.fillText( "AOM", 105, 65 );
+	draw_lens( 60, 90, 0, ctx );
+	draw_mirror( 10, 95, -Math.PI / 4, 0, ctx );
+	draw_mirror( 10, 35, Math.PI / 4, 0, ctx );
+	draw_mirror( 50, 90, -Math.PI / 4, "right", ctx );
+	ctx.fillText( "To Trap 1", 20, 20 );
+	ctx.fillText( "To Wavemeter", 25, 65 );
+
+	ctx.strokeRect( 40, 410, 100, 50 );
+	ctx.font = "20px Times New Roman";
+	ctx.fillText( "986 nm", 45, 435 );
+	ctx.font = "12px Times New Roman";
+
+	// Separate two beams
+	ctx.strokeRect( 160, 420, 10, 30 );
+	ctx.fillText( "HWP", 160, 410 );
+	draw_pbs( 190, 435, false, ctx );
+
+	// First beam, single pass to fiber
+	draw_mirror( 190, 480, Math.PI / 4, 0, ctx );
+	draw_lens( 160, 480, 0, ctx );
+	ctx.strokeRect( 105, 465, 10, 30 );
+	ctx.fillText( "AOM", 105, 505 );
+	draw_lens( 60, 480, 0, ctx );
+	draw_mirror( 30, 475, Math.PI / 4, 0, ctx );
+	draw_mirror( 30, 510, -Math.PI / 4, 0, ctx );
+	draw_mirror( 280, 510, Math.PI / 4, 0, ctx );
+	ctx.strokeRect( 277, 300, 6, 20 );
+	ctx.fillText( "Doubling", 225, 310 );
+	ctx.fillText( "Crystal", 225, 320 );
+	draw_mirror( 280, 90, Math.PI / 4, 0, ctx );
+
+	//First beam, double pass to cavity
+	draw_mirror( 50, 480, Math.PI / 4, "left", ctx );
+	draw_mirror( 50, 540, -Math.PI / 4, "right", ctx );
+	draw_lens( 160, 540, 0, ctx );
+	ctx.strokeRect( 105, 525, 10, 30 );
+	ctx.fillText( "DPAOM", 105, 565 );
+	draw_lens( 60, 540, 0, ctx );
+	draw_rightangle( 190, 540, Math.PI, ctx );
+	draw_mirror( 30, 540, Math.PI / 4, 0, ctx );
+	draw_mirror( 30, 570, -Math.PI / 4, 0, ctx );
+	draw_cavity( 210, 570, 0, ctx );
+	ctx.fillText( "Cavity", 210, 550 );
+	ctx.beginPath();
+	ctx.arc( 250, 570, 5, -Math.PI / 2, Math.PI / 2 );
+	ctx.moveTo( 250, 565 );
+	ctx.lineTo( 250, 575 );
+	ctx.moveTo( 255, 570 );
+	ctx.arc( 255, 575, 5, 0, Math.PI / 2 );
+	ctx.stroke();
+
+	// Second beam, single pass to fiber
+	draw_mirror( 210, 435, Math.PI / 4, 0, ctx );
+	draw_mirror( 210, 390, -Math.PI / 4, 0, ctx );
+	draw_lens( 160, 390, 0, ctx );
+	ctx.strokeRect( 105, 375, 10, 30 );
+	ctx.fillText( "AOM", 105, 365 );
+	draw_lens( 60, 390, 0, ctx );
+	draw_mirror( 20, 395, -Math.PI / 4, 0, ctx );
+	draw_mirror( 50, 390, -Math.PI / 4, "right", ctx );
+	ctx.fillText( "To Wavemeter", 25, 365 );
+	ctx.strokeRect( 17, 300, 6, 20 );
+	ctx.fillText( "Doubling", 27, 310 );
+	ctx.fillText( "Crystal", 27, 320 );
+	draw_mirror( 20, 35, Math.PI / 4, 0, ctx );
+
+	ctx.beginPath();
+	ctx.strokeStyle = "#ff0000";
+
+	// First beam, double pass to fiber
+	ctx.moveTo( 140, 135 );
+	ctx.lineTo( 190, 135 );
+	arrow( 190, 160, -Math.PI/2, ctx );
+	ctx.lineTo( 190, 180 );
+	arrow( 130, 180, -Math.PI, ctx );
+	arrow( 140, 180, 0, ctx );
+	ctx.lineTo( 110, 180 );
+	ctx.lineTo( 60, 175 );
+	ctx.lineTo( 40, 175 );
+	ctx.moveTo( 190, 180 );
+	ctx.lineTo( 230, 180 );
+	ctx.lineTo( 230, 90 );
+	arrow( 250, 90, -Math.PI, ctx );
+	ctx.lineTo( 290, 90 );
+
+	// First beam, double pass to cavity
+	ctx.moveTo( 110, 180 );
+	ctx.lineTo( 50, 180 );
+	arrow( 50, 210, -Math.PI/2, ctx );
+	ctx.lineTo( 50, 240 );
+	arrow( 80, 240, -Math.PI, ctx );
+	arrow( 90, 240, 0, ctx );
+	ctx.lineTo( 110, 240 );
+	ctx.lineTo( 160, 245 );
+	ctx.lineTo( 190, 245 );
+	ctx.moveTo( 50, 240 );
+	ctx.lineTo( 30, 240 );
+	ctx.lineTo( 30, 270 );
+	arrow( 100, 270, -Math.PI, ctx );
+	ctx.lineTo( 250, 270 );
+
+	// Second beam, single pass to fiber
+	ctx.moveTo( 190, 135 );
+	ctx.lineTo( 210, 135 );
+	ctx.lineTo( 210, 90 );
+	arrow( 180, 90, 0, ctx );
+	ctx.lineTo( 110, 90 );
+	ctx.lineTo( 60, 95 );
+	ctx.lineTo( 10, 95 );
+	ctx.lineTo( 10, 35 );
+	ctx.lineTo( 50, 35 );
+
+	ctx.moveTo( 110, 90 );
+	ctx.lineTo( 50, 90 );
+	ctx.lineTo( 50, 70 );
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.strokeStyle = "#663300";
+
+	// First beam, double pass to fiber
+	ctx.moveTo( 140, 435 );
+	ctx.lineTo( 190, 435 );
+	arrow( 190, 460, -Math.PI/2, ctx );
+	ctx.lineTo( 190, 480 );
+	arrow( 135, 480, 0, ctx );
+	ctx.lineTo( 110, 480 );
+	ctx.lineTo( 60, 475 );
+	ctx.lineTo( 30, 475 );
+	ctx.lineTo( 30, 510 );
+	arrow( 100, 510, -Math.PI, ctx );
+	ctx.lineTo( 280, 510 );
+	ctx.lineTo( 280, 310 );
+
+	// First beam, double pass to cavity
+	ctx.moveTo( 110, 480 );
+	ctx.lineTo( 50, 480 );
+	ctx.lineTo( 50, 540 );
+	arrow( 80, 540, -Math.PI, ctx );
+	arrow( 90, 540, 0, ctx );
+	ctx.lineTo( 110, 540 );
+	ctx.lineTo( 160, 545 );
+	ctx.lineTo( 190, 545 );
+	ctx.moveTo( 50, 540 );
+	ctx.lineTo( 30, 540 );
+	ctx.lineTo( 30, 570 );
+	arrow( 100, 570, -Math.PI, ctx );
+	ctx.lineTo( 250, 570 );
+
+	// Second beam, single pass to fiber
+	ctx.moveTo( 190, 435 );
+	ctx.lineTo( 210, 435 );
+	ctx.lineTo( 210, 390 );
+	arrow( 135, 390, 0, ctx );
+	ctx.lineTo( 110, 390 );
+	ctx.lineTo( 60, 395 );
+	ctx.lineTo( 20, 395 );
+	ctx.lineTo( 20, 310 );
+
+	ctx.moveTo( 110, 390 );
+	ctx.lineTo( 50, 390 );
+	ctx.lineTo( 50, 370 );
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.strokeStyle = "#0000ff";
+
+	ctx.moveTo( 20, 310 );
+	arrow( 20, 200, Math.PI/2, ctx );
+	ctx.lineTo( 20, 36 );
+	ctx.lineTo( 50, 36 );
+
+	ctx.moveTo( 280, 310 );
+	arrow( 280, 200, Math.PI/2, ctx );
+	ctx.lineTo( 280, 91 );
+	ctx.lineTo( 290, 91 );
+	ctx.stroke();
+
+}
+
+
+window.onload = function() {
+	var canvas = document.getElementById( "ba-lasers" );
+	var ctx = canvas.getContext( "2d" );
+	draw_ba_lasers( canvas, ctx );
+}
+
+
+</script>
+</head><body>
+<canvas id="ba-lasers" width="320px" height="600px"></canvas>
+</body></html>

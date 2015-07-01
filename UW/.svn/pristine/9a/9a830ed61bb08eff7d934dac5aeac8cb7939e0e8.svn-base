@@ -1,0 +1,149 @@
+
+\graphicspath{ {\curdir/Graphics/}  }
+
+Quantum computation is a new method for performing calculations on data that utitilizes additional properties of quantum mechanics.  Quantum algorithms running on capable systems will be able to perfom some calculations in exponentially less time than classical computers will ever be able to.  To realize these speed increases, we need to engineer unprecedented control over thousands of coupled quantum systems.  There are a number of candidate systems that have a sufficient degree of isolation from the environment that it is possible to consider implementing a quantum computer.  These systems include superconducting junctions\cite{Devoret:13}, quantum dots\cite{Kloeffell:13}, trapped neutral atoms\cite{Saffman:10}, and trapped ions.
+
+\section{Motivating Quantum Computing}
+In order to quantify the possible speed increase that quantum computers represent, it is useful to refer to the notion of complexity classes in computer science.  Complexity classes are groups of problems that share a similar dependence between the input size of a problem and the time and memory required to solve it.  In Figure~\ref{fig:bqp}, PSPACE is the class of problems that can be solved using an amount of memory that is polynomial in the size of the problem.  The size of the problem in this context refers to the size required to represent the inputs of the problem in computer memory.  For example, if the input is a single number, $N$, it can be repressented in space proportional to $\log{N}$.  For problems that require the input of a large series of numbers, the logarithm of each number is approximately the same size and the problem size is often written as the number of input numbers ignoring the approximately constant multiplicative factor.  The NP complexity class in the figure is the class of problems whose solutions can be verified in polynomial time, meaning an amount of computational time that depends via a polynomial on the size of the input.  One of the most important questions in computer science is whether these problems that can be verified in polynomial time can also be solved in polynomial time, and therefore are also member of the complexity class P.  It is generally believed that these complexity classes are not equal, that is $P \ne NP$, and therefore algorithms to efficiently solve NP problems of size will never be found.  Instead we will have to use algorithms that scale poorly with the size of the problem, and can become difficult to solve even for problems that seem trivially small.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth] {BQP_complexity_class_diagram}
+	\caption{The currently believed relationship between the BQP complexity class and other classical complexity classes.}
+	\label{fig:bqp}
+\end{figure}
+
+Quantum algorithms are usually analyzed as probabilistic algorithms that take into account some probability of the algorithm producing the wrong solution.  The computational class that is used is named bounded error quantum polynomial time, or BQP, and is the class of problems solvable in polynomial time on a quantum computer with a probability of failing less than $\frac{1}{3}$.  We can see from Figure~\ref{fig:bqp} that quantum computers will be able to efficiently solve some problems that will probably never be efficiently solved classically, including some problems in NP and some problems that are not. 
+
+The most famous and arguably useful quantum algorithm is known as Shor's algorithm.  It is an algorithm for solving the discrete logarithm problem.  The inputs to the problem are two elements, $a$ and $b$, of some finite group, $G$, and the desired output is an exponent, n, such that $a^n = b$.  The trivial algorithm is to continuously exponentiate a to higher and higher powers, which takes time proportional to the number of elements of $G$.  Since the input to the problem is two elements of G, the input size of the problem is proportional to $\log G$ and the naive algorithm takes time exponential in this input size.  Practically speaking, this problem has applications in cryptography for which groups with size $2^{256}$ or larger are often chosen, and therefore classical algorithms would require absurd amounts of computational time to find solutions.  Solving this problem is the difficult task that keeps public key cryptographically secured information safe, and it is generally suspected that for sufficiently large groups it will never be solved on classical hardware.
+
+Shor's algorithm provides a solution to the discrete logarithm problem that requires only time linear in the size of the input.  A functional quantum computer of sufficient size could use this algorithm to break all known public key cryptography techniques using a very small amount of computational time. These encryption techniques fall into two groups, those based on factoring large integers and those based on solving for roots of elliptic curves in finite fields.  Both of these problems are easy to solve in one direction, but very costly to solve in the opposite direction.  Someone desiring to encrypt something can easily compute the result of these calculations for chosen parameters, but finding those parameters from the result is very difficult.  Both of these known public-key cryptography problems are extremely susceptible to quantum computing.
+
+From a physicist's point of view, perhaps the larger motivation for building a quantum computer is the ability to simulate difficult quantum systems.  Trapped ion based quantum computers are beginning to approach being able to find results for physical problems that are very difficult for classical computers to solve.  In particular, frustrated magnetic systems are easily simulated by a number of quantum computer designed \cite{}, but are very difficult to solve classically even for only dozens of particles.  Simulating full Hamiltonians of complicated systems may remain infeasible on classical computers for decades still, while because of their favorable scaling quantum computers will be trivially able to do so.
+
+\section{The DiVincenzo Criteria}
+\label{sec:divincenzo}
+The operational units of a quantum computer are usually refered to as qubits (short for quantum bits).  Qubits have two possible values just like classical bits, but can also support any superposition of those two values.  Two energy states in the ion are chosen to represent these two values.   Additionally, multiple qubits can be entangled together, which enables the huge speed improvement these systems can achieve.
+
+Although there are many systems under investigation as potential quantum computing technologies, I am only going to seriously discuss the possibilities of trappied ion quantum computers.  In order to guide our discussion of how trapped ions represent a possible technology for implementing quantum computation, I will follow the venerable DiVincenzo criteria \cite{DiVincenzo:00}.  These criteria were proposed by David DiVincenzo in 2000, and describe the basic requirements for a feasible quantum computing architecture.  They place limits on both the chosen qubits and the technologies that isolate and interact with them.
+
+\subsubsection{1. A scalable physical system with well characterized qubits}
+
+The first criteria is the unfortunately the one that is most difficult to realize with a trapped ion system.  The qubits themselves, represented by long lived internal energy states of the ions, are certainly well characterized.  However, the physical system required to trap them and make them talk to each other has proven difficult to scale to large numbers of ions.  Current state of the art systems can simultaneously entangle 14 qubits \cite{Blatt}, which is already technically very challenging and still not very useful computationally.  The focus of the rest of this thesis will be on one proposal for scaling ion trap systems up to useful number of qubits.
+
+\subsubsection{2. The ability to initialize the state of the qubits to a simple fiducial state, such as $\ket{000...}$} 
+
+This ability is easily realized in trapped ions by tuning the polarization or frequency of a group of lasers to drive transitions from all but one accessible long-lived state.  The exact details depend on the species being trapped, but are usually very straightforward.  Once the necessary transitions are addressed the population will be pumped to the non-addressed long-lived state by decay from the excited states.  From this optically pumped state the qubit can be transferred to whatever state represents $\ket{0}$ in the proposed computation scheme.  In practice, only a few lasers are often necessary to realize this procedure and fidelities greater than 99\% are easily realizable.
+
+\subsubsection{3. Long relevant decoherence times, much longer than the gate operation time}
+
+Once again the exact details of the implementation depend on the chosen atomic species and isotope, but there are usually several possible long lived states in a given species that could serve as qubits.  In particular, in species with odd nuclear spin there are first order magnetic field insensitive ground state levels with coherence times easily reaching tens of seconds \cite{Monroe}.  There are even coupled energy levels with optical separation energies with similar decoherence times.  These time scales compare very favorably with gate operation times between 1~us and 10~us.
+
+\subsubsection{4. A universal set of quantum gates}
+
+In this context, a universal set of gates refers to a set of operations that can be performed on the qubits in order to realize any unitary operator.  In practice, the necessary set can be relatively small and involve only a few single qubit rotations and an entangling operation between qubits.  These kinds of operations are easily accomplished using external electric and magnetic fields.  The rotations can be accomplished with near-resonant radiation at the qubit energy. The Coulomb interaction between trapped ions provides a strong coupling between their motional energy states that can be used to perform entangling operations.  Fidelities for these operations can be very high, and gate times can be very short \cite{}.
+
+\subsubsection{5. A qubit-specific measurement capability}
+
+Ions that can be trapped usually have a strong, optical transition that can scatter millions of photons per second.  By manipulating the internal state of the ions to allow or disallow such a transition, the ions state can be read out by merely collecting flourescence.  Read out times of tens of milliseconds are easily possible, and times as short as 10~$\mu$s have been demonstrated \cite{}.  This internal state manipulation is often as simple as transferring the ion to a state outside of the decay channels of the driven transition.
+
+\section{Qubits and Operators}
+Initialization and readout of trapped ion quantum systems requires easily available lasers and well understood technology as I described above.  A universal set of quantum gates can also be engineered, but with some additional complexities.  A mathematical approach to the interaction between light and ions will help clarify how to engineer these gates.  Once we have chosen our two qubit levels, the state of the system can be described by a wavefunction of the form 
+\begin{eqnarray}
+	\Psi(t) &=& a e^{i \frac{E_0}{\hbar} t} \ket{0} + b e^{i \frac{E_1}{\hbar} t} \ket{1} \\
+	&=& \cos( \theta/2 ) \ket{0} + \sin( \theta/2 ) e^{i \phi} e^{i \omega t} \ket{1} \mathrm{,}
+\end{eqnarray}
+where the second form has dropped an overall phase and made it clear that $\left| a \right|^2 + \left| b \right|^2 = 1$.  We have also defined $\omega = \frac{E_1 - E_0}{\hbar}$.  Often such wavefunctions are represented graphically by vectors on the Bloch sphere (see Figure~\ref{fig:bloch}).  The $+z$ axis is usually chosen to represent $\ket{1}$, and the $-z$ axis to represent $\ket{0}$.  The polar angle of any arbitrary vector is given by $\theta$, while the azimuthal angle evolves in time and is equal to $\phi + \omega t$.  Coherent single-qubit operations can be described as rotations on the Bloch sphere, and their operators can then be written as the familiar Pauli matrices, $\sigma_x$, $\sigma_y$, and $\sigma_z$.  
+
+\[ 
+\sigma_x = \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) %
+\sigma_y = \left( \begin{array}{cc} 0 & i \\ -i & 0 \end{array} \right) %
+\sigma_z = \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array} \right)
+\]
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth]{Bloch_Sphere}
+	\caption{Vectors on the Bloch Sphere (shown above) can represent any possible qubit state $\Psi$.}
+	\label{fig:bloch}
+\end{figure}
+
+Rotations are a convenient basis for describing operations on qubits because all decoherence-free operations will preserve $\left| a \right|^2 + \left| b \right|^2 = 1$ and will therefore merely rotate states along the surface of the Bloch sphere.  It is clear from our description of the qubit state that rotations about the $\hat{z}$ axis are trivial, and can be accomplished by merely delaying and allowing the qubit to acquire the desired phase from the qubit energy splitting.  The only requirement is to be able to accurately track the phase the qubit is acquiring using some type of clock.  Full control of a single qubit state requires the ability to change the qubit's polar angle.  To perform these rotations using systems with a strong dipole moment, it is only necessary to use an external electric field.  Consider a two level Hamiltonian
+\begin{equation}
+	H = \hbar \omega \sigma_z \mathrm{,}
+\end{equation}
+where $\omega$ is the energy separation and $\sigma_z$ is the z Pauli matrix.  We can generally describe coherent interaction with an external electric field via the potential
+\begin{equation}
+	V = \left( \vec{\mu} \cdot \vec{E} \right)  \cos{\left( (\omega + \delta) t + \phi_0 \right)} \sigma_x \mathrm{,}
+\end{equation}
+where $\vec{\mu}$ is the ion dipole moment, $\vec{E}$ is the electric field magnitude and polarization, and $\delta$ is the detuning from the the qubit energy spacing of the electric field oscillation.
+
+Consider a qubit system initialized to be in $\ket{0}$.  We can write its probability to be found in the excited state $\ket{1}$, $\left| b \right|^2$, using time dependent perturbation theory.  In terms of the probability to be in state $\ket{0}$, $\left| a \right|^2$,
+\begin{eqnarray}
+	\label{eqn:dota}
+	\dot{a} &=& -i \Omega b e^{i \delta t + \phi_0} \\
+	\label{eqn:dotb}
+	\dot{b} &=& -i \Omega^* a e^{i \delta t + \phi + \phi_0} \mathrm{,}
+\end{eqnarray}
+where we have dropped the quickly oscillating complex amplitudes and defined $\Omega = \frac{ \left| \vec{\mu} \cdot \vec{E} \right| }{\hbar}$.  For very short interaction times where the amplitudes of the two states do not change we can approximate them as constant and let $a = 1$ and $b = 0$.  In this approximation, the population transferred to the excited states is 
+\begin{equation}
+	\left| b \right| ^2 = \Omega^2 t^2 \sin^2{ \delta t } \mathrm{.}
+	\label{eqn:shortpulses}
+\end{equation}
+This equation will be useful for using short pulses to make easy measurements of $\Omega$ in later chapters.
+
+The above approximations hold for small population transfers, but in order to analyze the long term behavior we need to simultaneously consider both the excited and ground state occupations.  In order to make a geometric connection we can start by considering
+\begin{eqnarray}
+	u &=& a b^* + a^* b \\
+	v &=& -i ( a b^* - a^* b ) \\
+	w &=& \left| b \right|^2 - \left| a \right|^2
+\end{eqnarray}
+where $u$, $v$, and $w$ are the x, y, and z components of the Bloch sphere representation of $\ket{\Psi}$.  Their time derivatives can then be found using Equations~\ref{eqn:dota} and \ref{eqn:dotb} to be
+\begin{eqnarray}
+	\dot{u} &=& \delta v \\
+	\dot{v} &=& -\delta u + \Omega w \\
+	\dot{w} &=& -\Omega v
+	\label{eqn:wdot}
+\end{eqnarray}
+Defining $P = u \hat{e_1} + v \hat{e_2} + w \hat{e_3}$ to be the vector representing $\Psi$, we can write $\dot{P} = P \times ( \Omega \hat{e_1} + \delta \hat{e_3} )$.  This formulation makes it clear that we can coherently control the state of the qubit by controlling the detuning frequency and application time of near resonant electric fields.  The detuning choses a vector about which the qubit state will process, and choosing the correct time duration allows us to reach any state we desire. 
+
+If we are only interested in the probability of measuring $\ket{1}$ after beginning in $\ket{0}$, we can derive the results easily from Equation~\ref{eqn:wdot}.
+\begin{equation}
+	\left| b \right|^2 = \frac{\Omega^2}{W^2} \sin^2( W t / 2 )
+\end{equation}
+where we have defined
+\begin{equation}
+	W^2 = \Omega^2 + \delta^2 \mathrm{.}
+\end{equation}
+By applying resonant electric fields we see that we can cause population to oscillated between the two qubit states.  Simply controlling the exposure time of the fields to the ion allows us to perform a rotation around the $\hat{y}$ axis on the Bloch sphere.  Given the strength of these couplings in ions full population transfers can easily be achieved in 1~us to 10~us.  Combining the rotations about $\hat{z}$ we already discussed and these rotations we have full control of a single qubit.
+
+However, the fundamental speed increases available through quantum computation rely on the ability to generate entanglement between qubits.  Without entanglement a quantum computer will not be able to outperform a classical, probabilistic computer.  Therefore, we must have at least one operation which can generate entanglement between our qubits.  A common choice is called a controlled NOT operation.  Its operation can be described by the unitary matrix 
+\begin{equation}
+	U_{CNOT} = \left( \begin{array}{cccc}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 1 & 0
+	\end{array}\right) \mathrm{.}
+\end{equation}
+The controlled qubit's state is flipped if the controlling qubit is set, and otherwise is not changed.
+
+While single qubit operations are almost always implemented by applying external electric and magnetic fields implementing entangling operations is signifcantly more difficult.  The method used to implement them is dependent on the interaction that cen be engineered between the qubits themselves.  In trapped ion systems, $N$ ions that are confined in the same trap share $3N$ quantum harmonic oscillator modes of motion coupled via Coulomb forces.  These harmonic oscillator states are used as intermediate states to allow communication between the qubits.  A number of methods for generating entanglement between ions have been proposed including the Cirac-Zoller gate \cite{Cirac:95}, the M{\o}lmer-S{\o}rensen gate \cite{Sorensen:00}, and the Garc\'{i}a-Ripoll gate \cite{GarciaRipoll:03}.  The Garc\'{i}a-Ripoll gate has the nicest properties including begin completely insensitive the ions motional energy and a gate time that can be much quicker than the time scale of the ion's motion.  However, the optical setup to efficiently implement it is very complicated, and we will instead use the M{\o}lmer-S{\o}rensen gate for the moment.
+
+The M{\o}lmer-S{\o}rensen gate is a two qubit entangling gate that uses these motional modes but is relatively tolerant to finite temperature in them\cite{Sorensen:00}.  For a normal mode with angular frequency $\omega_x$ and a qubit angular frequency $\omega$, the two ions are exposed to an two external fields with angular frequencies $\omega \pm (\omega_x + \delta)$.  These fields excite a virtual phonon into the motional mode and then remove it.  The result is that the result of the pulse sequence is independent of the number of quanta in the mode, but the two ions are linked via the motional mode and must make transitions together.  The action of this pulse sequence on two qubit states of our qubit levels, $\ket{0}$ and $\ket{1}$, can be described by
+\begin{eqnarray}
+	\ket{00} &\rightarrow& \cos\left( \frac{\Omega' t}{2} \right) \ket{00} + i \sin\left( \frac{\Omega' t}{2} \right) \ket{11} \\
+	\ket{11} &\rightarrow& \cos\left( \frac{\Omega' t}{2} \right) \ket{11} + i \sin\left( \frac{\Omega' t}{2} \right) \ket{00} \\
+	\ket{01} &\rightarrow& \cos\left( \frac{\Omega' t}{2} \right) \ket{01} - i \sin\left( \frac{\Omega' t}{2} \right) \ket{10} \\
+	\ket{10} &\rightarrow& \cos\left( \frac{\Omega' t}{2} \right) \ket{10} - i \sin\left( \frac{\Omega' t}{2} \right) \ket{01} 
+\end{eqnarray}
+where we have defined
+\begin{equation}
+	\Omega' = \frac{(\Omega \eta)^2}{\delta - \omega_x}\mathrm{,}
+\end{equation}
+and $\Omega$ is the coupling strength of the field to the qubit transition while $\eta$ is the Lamb-Dicke parameter that describes the coupling strength between the field's momentum and the ion's motional states.  Since this transition is indpendent of the motional energy level of the ion $n$, it can be driven with relatively high temperatures that can easily be reached with simple laser cooling techniques.  The entanglement is even robust against ion heating during the transition and only requires that the ion be cold enough to satisy $\eta^2 n \|| 1$.  The M{\o}lmer-S{\o}rensen gate implements an entangling operation, but it is not the easily described CNOT operation from above.  However, by performing single qubit rotations before and after this entangling oepration CNOT gates can be engineered.
+	
+Implementing a quantum algorithm can be thought of as implenting a complicated unitary matrix on a number of input and ancillary qubits.  However, it is easiest experimentally to perform and optimize a small number of single qubit and CNOT gates.  Fortunately, the Solovay-Kitaev algorithm allows us to approximate the quantum algorithm we want to perform using a universal set of simple gates.  This algorithm allows us to construct an appoximation with error at most $\epsilon$ to any unitary matrix using a number of simple gates that scales as $\log^2(1 / \epsilon )$.  The approximation can be found efficiently on a classical computer before the algorithm is implemented on a quantum device.  For this reason, we can concern ourselves with only implementing relatively simple quantum operations, with the promise that by performing many of these gates we can approximate any algorithm.  The only problem with this procedure is the accumulation of errors by performing hundreds or thousands of these simple gates.  For complicated quantum algorithms, quantum error correction will probably be necessary to stop this propagation of error and maintain the fidelity of the approximation to the algorithm in question.  Quantum error correction was first conceived of by Shor and requires more ancilla qubits for each computational qubit and more simple gates for each operation, but promises a higher total fidelity at the end of the algorithm\cite{Shor:95}.  The techniques have been adpated to many different quantum computing proposals including  new, scalable architectures for trapped ions\cite{Oi:06}.
+
+Quantum computation using trapped ions has a long history.  All of the requirements for quantum computation have been demonstrated with simple ion trapping systems using readily available technology.  The difficulty remains in scaling the number of communicating trapped ions to a sufficiently large number to outperform classical computer.  The number of required ions is not the billions it would take to compete with the number of bits in a classical computer, but insteasd only a few hundred because of the incredibly efficient quantum algorithms that are available for some difficult problems.  In Chapter~\ref{sec:musiqc}, I will discuss our strategies for reaching these numbers of communicating ions.
+

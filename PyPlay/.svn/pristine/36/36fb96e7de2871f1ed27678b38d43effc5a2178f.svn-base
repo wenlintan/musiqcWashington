@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/graph.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+
+var lock_params = {"pg":"PGain", "ig":"IGain", "dg":"DGain", "lf":"LFreq", "me":"MinErr"};
+
+var data = {
+	channel: 0, 
+	channel_data: [
+		{	frequency: 303.71318, 
+			locktime: 2,
+			locking: false,
+			params: {pg: 10, ig:4, dg:100, lf: 303.71318, me: 2},
+			interference: [0, 10, 30, 10, 0, 0, 0, 10, 30, 10, 0, 0, 0, 10, 30, 10, 0, 0, 0, 10, 30, 10, 0]
+		}
+	]
+};
+
+
+function start() {
+	var canvas = document.getElementById("Interference");
+	var ctx = canvas.getContext('2d');
+	window.setInterval( function(){  }, 1000 );
+	
+	$('#channel').val( data.channel );
+	$('#time').val( data.channel_data[ data.channel ].locktime );
+	$('#locking').val( data.channel_data[ data.channel ].locking );
+	for( param in data.channel_data[ data.channel ].params ) {
+		var clone = $('.parameter.template').clone();
+		clone.removeClass('template');
+		clone.find('.label').text( lock_params[ param ] );
+		clone.find('.value').val( data.channel_data[ data.channel ].params[ param ] );
+		$('#LockParameters').append( clone );
+	}
+	draw_graph(canvas, ctx, [data.channel_data[ data.channel ].interference], {colors:['green'], grid:false, labels:false});
+	$('#frequency').html( data.channel_data[ data.channel ].frequency.toFixed(6) )
+}
+
+</script>
+</head>
+
+<body onload="start()">
+<div id="SwitchControls"></div>
+
+<div id="ChannelData">
+<div class="parameter">
+<span class="label" style="width: 40px;">CH:</span>
+<input id="channel" class="value important" type="text" style="width: 90px;"></input>
+</div>
+
+<div class="parameter">
+<span class="label" style="width: 75px;">Lock Time:</span>
+<input id="time" class="value" type="text" style="width: 50px;"/>
+</div>
+
+<div class="parameter">
+<span class="label" style="width: 75px;">Locking:</span>
+<input id="locking" class="value" type="checkbox" />
+</div>
+</div>
+
+<div id="LockParameters">
+<div class="template parameter">
+	<span class="label" style="width: 50px;"></span>
+	<input class="value" type="text" style="width: 75px;"/>
+</div>
+</div>
+
+<div id="WavemeterData">
+<canvas width="350" height="75" id="Interference"></canvas>
+<span id="frequency" class="important"></span>
+</div>
+</body>
+</html>

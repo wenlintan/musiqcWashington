@@ -1,0 +1,22 @@
+
+project simulation : requirements <include>boost ;
+
+# Make the definition of the python-extension rule available
+import python ;
+
+python-extension simulation 
+	: entity.cpp component.cpp mesh.cpp collision.cpp physics.cpp network.cpp 
+		system.cpp renderer.cpp renderer_components.cpp event.cpp roam.cpp
+		rocket_system.cpp
+		world.cpp perlin.cpp transform.cpp matrix.cpp vector.cpp
+		/sdl2//sdl2
+		/boost//python/<link>static /boost//system/<link>static
+		/boost//date_time/<link>static /boost//regex/<link>static
+		/boost//thread/<link>static 
+		/libRocket//libRocketCore /libRocket//libRocketDebugger
+		/libRocket//libRocketControls
+		#/boost//serialization/<link>static
+	;
+
+install install-bin : simulation : <location>"." ;
+

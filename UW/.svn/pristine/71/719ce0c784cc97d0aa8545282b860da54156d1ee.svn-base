@@ -1,0 +1,353 @@
+@article{Auchter:14, 
+author = {Carolyn Auchter and Chen-Kuan Chou and Thomas W. Noel and Boris B. Blinov}, 
+journal = {J. Opt. Soc. Am. B}, 
+keywords = {Atomic and molecular physics; Quantum optics; Quantum information and processing},
+number = {7}, 
+pages = {1568--1572}, 
+publisher = {OSA},
+title = {Ion-photon entanglement and Bell inequality violation with 138{B}a$+$}, 
+volume = {31}, 
+month = {Jul},
+year = {2014},
+url = {http://josab.osa.org/abstract.cfm?URI=josab-31-7-1568},
+doi = {10.1364/JOSAB.31.001568},
+abstract = {We report on the demonstration of ion-photon entanglement and Bell inequality violation in a system of trapped Ba138$+$ ions. Entanglement between the Zeeman sublevels of the ground state of a single Ba138$+$ ion and the polarization state of a single 493\&\#xA0;nm photon emitted by the ion with a fidelity of 0.84\&\#xB1;0.01 was achieved, along with a Bell signal of 2.3, exceeding the classical limit of 2 by more than eight standard deviations. This system is a promising candidate for a loophole-free Bell inequality violation test using long-range ion\&\#x2013;ion entanglement as the wavelengths of the transitions of Ba138$+$ are in the visible region and thus suitable for long-range transmission over fiber optic cable.},
+}
+
+@article{Graham:14,
+   author = "Graham, R. D. and Chen, S.-P. and Sakrejda, T. and Wright, J. and Zhou, Z. and Blinov, B. B.",
+   title = "A system for trapping barium ions in a microfabricated surface trap",
+   journal = "AIP Advances",
+   year = "2014",
+   volume = "4",
+   number = "5", 
+   eid = 057124,
+   url = "http://scitation.aip.org/content/aip/journal/adva/4/5/10.1063/1.4879817",
+   doi = "http://dx.doi.org/10.1063/1.4879817" 
+}
+
+@article{Shu:11, 
+author = {Gang Shu and Chen-Kuan Chou and Nathan Kurz and Matthew R. Dietrich and Boris B. Blinov}, 
+journal = {J. Opt. Soc. Am. B}, 
+keywords = {Quantum information and processing ; Micro-optical devices},
+number = {12}, 
+pages = {2865--2870}, 
+publisher = {OSA},
+title = {Efficient fluorescence collection and ion imaging with the ``tack'' ion trap}, 
+volume = {28}, 
+month = {Dec},
+year = {2011},
+url = {http://josab.osa.org/abstract.cfm?URI=josab-28-12-2865},
+doi = {10.1364/JOSAB.28.002865},
+abstract = {Trapped, laser-cooled atoms and ions produce intense fluorescence of the order 107~108 photons per second. Detection of this fluorescence enables efficient measurement of the quantum state of qubits based on trapped atoms. It is desirable to collect a large fraction of the photons to make the detection faster and more reliable. Additionally, efficient fluorescence collection can improve the speed and fidelity of remote ion entanglement and quantum gates. Refractive and reflective optics, and optical cavities have all been used to collect the trapped ion fluorescence with up to about 10\% efficiency. Here we show a novel ion trap design that incorporates a metallic spherical mirror as the integral part of the trap itself, being its RF electrode. The mirror geometry enables up to 35\% solid angle collection of trapped ion fluorescence. The movable central pin electrode of this trap allows precise placement of the ion at the focus of the reflector. We characterize the performance of the mirror, and measure 25\% collection efficiency, likely limited by the imperfections of the mirror surface. We also study the properties of the images of single ions formed by the spherical mirror and apply aberration correction with an aspherical element placed outside the vacuum system. Owing to the simplicity of its design, this trap structure can be adapted for microfabrication and integration into more complex trap architectures.},
+}
+
+@article{Monroe:14,
+  title = {Large-scale modular quantum-computer architecture with atomic memory and photonic interconnects},
+  author = {Monroe, C. and Raussendorf, R. and Ruthven, A. and Brown, K. R. and Maunz, P. and Duan, L.-M. and Kim, J.},
+  journal = {Phys. Rev. A},
+  volume = {89},
+  issue = {2},
+  pages = {022317},
+  numpages = {16},
+  year = {2014},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.89.022317},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.89.022317}
+}
+
+@article{Church:93,
+title = "Collision measurements and excited-level lifetime measurements on ions stored in Paul, Penning and Kingdon ion traps ",
+journal = "Physics Reports ",
+volume = "228",
+number = "5–6",
+pages = "253 - 358",
+year = "1993",
+note = "",
+issn = "0370-1573",
+doi = "http://dx.doi.org/10.1016/0370-1573(93)90030-H",
+url = "http://www.sciencedirect.com/science/article/pii/037015739390030H",
+author = "D.A Church",
+abstract = "Ion-collision and ion-excited level mean lifetime measurements carried out in Paul, Penning and Kingdon ion traps are briefly reviewed. Low energy spin-dependent charged particle collisions which have been studied include electron-atom spin exchange, spin-dependent electron-atom elastic collisions, spin-dependent excitation of atoms by polarized electrons, and spin-dependent electron transfer. Cross sections for electron recombination with molecules have been measured, as were the rate coefficients for ion-molecule reactions at temperatures between 11 K and 60 K. The rate coefficients or cross sections for electron transfer from atoms or molecules to atomic ions with charge states as high as 10 + , and energies in the eV range or below, have been obtained. The mean lifetimes of atomic and molecular ion states, with lifetimes ranging from 10−9s to tens of seconds, decaying by E1, intercombination E1, 2E1, \{M1\} and \{E2\} transitions, have been measured. The experimental data are presented in tabular form to simplify retrieval. The operation of the ion traps, and certain properties of the ion motion in the traps, are discussed, particularly from the point of view of the storage of ion numbers typically used in collisional research. The background and motivation for individual measurements, as well as salient features of the experimental technique, are also presented. "
+}
+
+
+@article{Olmschenk:07,
+  title = {Manipulation and detection of a trapped ${\mathrm{Yb}}^{+}$ hyperfine qubit},
+  author = {Olmschenk, S. and Younge, K. C. and Moehring, D. L. and Matsukevich, D. N. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. A},
+  volume = {76},
+  issue = {5},
+  pages = {052314},
+  numpages = {9},
+  year = {2007},
+  month = {Nov},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.76.052314},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.76.052314}
+}
+
+@article{Casabone:13,
+  title = {Heralded Entanglement of Two Ions in an Optical Cavity},
+  author = {Casabone, B. and Stute, A. and Friebe, K. and Brandst\"atter, B. and Sch\"uppert, K. and Blatt, R. and Northup, T. E.},
+  journal = {Phys. Rev. Lett.},
+  volume = {111},
+  issue = {10},
+  pages = {100505},
+  numpages = {5},
+  year = {2013},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.111.100505},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.111.100505}
+}
+
+@Article{Moehring:07,
+    author="Moehring, D. L.
+        and Maunz, P.
+        and Olmschenk, S.
+        and Younge, K. C.
+        and Matsukevich, D. N.
+        and Duan, L.-M.
+        and Monroe, C.",
+    title="Entanglement of single-atom quantum bits at a distance",
+    journal="Nature",
+    year="2007",
+    month="Sep",
+    day="06",
+    publisher="Nature Publishing Group",
+    volume="449",
+    number="7158",
+    pages="68--71",
+    issn="0028-0836",
+    doi="10.1038/nature06118",
+    url="http://dx.doi.org/10.1038/nature06118"
+}
+
+@article{Gurell:07,
+  title = {Laser-probing measurements and calculations of lifetimes of the $5d\phantom{\rule{0.2em}{0ex}}^{2}D_{3∕2}$ and $5d\phantom{\rule{0.2em}{0ex}}^{2}D_{5∕2}$ metastable levels in $\mathrm{Ba}\phantom{\rule{0.2em}{0ex}}II$},
+  author = {Gurell, J. and Bi\'emont, E. and Blagoev, K. and Fivet, V. and Lundin, P. and Mannervik, S. and Norlin, L.-O. and Quinet, P. and Rostohar, D. and Royen, P. and Schef, P.},
+  journal = {Phys. Rev. A},
+  volume = {75},
+  issue = {5},
+  pages = {052506},
+  numpages = {6},
+  year = {2007},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.75.052506},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.75.052506}
+}
+
+
+
+@article{Hayes:10,
+  title = {Entanglement of Atomic Qubits Using an Optical Frequency Comb},
+  author = {Hayes, D. and Matsukevich, D. N. and Maunz, P. and Hucul, D. and Quraishi, Q. and Olmschenk, S. and Campbell, W. and Mizrahi, J. and Senko, C. and Monroe, C.},
+  journal = {Phys. Rev. Lett.},
+  volume = {104},
+  issue = {14},
+  pages = {140501},
+  numpages = {4},
+  year = {2010},
+  month = {Apr},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.104.140501},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.104.140501}
+}
+
+@article{Kirchmair:09,
+  author={G Kirchmair and J Benhelm and F Zähringer and R Gerritsma and C F Roos and R Blatt},
+  title={Deterministic entanglement of ions in thermal states of motion},
+  journal={New Journal of Physics},
+  volume={11},
+  number={2},
+  pages={023002},
+  url={http://stacks.iop.org/1367-2630/11/i=2/a=023002},
+  year={2009},
+  abstract={We give a detailed description of the implementation of a Mølmer–Sørensen gate entangling two 40 Ca + ions using a bichromatic laser beam near-resonant with a quadrupole transition. By amplitude pulse shaping and compensation of ac-Stark shifts we achieve a fast gate operation without compromising the error rate. Subjecting different input states to concatenations of up to 21 individual gate operations reveals Bell state fidelities above 0.80. In principle, the entangling gate does not require ground state cooling of the ions as long as the Lamb–Dicke criterion is fulfilled. We present the first experimental evidence for this claim and create Bell states with a fidelity of 0.974(1) for ions in a thermal state of motion with a mean phonon number of ##IMG## [http://ej.iop.org/images/1367-2630/11/2/023002/nj294699ieqn1.gif] {\bar{n}=20(2)} in the mode coupling to the ions' internal states.}
+}
+
+@article{Home:11,
+      author={J P Home and D Hanneke and J D Jost and D Leibfried and D J Wineland},
+    title={Normal modes of trapped ions in the presence of anharmonic trap potentials},
+          journal={New Journal of Physics},
+            volume={13},
+          number={7},
+            pages={073026},
+              url={http://stacks.iop.org/1367-2630/13/i=7/a=073026},
+                year={2011},
+              abstract={We theoretically and experimentally examine the effects of anharmonic terms in the trapping potential for linear chains of trapped ions. We concentrate on two different effects that become significant at different levels of anharmonicity. The first is a modification of the oscillation frequencies and amplitudes of the ions' normal modes of vibration for multi-ion crystals, resulting from each ion experiencing a different curvature in the potential. In the second effect, which occurs with increased anharmonicity or higher excitation amplitude, amplitude-dependent shifts of the normal-mode frequencies become important. We evaluate normal-mode frequency and amplitude shifts, and comment on the implications for quantum information processing and quantum state engineering. Since the ratio of the anharmonic to harmonic terms typically increases as the ion?electrode distance decreases, anharmonic effects will become more significant as ion trap sizes are reduced. To avoid unwanted problems, anharmonicities should therefore be taken into account at the design stage of trap development.}
+}
+
+@article{Sakrejda:14,
+  title = {Ion Chain Thermometry in Barium-Ytterbium Ion Chains},
+  author = {Sakrejda, T. and Graham, R. and Wright, J. and Zhou, Z. and Blinov, B.},
+  year = {in prep.}
+}
+
+@article{Campbell:10,
+  title = {Ultrafast Gates for Single Atomic Qubits},
+  author = {Campbell, W. C. and Mizrahi, J. and Quraishi, Q. and Senko, C. and Hayes, D. and Hucul, D. and Matsukevich, D. N. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. Lett.},
+  volume = {105},
+  issue = {9},
+  pages = {090502},
+  numpages = {4},
+  year = {2010},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.105.090502},
+  url = {http://link.aps.org/doi/10.1103/PhysRevLett.105.090502}
+}
+
+@article{Shu:14,
+  title = {Heating rates and ion-motion control in a $\mathsf{Y}$-junction surface-electrode trap},
+  author = {Shu, G. and Vittorini, G. and Buikema, A. and Nichols, C. S. and Volin, C. and Stick, D. and Brown, Kenneth R.},
+  journal = {Phys. Rev. A},
+  volume = {89},
+  issue = {6},
+  pages = {062308},
+  numpages = {8},
+  year = {2014},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.89.062308},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.89.062308}
+}
+
+
+@article{Wright:13,
+  author={Kenneth Wright and Jason M Amini and Daniel L Faircloth and Curtis Volin and S Charles Doret and Harley Hayden and C-S
+Pai and David W Landgren and Douglas Denison and Tyler Killian and Richart E Slusher and Alexa W Harter},
+  title={Reliable transport through a microfabricated X -junction surface-electrode ion trap},
+  journal={New Journal of Physics},
+  volume={15},
+  number={3},
+  pages={033004},
+  url={http://stacks.iop.org/1367-2630/15/i=3/a=033004},
+  year={2013},
+  abstract={We report the design, fabrication and characterization of a microfabricated surface-electrode ion trap that supports controlled transport through the two-dimensional intersection of linear trapping zones arranged in a 90° cross. The trap is fabricated with very large scalable integration techniques which are compatible with scaling to a large quantum information processor. The shape of the radio-frequency electrodes is optimized with a genetic algorithm to reduce axial pseudopotential barriers and minimize ion heating during transport. Seventy-eight independent dc control electrodes enable fine control of the trapping potentials. We demonstrate reliable ion transport between junction legs and determine the rate of ion loss due to transport. Doppler-cooled ions survive more than 10 5 round-trip transits between junction legs without loss and more than 65 consecutive round trips without laser cooling.}
+}
+
+@article{Allcock:12,
+year={2012},
+issn={0946-2171},
+journal={Applied Physics B},
+volume={107},
+number={4},
+doi={10.1007/s00340-011-4788-5},
+title={Heating rate and electrode charging measurements in a scalable, microfabricated, surface-electrode ion trap},
+url={http://dx.doi.org/10.1007/s00340-011-4788-5},
+publisher={Springer-Verlag},
+author={Allcock, D.T.C. and Harty, T.P. and Janacek, H.A. and Linke, N.M. and Ballance, C.J. and Steane, A.M. and Lucas, D.M. and Jarecki, R.L., Jr. and Habermehl, S.D. and Blain, M.G. and Stick, D. and Moehring, D.L.},
+pages={913-919},
+language={English}
+}
+
+@article{Daniilidis:11,
+  author={N Daniilidis and S Narayanan and S A Möller and R Clark and T E Lee and P J Leek and A Wallraff and St Schulz and F Schmidt-Kaler and H
+Häffner},
+  title={Fabrication and heating rate study of microscopic surface electrode ion traps},
+  journal={New Journal of Physics},
+  volume={13},
+  number={1},
+  pages={013032},
+  url={http://stacks.iop.org/1367-2630/13/i=1/a=013032},
+  year={2011},
+  abstract={We report heating rate measurements in a microfabricated gold-on-sapphire surface electrode ion trap with a trapping height of approximately 240 μm. Using the Doppler recooling method, we characterize the trap heating rates over an extended region of the trap. The noise spectral density of the trap falls in the range of noise spectra reported in ion traps at room temperature. We find that during the first months of operation, the heating rates increase by approximately one order of magnitude. The increase in heating rates is largest in the ion-loading region of the trap, providing a strong hint that surface contamination plays a major role for excessive heating rates. We discuss data found in the literature and the possible relation of anomalous heating to sources of noise and dissipation in other systems, namely impurity atoms adsorbed onto metal surfaces and amorphous dielectrics.}
+}
+
+@article{Sterk:12,
+  title = {Photon collection from a trapped ion-cavity system},
+  author = {Sterk, J. D. and Luo, L. and Manning, T. A. and Maunz, P. and Monroe, C.},
+  journal = {Phys. Rev. A},
+  volume = {85},
+  issue = {6},
+  pages = {062308},
+  numpages = {8},
+  year = {2012},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.85.062308},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.85.062308}
+}
+
+@article{Clark:14,
+  title = {Characterization of Fluorescence Collection Optics Integrated with a Microfabricated Surface Electrode Ion Trap},
+  author = {Clark, Craig R. and Chou, Chin-wen and Ellis, A.\,R. and Hunker, Jeff and Kemme, Shanalyn A. and Maunz, Peter and Tabakov, Boyan and Tigges, Chris and Stick, Daniel L.},
+  journal = {Phys. Rev. Applied},
+  volume = {1},
+  issue = {2},
+  pages = {024004},
+  numpages = {5},
+  year = {2014},
+  month = {Mar},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevApplied.1.024004},
+  url = {http://link.aps.org/doi/10.1103/PhysRevApplied.1.024004}
+}
+
+@article {Luo:09,
+author = {Luo, L. and Hayes, D. and Manning, T.A. and Matsukevich, D.N. and Maunz, P. and Olmschenk, S. and Sterk, J.D. and Monroe, C.},
+title = {Protocols and techniques for a scalable atom-photon quantum network},
+journal = {Fortschritte der Physik},
+volume = {57},
+number = {11-12},
+publisher = {WILEY-VCH Verlag},
+issn = {1521-3978},
+url = {http://dx.doi.org/10.1002/prop.200900093},
+doi = {10.1002/prop.200900093},
+pages = {1133--1152},
+keywords = {Quantum information, entanglement, atom-photon network, trapped ions, light collection.},
+year = {2009},
+}
+
+@article{Jechow:11, 
+author = {A. Jechow and E. W. Streed and B. G. Norton and M. J. Petrasiunas and D. Kielpinski}, 
+journal = {Opt. Lett.}, 
+keywords = {Quantum optics; Diffractive lenses ; Quantum information and processing ; Laser cooling},
+number = {8}, 
+pages = {1371--1373}, 
+publisher = {OSA},
+title = {Wavelength-scale imaging of trapped ions using a phase Fresnel lens}, 
+volume = {36}, 
+month = {Apr},
+year = {2011},
+url = {http://ol.osa.org/abstract.cfm?URI=ol-36-8-1371},
+doi = {10.1364/OL.36.001371},
+abstract = {A microfabricated phase Fresnel lens was used to image ytterbium ions trapped in a radio frequency Paul trap. The ions were laser cooled close to the Doppler limit on the 369.5?nm transition, reducing the ion motion so that each ion formed a near point source. By detecting the ion fluorescence on the same transition, near-diffraction-limited imaging with spot sizes of below 440?nm (FWHM) was achieved. To our knowledge, this is the first demonstration of wavelength-scale imaging of trapped ions and the highest imaging resolution ever achieved with atoms in free space.},
+}
+
+@article{Schlatter:04, 
+author = {Adrian Schlatter and S. C. Zeller and R. Grange and R. Paschotta and U. Keller}, 
+journal = {J. Opt. Soc. Am. B}, 
+keywords = {Lasers, Q-switched; Lasers, solid-state; Mode-locked lasers},
+number = {8}, 
+pages = {1469--1478}, 
+publisher = {OSA},
+title = {Pulse-energy dynamics of passively mode-locked solid-state lasers above the Q-switching threshold}, 
+volume = {21}, 
+month = {Aug},
+year = {2004},
+url = {http://josab.osa.org/abstract.cfm?URI=josab-21-8-1469},
+doi = {10.1364/JOSAB.21.001469},
+abstract = {We have investigated the dynamical behavior of various passively mode-locked solid-state lasers by measuring how a modulation of the pump power affects the output power. We show theoretically and experimentally how the damping of the relaxation oscillations is reduced and finally becomes zero when the pump power is reduced so that the threshold for Q-switched mode locking is approached. For the first time to our knowledge, this method provides important information on the stability of mode locking above the Q-switched mode-locking threshold. It is applicable to lasers that are mode locked with slow-saturable absorbers. The results helped to explain the cause of unexpectedly low Q-switching thresholds in two cases. Also we obtain some useful spectroscopic information.},
+}
+
+@article{Sun:10,
+  author={L Sun and L Zhang and H J Yu and L Guo and J L Ma and J Zhang and W Hou and X C Lin and J M Li},
+  title={880 nm LD pumped passive mode-locked {TEM} 00 {Nd:YVO} 4 laser based on SESAM},
+  journal={Laser Physics Letters},
+  volume={7},
+  number={10},
+  pages={711},
+  url={http://stacks.iop.org/1612-202X/7/i=10/a=004},
+  year={2010},
+  abstract={We report on an 880 nm LD pumped passive mode-locked TEM 00 Nd:YVO 4 laser based on a semiconductor saturable absorber mirror (SESAM) for the first time. When the incident pump power was 16 W, 4.76 W average output power of continuous-wave mode-locked laser with an optical-to-optical conversion efficiency of 30% was achieved. The repetition rate of mode-locked pulse was 80 MHz with 25 ps pulse width. The maximum pulse energy and peak power were 60 nJ and 2.4 kW, respectively.}
+}
+
+
+
+

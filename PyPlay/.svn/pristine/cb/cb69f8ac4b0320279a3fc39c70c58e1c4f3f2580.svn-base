@@ -1,0 +1,23 @@
+DC: 75.3/75.5 V
+RF: -12 dBm very well coupled
+Comp: 0.25/0. V
+Pressure: 2000ms: 6.6e-11
+
+493: varying
+	bkg - 6cts / 20ms
+	.714430 - 18cts / 20ms
+	.714440 - 26cts / 20ms
+	.714450 - 35cts / 20ms
+	.714455 - 47cts / 20ms
+	.714460 - 60cts / 20ms
+	.714465 - 71cts / 20ms
+	.714470 - 72cts / 20ms
+
+650: .31121 (.313190 on lock program)
+	drifted down to .313165 during .714460 scan for a bit
+	was at .313200 during .714440, .714460 scan
+	holding well betwen .313180 and .313205 on lock program for rest of data
+		it does look like there is some change in flourescence over this range ...
+
+During last runs 3500 and 4000ms WM frequency started drifting lower, but ion flourescence stayed the same
+so I tried to follow ion flourescences.  WM read as low as .714435

@@ -1,0 +1,120 @@
+
+\graphicspath{ {\curdir/Graphics/}  }
+
+Basic electrostatics requires that in free space the electric potential $\phi$ obey
+\begin{equation}
+	\nabla^2 \phi = 0
+\end{equation}
+and therefore it is impossible to have $\partial_x^2 \phi > 0$, $\partial_y^2 \phi > 0$, and $\partial_z^2 \phi > 0$ at the same point in space, which is the condition for having a stable trap in three dimensions for a positively charged particle.  The best possibility with electrostatics is to form a trap in two dimensions, but the third axis will always be an unstable equilibrium point.
+
+Therefore to stably confine a charged particle we have to use either static magnetic fields or time-varying electric fields.  Both of these possibilities are used in modern labs, but working with magnetostatics in Penning traps requires that the ions precess about the magnetic field axis which makes performing quantum operations on them more difficult.  All control lasers and readout must be continuously corrected for the rotation \cite{Sawyer:12,Britton:12}.  These traps are often used for precision measurements. Instead, most quantum information efforts with trapped ions use linear rf traps, which use radio frequency and dc electric fields to generate stable trapping \cite{Paul:90}.  Linear rf traps allow stationary confinement of any charged particle.
+
+In order to more rapidly evaluate different ion trap designs, we have been working on two separate traps in different vacuum chambers.  Power from all of the necessary ionization and cooling lasers is split between the two traps.  Both chambers were originally designed to hold microfabricated surface traps, but one has been converted to hold a standard macroscopic linear rf trap in order to more easily test new quantum operations.
+
+\section{Linear RF Traps}
+\label{sec:paul}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{PaulTrap}
+	\caption[Schematic drawing of a linear rf trap]{Schematic drawing of a linear rf trap showing rf (red) and ground (blue) rods, as well as high voltage dc needles (purple).}
+	\label{fig:paultrap}
+\end{figure}
+
+The easiest linear rf trap geometry to understand features four long rods arranged in a square with their long axis along z (see Figure~\ref{fig:paultrap}).  Radio frequency voltage is applied to two rods in opposite corners (red) and the other two rods are grounded (blue).  The rods provide radial confinement for the ions, and axial confinement is then provided by applying high voltage dc to two electrodes centered inbetween the rods at opposite ends (purple).
+
+At the center of the trap the rods form a radial oscillating quadrupole electric field that is a function of the frequency of the applied rf, $\Omega$.
+\begin{equation}
+	\Psi_\mathrm{rf} = \kappa_\mathrm{rf} V_\mathrm{rf} \cos( \Omega t ) \left( x^2 - y^2 \right) 
+	\label{eq:pot_rf}
+\end{equation}
+while the dc electrodes form a stable trap in the z (axial) direction, and an unstable equilibrium position in x and y.
+\begin{equation}
+	\Psi_\mathrm{dc} = \kappa_\mathrm{dc} V_\mathrm{dc} \left( z^2 - \frac{1}{2} \left( x^2 + y^2 \right) \right) 
+	\label{eq:pot_dc}
+\end{equation}
+The axial confinement is therefore straightforward and follows directly from just the dc potential. 
+
+The resulting axial secular frequency can easily be derived from Equation~\ref{eq:pot_dc} and is $\omega_z = \sqrt{ 2 \kappa_\mathrm{dc} V_\mathrm{dc} q / m }$ for an ion of charge $q$ and mass $m$.  The radial equations of motion can be converted to the standard form
+\begin{equation}
+	\frac{d^2 x}{d \xi^2} + (a_x + 2 q_x \cos(2 \xi)) x = 0
+\end{equation}
+with the definitions
+\begin{eqnarray}
+	\xi &=& \Omega t / 2 \\
+	a_x &=& \frac{4 q \kappa_\mathrm{dc} V_\mathrm{dc}}{m \Omega^2} \\
+	q_x &=& \frac{2 q V_\mathrm{rf}}{ \Omega^2 m } \mathrm{.}
+\end{eqnarray}
+Typically in experimental conditions we will have $a_x < q_x^2 \ll 1$, which is a stable solution of the Mathieu equation.  The motion of the ion under these approximations can be written as
+\begin{equation}
+	x(t) = A_x \cos( \omega_x t + \phi_x ) \left( 1 + \frac{q_x}{2} \cos(\Omega t) \right) \mathrm{.}
+	\label{eqn:mathieu-soln}
+\end{equation}
+The radial secular frequencies, $\omega_x$, correspond to the restoring force the ion feels and are equal to 
+\begin{equation}
+	\omega_x = \frac{\Omega}{2} \sqrt{ \frac{a_x + q_x^2/2}{1 - 3 q_x^2 / 8} } \mathrm{.}
+\end{equation}
+The $A_x$ parameter is an amplitude set by the initial conditions of the ion.  There is still some residual motion of the ion at the frequency of the applied rf, $\Omega$.  All of the above arguments carry through for both radial directions although I've only been discussing x.  However, it is undesirable to have the radial frequncies be extremely close together because of the resulting low frequency beat note them that makes the ions sensitive to low frequency electric field noise.  Therefore, the $\omega_x$ and $\omega_y$ are usually separated either though geometry or by applying a radially symmetry breaking dc field.
+
+In Figure~\ref{fig:mathieu}, a solution to the Mathieu equation given a starting location near the trap center is shown.  The ion is confined radially with a restoring frequency corresponding to the slower oscillations seen above, while some faster oscillations that come directly from the applied rf frequency also perturb the ions' motion.  These fast oscillations are known as trap micromotion and are minimized as much as possible.  They lead to micromotion sidebands on all lasers applied to the ion and increase ion heating when ions are moved by changing dc electrode voltages.  The micromotion is induced when the ions are pushed off the quadrupole null by stray dc electric fields.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{PaulTrap-ion_motion}
+	\caption[Sample solution to the Mathieu equation]{Solution to the Mattheiu equation for a possible linear rf trap geometry showing secular motion and driven micromotion in one radial direction.}
+	\label{fig:mathieu}
+\end{figure}
+
+
+In addition the amplitude of the trap micromotion as a function of stray field can also be found by analyzing the Mathieu equation.  It is usually parameterized by a value $\beta = $.  By cancelling out the stray field as much as possible the micromotion amplitude can be reduced.
+
+When we are working with standard macroscopic linear rf traps we have used a design exactly as pictured in Figure~\ref{fig:paultrap}.  The trap is formed by four 0.017~in diameter tungsten rods separated by approximately 800~microns.  The rods are held in place at either end of the trap by an alumina spacer.  In order to provide axial confinement two tungsten needles were created by electrochemically etching a fine point onto tungsten rods \cite{}.  These needles are also inserted into the alumina spacers and everything is secured with a UHV-compatible quick-drying cement.
+
+The rods and needles are connected to an 8-pin vacuum feedthrough.  High voltage rf to generate the trapping potential is created using a helical can resonator.  Two long pieces of copper are wound into a two-strand copper helix and held in the center of a large copper can.  One end of each copper piece is connected to an rf ground and the other is connected to the vacuum feedthrough.  Rf is coupled into the resonator using a small induction coil whose shape and length can be manipulated to match the load to a standard rf amplifier.
+
+The ground electrodes and the end of the helix coils after the rf filter are connected to dc voltage sources.  By adjusting the dc voltage of these four rods we can control the radial dc field in the trap.  These degrees of freedom allow us to cancel out stray field that may be present in the trap as well as break the radial symmetry of the trap to separate the two radial secular frequencies.
+
+Although the effects of the rf are easiest to see in this type of linear rf trap geometry, many different rf and dc electrode geometries are possible.  The only requirements for this kind of trapping to work are an oscillating quadrupole field overlapped with dc confinement in the other directions.  A particularly simple electrode geometry is applying rf to a metal ring with dc electrodes above and below it.  Another geometry used in my group applies rf to a large parabolic mirror with a grounded metal needle inside of it \cite{Shu:11}.  The ion's position can be manipulated by moving the needle, and by positioning it at the focus of the parabolic mirror very large fractions of the light emitted by the ion can be collected.
+
+\section{Surface Traps}
+\label{sec:surface}
+
+A favorable geometry for working towards scalable quantum computing is called a surface electrode trap.  In this geometry, all of the electrodes are place in a single plane.  Surface electrode traps have several advantges over standard millimeter scale linear rf traps including repeatable manufacturing processes and many separately controllable dc electrodes.  These electrodes allow the creation of separate trapping regions as well as shuttling between the regions and splitting and merging ions into them.  Many groups have been developing the techniques to design and manufacture these traps \cite{Allcock:12, Daniilidis:11, Wright:13}.
+
+Georgia Tech Research Institute and Sandia National Lab have provided us with surface traps for evaluation.  The MUSIQC collaboration has been exploring a number of possible features that can be engineered into surface traps including regions of hight optical access to allow tightly focused lasers, regions with optical cavities to increase ion flourescence collection, and junctions between linear trapping regions that allow chains with different ion species composition and ordering to be organized.  In order to be able to evaluate different traps quickly we have designed an implemented a vacuum chamber that allows for quick trap replacement.
+
+The surface electrode traps we receive are wirebonded onto a CPGA-100 carrier.  This carrier slots into a UHV-compatible Zero Insertion Force (ZIF) socket in the center of our vacuum chamber.  The ZIF socket connects to a custom PCB that can host additional filtering for the dc voltages that will be applied to the trap if necessary.  The PCB also routes the connections from the socket to four 25~pin D-Sub connectors that are connected through a vacuum feedthrough to our control electronics.  The neutral atom oven mount below the PCB.  The bottom flange of the vacuum chamber can be removed to replace the oven, and the top flange can be removed to replace the trap.  This system has been cycled from atmospheric pressure to pressures below 5 $\times$ 10$^{-11}$ more than ten times often in a week or less.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{chiptrap-chamber}
+	\caption[Diagram of surface trap vacuum chamber]{Diagram of vacuum chamber with integrated systems to facilitate the easy replacement of surface electrode traps.}
+	\label{fig:chipchamber}
+\end{figure}
+
+The electric fields at the trapping location in surface traps are often calculated using the Boundary Element Method (BEM).  All of the surfaces in the trap are subdivided into small triangles or quadrilaterals and a surface charge degree of freedom is placed at each vertex of this mesh.  The actual surface charge is assumed to be the linear interpolation of these points. This step reduces the problem from one large integral to the sum of a large number of integral that depend linearly on these vertex surface charges.  In other words the problem of solving for $\phi$ is changed from
+\begin{eqnarray}
+	\phi(x) &=& \int_{\{S\}} \frac{\sigma(x')}{4 \pi \left| x - x' \right| } dx' \mathrm{to} \\
+	\phi(x_i) &=& \sum_{S_k = x_q, x_r, x_s} \int_0^1 \int_0^v \frac{(1-u-v)\sigma(x_q) + u\sigma(x_r) + v\sigma(x_s)}{4 \pi \left| x(u, v) - x_i \right| } \left| \frac{\partial x}{\partial (u,v)} \right| du dv \mathrm{,}
+\end{eqnarray}
+where $\sigma$ is the surface charge density and $u$ and $v$ are a paremtrization of the small triangular surface $S_k$ defined by the three vertices $x_q$, $x_r$ and $x_s$.  The desired solution is then a set of $\sigma(x_i)$ given a desired set of voltages on each surface $\phi(x_i)$.
+
+The problem of solving for these vertex surface charges can then be reduced to linear algebra by computing these integrals without the $\sigma$ parameter.  Then given the desired voltages on each surface the resulting surface charge distribution can be calculated by standard linear algebra techniques.  We have developed software that performs the integration using Gaussian quadrature, and inverts the generated matrix using the open source PETSc package.
+
+Usually in order to be able to quickly analyze voltage solutions the electric field of each electrode is solved individually.  Every electrode is set to 0~V except for one which is assigned some nominal value like 1~V.  The total electric field for a set of voltages can then be found by scaling and adding these results for each electrode.  The radial trapping potential is analyzed by performing the same analysis for the rf electrodes and the calculating the electric field from this analysis.  The radial behavior of the ion can be described by an rf pseudopotential approximation
+\begin{equation}
+	\phi_{\mathrm{pseudo}} = \frac{e}{4 m \omega^2}\left| \nabla \vec{E} \right| ^2
+\end{equation}
+where $\vec{E}$ is the electric field vector, $e$ is the electron charge, $m$ is the ion mass, and $\omega$ is the frequency of the applied rf voltage.  The secular motion of the ion is described by this potential under the same approximations that we made before, but micromotion is not taken into account.
+
+Multidimensional functional minization is then used to solve for voltage solutions with desired trap strengths or locations.  Ions can be shuttled axially by solving for voltage solutions that generate a trap every few microns along the region of itnerest.  Applying these solutions in order at some sufficiently high fixed speed will shuttle the ion at roughly constant velocity.
+
+Once a trapping potential has been calculated, it must be applied to the dc electrodes.  The current generation of traps have up to 96 dc electrodes that must be independently controlled.  After evaluating potential solutions including many National Instruments cards in PCI chassis and a hundred separate high precision DAC chips, I decided to implement a solution using a few many-channel DAC chips.  The AD5372 is an Analog Devices chip that contains 32 independent DACs with 16-bit precision and 20~V output range.  The latter two specifications are sufficient for our needs and with 32 channels three chips suffice to control any surface electrode trap.
+
+The disadvantage of using a many-channel chip is that it is not possible to update the voltages of all of the electrodes simultaneously.  Each chip supports a serial interface at 50~MHz and a minimum time between channel updates of 600~ns.  Often it is necessary to update many electrodes near each other for example to slightly adjust the potential near an ion to change its stray field correction or to begin a shuttling operation.  Therefore, it's often necessary to send a sequence of $\approx$ 8 to 10 sequential writes to a single chip for a single step in a shuttling solution.  The overall update rate for a single step in a shuttling solution is therefore usually limited to 10~kHz to 100~kHz.  The AD5372 does include the functionality to buffer all of these updates into its registers and then present the voltages simultaneously to the ion trap.  The potential the ion sees is never in an intermediate state and always corresponds to one of the potentials in the solution file even though the updates are communicated serially to the DAC board.
+
+Communication with the DAC chips is accomplished through their serial interface using a custom FPGA software solution implemented on an Altera DE2-115 FPGA development board.  This board features 512~KB of SRAM volatile memory and a DM9000a ethernet controller.  In order to shuttle the ion, the lab computer loads the shuttling solution from files and transmits it via UDP packets to the DM9000a ethernet controller.  The FPGA board stores each solution step in its SRAM memory and confirms its receipt to the lab computer.  Once the solution has been loaded it can be played from any desired step to any other at the maximum update rate of the DAC chips.  Since each step could take a different number of updates and it is desirable to maintain the same time period between steps in the shuttling solution file the FPGA will automatically generate delays if necessary between solution steps.
+
+Using this system we have successfully trapped in two different surface electrode traps and have demonstrated shuttling ions.  In order to work on ions at different positions along the axis we have also developed computer controlled systems for positioning the cooling lasers and imaging systems.  We currently shift the position of the cooling lasers using a mirror with a piezoelectric control system.  A custom dc-dc amplifier transforms voltages from an ADC output from a microcontroller into a high voltage input for the piezo mirror.  The microcontroller communicates with the experimental control computer over a serial interface, and it can be program to any desired voltage or to sweep over multiple voltages spending a designated amount of time at each voltage.  This second mode is useful for working on multiple trapping regions at the same time.
+
+In this chapter we have developed all of the technology we will need to trap ions for the rest of this work.  Macroscopic linear rf traps are useful for easily evaluating new technologies because of their lower heating rates and easier optical access.  Surface traps will enable us to work with larger numbers of ions and to work efficiently with multiple ion species.  The next two pieces of setup we need are the ionization lasers and the cooling lasers that will create our ions and maintain their low temperatures.  I will discuss these in the next chapter.

@@ -1,0 +1,13 @@
+\begin{description}
+	\item[ADC] Analog to Digital Converter.  Converts analog voltage or current signals to the digital representation of a corresponding number in Volts of Amperes.
+	\item[AOM] Acousto-Optic Modulator.  Device to diffract an incoming laser beam against a standing wave of RF.  Allows the frequency and power of a diffracted beam to be quickly controlled by changing RF parameters.
+
+	\item[DAC] Digital to Analog Converter.  Converts a digital representation of a number to a corresponding analog signal of that many Volts or Amperes.
+
+	\item[HWP] Half Wave Plate. Delays light polarized along one direction by half a wavelength while not affecting the orthogonal direction of polarization.
+
+	\item[PBS] Polarizing Beam Splitter.  Reflects light polarized along one direction while transmitting the orthogonal direction of polarization.
+
+	\item[QWP] Quarter Wave Plate. Delays light polarized along one direction by a quarter of a wavelength while not affecting the orthogonal direction of polarization.
+\end{description}
+

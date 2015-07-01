@@ -1,0 +1,27 @@
+<rml>
+	<head>
+		<style>
+			body {
+				position: fixed;
+				bottom: 0px;
+				left: 0px;
+
+				width: 400px;
+				height: 50px;
+
+				font-family: Anonymous Pro;
+				font-weight: normal;
+				font-style: normal;
+				font-size: 14;
+
+				background-color: rgb( 64, 64, 64 );
+			}
+		</style>
+	</head>
+	<body>
+		<div><img id="weapon_icon"/>
+		<span id="weapon_name">Pistol</span>
+		<span id="weapon_ammo">10</span></div>
+	</body>
+</rml>
+

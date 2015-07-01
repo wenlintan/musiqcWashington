@@ -1,0 +1,36 @@
+<div class="section">
+    <div class="header">
+        <div class="separator"></div>
+        <h2 class="title">Title</h2>
+    </div>
+    <div class="content">
+        <div class="entry template">
+            <h3 class="position">Name</h3>
+            <div class="info">
+                <span class="date"></span>, 
+                <span class="organization"></span>, 
+                <span class="location"></span>.
+                <span class="grade"></span>
+            
+                <br/>
+                <span class="desc">
+                    This is the sample description that I have
+                    written in an intentionally elongated way 
+                    using more words han strictly necessary in order
+                    to try to span more than one line.
+                </span>
+                <ul class="details"></ul>
+            </div>
+        </div>
+        <div class="item template">
+            <h3 class="name">Name</h3>
+            <div class="desc">
+                This is the sample description that I have
+                written in an intentionally elongated way 
+                using more words han strictly necessary in order
+                to try to span more than one line.
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,72 @@
+
+\graphicspath{ {\curdir/Graphics/}  }
+
+Surface electrode traps have several advantages over standard ``macro'' ion traps.  They can be repeatably manufactured and provide large number of independent dc voltage parameters that can be used to precisely control ions' location and motion.  We have performed some initial characterization of surface traps that we have been working with.  
+
+\section{Ion Dark Lifetime}
+\label{sec:lifetime}
+
+One of the initial difficulties with working with surface traps was their poor ion lifetimes.  Even while being cooled ions would only stay trapped for minutes, and without continuous cooling lifetimes were often as small as a few seconds.  The first trap that we performed measurements in was a Sandia National Labs ``Y'' trap.  This surface electrode trap has three arms extending radially from a central point where they are all connected.  The radial trap is formed by rf and dc rails that run along the side of each arm.  Near the end of each arm there is a 100~micron by 100~micron hole through the entire chip that allows neutral atom flux to travel from behind the trap to be loaded into the trapping region above it.
+
+Cooled lifetimes in this trap were easily tens of minutes, and further investigation of them would have painfully slow so we performed measurements of the dark, uncooled lifetime instead.  An automated loading procedure was developed leveraging the completely autmoatic control over all ionization lasers and our neutral atom oven.  This system allowed the entire experiment to be automated even though it involved losing and retrapping ions many times.
+
+Measuring dark lifetimes itself is straightforward.  A single ion is trapped and cooled using our normal cooling apparatus.  The cooling lasers are then well shuttered for a fixed period of time.  The cooling lasers are unshuttered and flourescence is collected to determine if the ion remained in the trap.  If it didn't another ion is trapped, and then the experiment is repeated.
+
+This measurement is expected to give some insight into the heating rate of ions in the trap.  The heating rate of ions traps is complicated but is related to the stray field and electric field noise environments of the ion.  Using our shuttling system we were able to repeat the measurement at different location along one arm of the trap.  It was expected that because of the neutral atom flux deposited underneath the loading hole this region could develop a large stray vertical field which would increase heating in this region.  
+
+Motional heating in ion traps is a complicated phenomenon and is only recently beginning to be investigated systematically.  There are a number of phenomena known to cause some heating including rf electric field noise near trap junctions, DAC sampling noise, and electric field noise at the secular frequencies \cite{Blakestad:09, Blakestad:11}.  The first heating source is significant in junctions in surface traps where there may be significant gradients in the rf pseudopotential.  In regions with high gradients, the ion can provide nonlinear mixing between applied rf and the applied trapping rf to excite motional energy in the ions.  The update rate of the DACs has strong frequency components that can cause direct heating of motional modes or combinations of motional modes through parametric resonances.
+
+Direct heating from electric field noise at the motional secular frequencies has historically been anomalously high.  Heating rates seem to strongly increase as ions are brought closer to surfaces in ion traps, which has made the problem increasingly problematic as the community moves towards using surface traps where ions are located 40~um to 100~um from the surface of the trap.  The expected scaling for the heating rate as a function of the distance to the nearest surface would be $d^{-2}$, but instead there is significant evidence that the dependence is $d^{-4}$.  This problem has often been addressed in the past by using cryogenic instead of room temperature ion trap systems which greatly reduces the electric field noise density \cite{Niedermayr:14, Labaziewicz:08, Chiaverini:14}.  Recent investigations have shown that this surface heating is probably due to electric field noise in contaminants deposited on the surface during the UHV bakeout \cite{Safavi:11,Hite:12}.  These contaminants can be removed by argon ion bombardment after bakeout, which significantly lowers the heating rate in the trap.
+
+While we begin to develop an understanding of the processes behind this heating rate, at the moment it is still one of the most difficult experimental problems in surface traps.  In trapping systems that were not designed to be cleaned by ion bombardment, characterizing and dealing with the trap heating rate is important.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{LifetimeLoadingHole}
+	\includegraphics[width=0.9\textwidth]{LifetimeMidarm}
+	\caption[Dark lifetimes of barium ions in surface traps]{The probability that an ion remains trapped and can be recooled after a period without Doppler cooling.  This lifetime is significantly shorter in the loading hole (left) than several hundred microns away (right).}
+	\label{fig:lifetime}
+\end{figure}
+
+From Figure~\ref{fig:lifetime}, it is clear from our results that there are additional heating sources near the loading region.  It is beneficial to have regions of the surface trap that do not have loading holes where the heating rates may be lower and quantum operations can be performed more easily.  An additional benefit is that ions can be loaded while quantum operations are being performed without the neutral atom flux perturbing the calculation.  Even in the loading hole we observe ion lifetimes easily sufficient for quantum operations.
+
+\section{Secular Frequencies and Stray Fields}
+\label{sec:secfreqs}
+
+As discussed in Section~\ref{sec:paul} the ions' restoring force from the rf fields is called its secular frequency.  Measuring the secular frequencies allows us to characterize the strength of the trapping potential.  A common technique to measure these frequencies is to apply a small amplitude electric field and scan its frequency over the possible range for the ions secular frequency.  When this ``tickle'' frequency is resonant with the trap secular frequency the ion is heated \cite{Ibaraki:11,Mount:13}.  The motion of ions in a Paul trap is given by Equation~\ref{eqn:mathieu-soln} if there is no stray electric field at the trapping location.  Additional micromotion caused by a stray field, $\vec{E}$, adds a term $B_x = q \vec{E} \cdot \hat{x} / m \omega_x^2$.  The motion of the ions is described by
+\begin{equation}
+	x(t) = \left( B_x + A_x \cos( \omega_x t + \phi_x ) \right) \left( 1 + \frac{q_x}{2} \cos( \Omega t ) \right) \mathrm{,}
+\end{equation}
+where $\omega_x$ is the secular frequency, $\Omega$ is the frequency of the applied rf, $q_x$ is a parameter of the Mathieu equation, and $A_x$ is an amplitude set by initial conditions.  Modulating the applied rf at a frequency $\omega_m$, changes the equation of motion for the ion to
+\begin{equation}
+	\ddot{x} + \omega_x^2 \left( 1 + 2 m \cos( \omega_m t ) \right) x = 0
+\end{equation}
+where $m$ is the modulation depth of the applied signal.  The system is a driven harmonic oscillator, which will exhibit very largy amplitude driven motion when $\omega_m$ is near $\omega_x$.
+
+The additional motion caused by large ``tickle'' amplitudes can be detected by observing the ion flourescence on a CCD camera where the amplitude of the ions motion can increase to resolvable distance scales.  Since the motion of the ion is much faster than the exposure time of the camera, the ions' flourescence appears to blur out over a larger area while it is being heated and collapse to a small point when cold.  The direction of this blurring can be seen in the CCD images and used to identify the trap axis that is being excited.  Figure~\ref{fig:tickle} shows the ions response to being driven at its axial secular frequency.  For small amplitudes, the additional heating can be detected by detuning the Doppler cooling laser several linewidths from the transition so that normally the flourescence is very low.  When the ion is heated though it occupies much higher motional states and additional flouresence can be seen.
+
+Another method for applying the ``tickle'' amplitude is to apply an additional frequency to the rf electrodes inside the trap.  When this signal's frequency is offset from the rf trap frequency by one of the traps secular frequencies heating can again be observed.  The tickle signal is added to the normal trapping rf using an rf splitter/combiner before it is amplified.  Although the rf then passes through a resonator with a Q factor of $\approx$ 200, enough of the probe signal remains for the additional heating to be detected.
+
+The advantage of applying the signal this way is that the amplitude of the heating signal the ion sees is minimized when the ion is located on the rf null.  At the rf null the ions micromotion is minimized and therefore the strength of the secular frequency signal that the ion experience is also minimized.  By applying the rf in this manner and minimizing the ions response to it the micromotion in all three axes can be minimized.
+
+\begin{figure}
+	\centering
+\begin{tabular*}{0.6\textwidth}{cccc}
+\includegraphics[width=0.1\textwidth]{axial/crop171} &
+\includegraphics[width=0.1\textwidth]{axial/crop173} &
+\includegraphics[width=0.1\textwidth]{axial/crop176} &
+\includegraphics[width=0.1\textwidth]{axial/crop178} \\
+{\small 24.171 MHz} & {\small 24.173 MHz} & {\small 24.176 MHz} & {\small 24.178 MHz} \\[0.5in]
+\includegraphics[width=0.1\textwidth]{axial/crop181} &
+\includegraphics[width=0.1\textwidth]{axial/crop183} &
+\includegraphics[width=0.1\textwidth]{axial/crop185} &
+\includegraphics[width=0.1\textwidth]{axial/crop187} \\
+{\small 24.181 MHz} & {\small 24.183 MHz} & {\small 24.185 MHz} & {\small 24.187 MHz} \\ 
+\end{tabular*}
+	\caption[CCD images of ions heated by resonant rf modulation]{CCD images of ion flourescence at different applied rf tickle frequency. The amplitude of the ions motion increases dramatically when the tickle frequency is offset from the carrier frequency by the trap's secular frequency.}
+	\label{fig:tickle}
+\end{figure}
+
+Using this measurement technique we have measured the secular frequencies of our trap with the voltages we are currently applying.  The axial frequency is $\approx$ 0.75~MHz and the radial frequencies are $\approx$ 1.50~MHz and 2.05~MHz.  In future traps we will extend this to minimize stray fields.
+
+

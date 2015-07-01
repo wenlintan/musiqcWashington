@@ -1,0 +1,115 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+%\usepackage[scale=0.75]{geometry}
+\usepackage[vscale=0.85]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\setlength{\makecvtitlenamewidth}{12cm}
+\name{John A.}{Wright}
+%\title{Research Assistant}
+\address{770 N. 73rd Street Apt. 6}{Seattle, WA 98103}{}
+\phone[mobile]{+1~(206)~795~8982}
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{johnwri@uw.edu}
+\homepage{www.pymud.net}
+%\social[linkedin]{john.doe}
+%\social[twitter]{jdoe}
+%\social[github]{jdoe}
+%\extrainfo{additional information}
+%\photo[64pt][0.4pt]{closeup.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%-------------------------------------------------------------------------------
+%            content
+%-------------------------------------------------------------------------------
+\begin{document}
+%-----       resume       ------------------------------------------------------
+\makecvtitle
+
+\section{Objective}
+\cvitem{Objective}{A position developing new products and technologies where I can apply my expertise with embedded control, optical systems, and computer simulation to make a large contribution to a dedicated team.}
+
+\section{Education}
+\cventry{2010--2015}{Physics Ph.D.}{University of Washington}{Seattle, WA}{\textit{3.81/4.00}}{}
+\cventry{2006--2010}{Physics, CS B.S.}{Purdue University}{West Lafayette, IN}{\textit{3.96/4.00}}{}
+
+\section{Work Experience}
+\cventry{2010--Present}{Research Assistant - Experimental Ion Trapping}{University of Washington}{Seattle, WA}{}{Built UHV ion trapping chambers and related optical and electronic control systems for evaluating quantum computer architectures with barium and ytterbium ions.
+	\begin{itemize}
+		\item Developed an FPGA system to drive a 50~MHz DAC serial interface from SRAM with data loaded using UDP over Ethernet;
+		\item Created ARM microcontroller systems for fast feedback on thermoelectric devices and piezoelectric actuators;
+		\item Designed and fabricated a mode-locked diode-pumped Nd:YVO$_4$ laser and external cavity diode lasers;
+		\item Wrote simulations of electrostatic potentials and molecular dynamics to understand and improve our electric field control solutions;
+		\item Simulated electronic and optical systems to guide designs, fix defects, and improve performance;  
+		\item Assembled and aligned entire optical setup including fast power, frequency, and polarization control of ten separate lasers using AOMs, EOMs, Pockels cells, and single mode fibers;
+		\item Supervised undergraduate and junior graduate students as part of a technically diverse team while doing research, taking graduate courses, and teaching undergraduates.
+	\end{itemize}}
+%\cventry{2006--2010}{Undergraduate Research Assistant - Telescope Simulations}{Purdue University}{West Lafayette, IN}{}{Wrote ray tracing simulations of the Very Energetic Radiation Imaging Telescope Array System and the Large Synoptic Survey Telescope including atmospheric corrections and optical aberrations.  Developed automatic image analysis and data visualization procedures.}
+\cventry{2006--2010}{Undergraduate Research Assistant - Telescope Simulations}{Purdue University}{West Lafayette, IN}{}{Wrote ray tracing simulations of large, scientific telescopes including atmospheric seeing and optical aberrations.  Developed automatic image analysis routines for identifying and tracking sources, and created data visualizations for diagnostic and design purposes.}
+
+\section{Technical Skills}
+\cvitem{Embedded Systems}{NI-DAQ; Altera FPGAs (Cyclone series); ARM7 Microcontrollers; Analog Devices DACs and DDSs; RF Amplifiers and Switches; GPIB, RS-232, and USB Communication}
+\cvitem{Design/Analysis Tools}{OpticStudio, SPICE, Quartus, Mathematica, MatLab, GSL, MPI, OpenCV, OpenGL}
+\cvitem{Programming}{C, C++, Java, Python, C\#, Verilog, Haskell, Javascript}
+%\cvitem{Test Equipment}{Optical/RF Spectrum Analyzers and Power Meters, Oscilloscopes, Multimeters, LCR Meters}
+%\cvitem{Optical Systems}{Acousto-optic Modulators, Electro-optic Modulators, Pockels Cells, Single Mode Fibers, External Cavity Diode Lasers, Nd:YVO$_4$ Lasers, Ti:Sapphire Lasers, Fiber Lasers}
+
+%\section{Awards}
+%\cvitem{Miller Award}{Graduate award for need, excellence of character, and scholarship.}
+%\cvitem{Purdue Presidential Scholarship}{Recognizes high academic achievement with experience in leadership, service, and/or community activity.}
+
+%\clearpage
+%-----       letter       ------------------------------------------------------
+% recipient data
+%\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+%\date{January 01, 1984}
+%\opening{Dear Sir or Madam,}
+%\closing{Yours faithfully,}
+%\enclosure[Attached]{curriculum vit\ae{}}
+%\makelettertitle
+
+%	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra %tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, %eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+%	Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor %laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus %dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a %fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+%	Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc %metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+%	Albert Einstein discovered that $e=mc^2$ in 1905.
+
+%	\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+%\makeletterclosing
+\end{document}
+
+

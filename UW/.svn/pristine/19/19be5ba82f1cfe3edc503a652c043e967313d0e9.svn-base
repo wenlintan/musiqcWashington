@@ -1,0 +1,165 @@
+#!/usr/bin/env python
+
+import numpy as np
+from collections import defaultdict
+
+try:
+    import matplotlib
+    #matplotlib.use('Agg')
+    from matplotlib import pyplot
+    have_matplotlib = True
+
+except ImportError:
+    print( "Running without matplotlib" )
+    have_matplotlib = False
+    
+class IonDetector:
+    "Detect ion positions from flourescence counts and select on ordering."
+    def __init__( self, stddev_threshold = 3, order = None, sym = False ):
+        self.threshold = stddev_threshold
+        self.order = order
+        self.symmetry = sym
+
+    def detect( self, data ):
+        "Detect ions."
+        #Assume background calibration is last column in data file
+        if not len(data):
+            return None, None
+
+        nions = (len(data[0]) - 3) / 2
+        bkg = data[:,-1].flatten()
+        bkg = bkg - bkg.mean()
+
+        threshold = self.threshold * bkg.std()
+        before = (data[:,1:1+nions] - data[:,1+nions,None]) > threshold
+        after = (data[:,2+nions:2+2*nions] - data[:,-1,None]) > threshold
+
+        nbright, count = 0, 0
+        for b, a in zip(before, after):
+            if count == 0:
+                nbright = b.sum()
+            elif b.sum() == nbright:
+                count += 1
+            else:
+                count -= 1
+        ndark = nions - nbright
+
+        drops, flips = [], []
+        for i, (b, a) in enumerate( zip(before, after) ):
+            if b.sum() != nbright:
+                drops.append( i )
+            elif self.order is not None and any( self.order != b ):
+                if self.symmetry and all( list(reversed(self.order)) == b ):
+                    flips.append( i )
+                else:
+                    drops.append( i )
+
+        for f in flips:
+            before[f] = before[f,::-1]
+            after[f] = after[f,::-1]
+
+        times = data[:,0]
+        times = np.delete( times, drops, axis=0 )
+        before = np.delete( before, drops, axis=0 )
+        after = np.delete( after, drops, axis=0 )
+
+        return times, before, after
+
+class Shelves:
+    def run( self, times, before, after ):
+        nions, nbright = len(before[0]), before[0].sum()
+        occurences = defaultdict(lambda:[0]*nions)
+        shelves = defaultdict(lambda:[0]*nions)
+
+        for t, b, a in zip( times, before, after ):
+            for i in range( nions ):
+                if b[i]:                occurences[t][i] += 1
+                if b[i] and not a[i]:   shelves[t][i] += 1
+
+        times = shelves.keys()
+        times = list( sorted(times) )
+        occs = [ occurences[t] for t in times ]
+        flop_data = [[ float(s) / o if o else 0
+            for s, o in zip( shelves[t], occurences[t] ) ]
+            for t in times ]
+
+        return list( zip( times, flop_data, occs ) )
+
+class Configurations:
+    def run( self, times, before, after ):
+        nions, nbright = len(before[0]), before[0].sum()
+        counts = defaultdict(int)
+        for b in before:
+            counts[tuple(b)] += 1
+
+        return counts.items()
+
+class Reorders:
+    def run( self, times, before, after ):
+        nions, nbright = len(before[0]), before[0].sum()
+        current, run, runs = tuple(before[0]), 1, defaultdict(list)
+        for b in before[1:,]:
+            b = tuple(b)
+            if b == current:
+                run += 1
+            else:
+                runs[b].append( run )
+                current = b
+                run = 1
+        runs[current].append( run )
+        return runs.items()
+
+if __name__ == "__main__":        
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='Chain Analysis (Rabi or Scan) Program')
+    parser.add_argument( 'data', help='datafile to be processed' )
+    parser.add_argument( 'out', help='output filename' )
+    parser.add_argument( '-shelves', action='store_true',
+        help="compute shelving efficiency" )
+    parser.add_argument( '-conf', action='store_true', 
+        help="compute configuration probabilities" )
+    parser.add_argument( '-reorder', action='store_true',
+        help="compute times in runs before reordering" )
+    parser.add_argument( '-order', help='order of ions, 1=bright 0=dark' )
+    parser.add_argument( '-sym', action='store_true', 
+        help='accept the reverse of order' )
+
+    args = parser.parse_args()
+    order = [ bool(x) for x in map(int, args.order) ] if args.order else None
+    data = np.loadtxt( args.data )
+
+    times, before, after = IonDetector( 3, order, args.sym ).detect( data )
+
+    if args.shelves:
+        shelves = Shelves().run( times, before, after )
+        output = open( args.out, "w" )
+        for i in range( len(before[0]) ):
+            for t, d, o in shelves:
+                if not o[i]: continue
+                output.write( "{0}\t{1}\t{2}\n".format( t, d[i], o[i] ) )
+            output.write( "\n\n" )    
+        output.close()
+
+    if args.conf:
+        conf = Configurations().run( times, before, after )
+        for c, count in conf:
+            print( "{}: {}".format( c, count ) )
+
+    if args.reorder:
+        reorder = Reorders().run( times, before, after )
+        allruns = []
+        for c, runs in reorder:
+            print( "{}: {}".format( c, runs ) )
+            allruns.extend( runs )
+        allruns = list( filter( lambda x: x < 300, allruns ) )
+        if allruns:
+            pyplot.hist( allruns, 15 )
+            pyplot.show()
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+7/25/05:
+The first goal for the project is to create an effective system that isolates sharp image color changes with the intention of seperating objects in photographs.  Unless otherwise noted all code will be written in python following the specfication of version 2.4 available at www.python.org.
+
+First a framework had to be established.  All global variable directly affecting the search were palced into their own module for easy modification.  This module also contains basic color comparison functions and epsilon values to define exact and close color matches.
+
+Next an object module was created to finalize exactly the format of the information the parser should retrieve.  The object module will consist of a list of points and a name which may be used later.  The module includes definitions for functions that allow the points and name to be rendered using different colors.  To facilitate the drawing of text the globals module now includes code to create a font and store it where all modules can access it
+
+The main module will be used to load the image, run the parser, and display the final product (the images with the object outlines drawn over it).
+
+This module uses the pygame python library (www.pygame.org) to load the image and convert the image into a rapidly modifiable form.  The main module then invokes the imageparser module which will be a wrapper around the other modules that actually parse the image
+
+
+7/27/05:
+The imageparser module now contains code to run the simplified module and draw it's output.  The simplified module is intented to be used as a first pass that merely separates based on color in preparation for other steps.
+
+The simplified module build_objects method now attempts this.  The algorithm uses looks for boundaries between colors and attempts to trace the boundary.  Everytime it establishes that a point is a boundary it adds this point to a new object point list, and then, starting with this point, looks for the nearest boundary it can find.
+
+First difficulty of the project, it seems that just a bit of grain in the image is enough to trip a color boundary.  Attempting to raise the epsilon for the color match to avoid grain merely causes difficulty in normal operation.  The problem has been resolved by making several passes over the image that blur nearby colors together.  The number of passes made is controlled by a variable added to the globals module
+
+Second difficulty, when tracing the boundary the algorithm can occasionally reverse direction and preceed back along the area between the boundary it established and the actual color change.  This was fixed by blocking an extra square outside the boundary.
+
+Due to the way the algorithm works it also seems that it can occassionally get itself stuck into a deadend where every direction is barely above the color epsilon but the object is not really complete.  To resolve this issue a list of safe, open pixels to jump back to is maintained behind the leader running along the boundary line.  The globals module now contains a  varible specifying the distance to keep these safe back point.  Points beyond this distance will be removed to keep the list small.
+
+The next difficulty was a gradual slowdown of the parse as it proceeded around an object.  This has been traced to keeping the list of locked pixels for the entire duration of picking the object.  For small objects this did not present a difficulty but for backgrounds in particular it has proven a problem.  The globals module now contains a max-size for the locked pixel list.  I am unsure of the exact consequences that may result.  It is possible that if the parser has to come back to a previous area it will not have the locked pixels to guide it and may behave badly.  For this reason, I intend to keep the max size of the locked pixel list as large as feasible
+
+Operating time has definitely become a minor problem.  Especially the blurring pass over the image takes some time to complete.  It is difficult to say fast the boundary definition method runs because at the moment it prints so much debugging information.  It may be necessary to optimize this routine later, but I do not believe it necessary at this time.
+
+The debug information is looking very nice though.  The screen object has been temporarily added to the global module so that the simplified module can draw the boundary as it forms it.  A screenshot (parser-running.bmp) is available in this directory.  The green is the list of safe starts in case of a dead end, the red (only one pixel) is the list of temporary locked pixels, the purple is the main locked list, and the white is the actual boundary.
+
+7/28/05
+Not much time today.  Found some new images and tested them, taking one screenshot (bent-nail-parsed.bmp).  The blue line indicates the trace now and shows that it appears to be able to follow even sharp curves remarkably well.  Unfotrunately this parse took about 5 minutes, which seems too long even with the VERY slow debugging drawing taking place.  Also, on this image shadows decieved the tracer and with certain settings it once lost the object.  I'm beginning to think that this method of parsing needs a pre-processing step to identify objects that it would be well suited for.  Other objects could then be redirected to a more suitable pass.  I'm glad that the imageparser module is wrapping this, it should prove the perfect place to make these modifications ... tomorrow.

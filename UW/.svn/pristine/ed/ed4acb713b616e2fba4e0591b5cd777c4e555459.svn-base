@@ -1,0 +1,203 @@
+
+<html><head>
+<script>
+
+var minenergy = 0;
+var maxenergy = 0;
+
+var zeroenergy = 0;
+var fullenergy = 0;
+
+function draw_energy_level( x, name, subscript, energy, ctx ) {
+	var y = zeroenergy + (fullenergy - zeroenergy) * energy / 
+		(maxenergy - minenergy);
+
+	ctx.beginPath()
+	ctx.strokeStyle = "#000000";
+	ctx.moveTo( x, y );
+	ctx.lineTo( x + 30, y );
+
+	ctx.font = "bold 20px Times New Roman";
+	ctx.textBaseline = "middle";
+	ctx.fillText( name, x + 30, y-10 );
+
+	var off = ctx.measureText( name ).width;
+	ctx.font = "bold 15px Times New Roman";
+	ctx.fillText( subscript, x + 30 + off, y + 10 );
+	ctx.stroke();
+}
+
+function draw_transition( x1, e1, x2, e2, name, color, ctx, prop ) {
+	y1 = zeroenergy + (fullenergy - zeroenergy) * e1 /
+		(maxenergy - minenergy)
+	y2 = zeroenergy + (fullenergy - zeroenergy) * e2 /
+		(maxenergy - minenergy)
+
+	ctx.beginPath();	
+	ctx.strokeStyle = color;
+	if( !prop || (prop && !prop.wavy) ) {
+		ctx.moveTo( x1, y1 );
+		ctx.lineTo( x2, y2 );
+	}
+	ctx.stroke();
+
+	var angle = Math.atan2( y2 - y1, x2 - x1 );
+	var offset = Math.abs(y2 - y1) / 2;
+	var dist = Math.sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) );
+	if( prop && prop.off ) offset = off;
+
+	if( angle < -Math.PI/2) {
+		angle += Math.PI;
+		offset = -offset;
+	}
+
+	ctx.textBaseline = "top";
+	if( prop && prop.above ) ctx.textBaseline = "bottom";
+
+	ctx.save();
+	ctx.fillStyle = color;
+	ctx.translate( x1, y1 );
+	ctx.rotate( angle );
+	if( prop && prop.wavy ) {
+		ctx.beginPath();
+		ctx.moveTo( 0, 0 );
+		var xpos = prop.wavy;
+		while( xpos + 4*prop.wavy < dist ) {
+			ctx.arcTo( xpos, 5, xpos+prop.wavy, 0, 5 );
+			xpos += 2*prop.wavy;
+			ctx.arcTo( xpos, -5, xpos+prop.wavy, 0, 5 );
+			xpos += 2*prop.wavy;
+		}
+		ctx.lineTo( dist, 0 );
+		ctx.stroke();
+	}
+
+	if( prop && (prop.arrows == "left" || prop.arrows == "both") ) {
+		ctx.beginPath();
+		ctx.moveTo( 0, 0 );
+		ctx.lineTo( 10, 4 );
+		ctx.lineTo( 10, -4 );
+		ctx.closePath();
+		ctx.fill();
+	}
+	if( prop && (prop.arrows == "right" || prop.arrows == "both") ) {
+		ctx.beginPath();
+		ctx.moveTo( dist, 0 );
+		ctx.lineTo( dist-10, 4 );
+		ctx.lineTo( dist-10, -4 );
+		ctx.closePath();
+		ctx.fill();
+	}
+	ctx.font = "bold 20px Times New Roman";
+	ctx.fillText( name, offset, 0 );
+	ctx.stroke();
+	ctx.restore();
+}
+
+function draw_lens( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.strokeStyle = "#000000";
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	ctx.beginPath();
+	ctx.moveTo( 0, 12 );
+	ctx.arcTo( 6, 0, 0, -12, 24 );
+	ctx.arcTo( -6, 0, 0, 12, 24 );
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_mirror( x, y, angle, pickoff, ctx ) {
+	ctx.save();
+	ctx.strokeStyle = "#000000";
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	var offset = 0, size = 5;
+	if( pickoff == "left" ) offset = 5;
+	else if( pickoff == "right" ) offset = -5;
+	else size = 10
+
+	ctx.beginPath();
+	ctx.moveTo( 0, offset + size );
+	ctx.lineTo( 0, offset + -size );
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_detector( x, y, angle, ctx ) {
+	ctx.save();
+	ctx.translate( x, y );
+	ctx.rotate( angle );
+
+	ctx.beginPath();
+	ctx.moveTo( -10, 0 );
+	ctx.lineTo( 10, 0 );
+	ctx.arcTo( 0, -20, -10, 0, 10 );
+
+	ctx.moveTo( 0, -10 );
+	ctx.arcTo( 0, -20, 10, -20, 10 );
+	ctx.stroke();
+
+	ctx.restore();
+}
+
+function draw_op( canvas, ctx ) {
+	minenergy = 0;
+	maxenergy = 10;
+
+	fullenergy = 20;
+	zeroenergy = canvas.height - 20;
+
+	draw_energy_level( 20, "m  = -1/2", "", 1, ctx );
+	draw_energy_level( 150, "m  = 1/2", "", 1.5, ctx );
+
+	//ctx.fillText( "Ground States", 70, 350 );
+
+	draw_energy_level( 20, "m  = -1/2", "", 9, ctx );
+	draw_energy_level( 150, "m  = 1/2", "", 9.5, ctx );
+	//ctx.fillText( "Excited States", 20, 30 );
+	ctx.beginPath();
+	ctx.font = "bold 15px Times New Roman";
+	ctx.fillText( "J", 66, 52 );
+	ctx.fillText( "J", 197, 35 );
+	ctx.fillText( "J", 66, 340 );
+	ctx.fillText( "J", 197, 322 );
+	ctx.stroke();
+
+	draw_transition( 25, 1, 155, 9.5, "", "#2222ff", ctx, 
+		{ arrows: "right" } );
+	draw_transition( 160, 1.5, 270, 10, "", "#2222ff", ctx, 
+		{ arrows: "right" } );
+
+	ctx.strokeStyle = "#ff0000";
+	ctx.lineWidth = 3;
+	ctx.beginPath();
+	ctx.moveTo( 210, 150 );
+	ctx.lineTo( 230, 170 );
+	ctx.moveTo( 210, 170 );
+	ctx.lineTo( 230, 150 );
+	ctx.stroke();
+	ctx.lineWidth = 1;
+
+	draw_transition( 35, 1, 165, 9.5, "", "#000000", ctx, 
+		{ wavy: 5, arrows: "left" } );
+	draw_transition( 160, 1.5, 165, 9.5, "", "#000000", ctx, 
+		{ wavy: 5, arrows: "left" } );
+
+}
+
+window.onload = function() {
+	var canvas = document.getElementById( "remoteexp" );
+	var ctx = canvas.getContext( "2d" );
+	draw_op( canvas, ctx );
+}
+
+
+</script>
+</head><body>
+<canvas id="remoteexp" width="280px" height="400px"></canvas>
+</body></html>

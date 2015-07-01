@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+<script type="text/javascript">
+var ctx;
+function draw_trap( canvas, ctx, voltages ) {
+	canvas.width = canvas.width; // reset canvas
+	var width = canvas.width, height = canvas.height;
+	
+	var centerx = width / 2, centery = height / 2;
+	var radius = (Math.min( centerx, centery ) * 0.8).toFixed(0);
+
+	ctx.arc( centerx + radius, centery, radius, 0, Math.Pi, false );
+}
+
+function start() {	
+	var canvas = document.getElementById("plox2");
+	ctx = canvas.getContext("2d");
+
+	draw_trap( canvas, ctx, [] );
+}
+</script>
+</head>
+
+<body onload="start()">
+<canvas width="600" height="600" id="plox2"></canvas>
+<div id="log" style="clear: both;" />
+</body></html>

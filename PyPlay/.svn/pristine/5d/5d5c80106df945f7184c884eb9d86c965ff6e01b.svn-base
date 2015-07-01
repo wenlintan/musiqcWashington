@@ -1,0 +1,10 @@
+
+project trap_md : requirements <include>boost ;
+
+exe sim 
+	: main.cpp /boost//date_time/<link>static
+		/boost//thread/<link>static /boost//system/<link>static
+	;
+
+install install-bin : sim : <location>"." ;
+

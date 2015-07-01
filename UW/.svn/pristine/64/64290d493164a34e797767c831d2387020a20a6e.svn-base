@@ -1,0 +1,96 @@
+\documentclass[twocolumn]{svjour3}
+
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {Graphics/} }
+
+\begin{document}
+
+\title{Quantum Information Processing with Mixed Species Ion Chains}
+\author{John Wright \and Carolyn Auchter \and Chen-Kuan Chou \and Richard D. Graham \and Thomas W. Noel \and Tomasz Sakrejda \and Zichao Zhou \and Boris B. Blinov}
+\institute{
+	Department of Physics, University of Washington, Seattle, WA 98195 \\
+	\and John Wright \at \email{johnwri@uw.edu}
+}
+\date{\today}
+\journalname{Quantum Information Processing}
+
+\maketitle
+
+\begin{abstract}
+	Trapped ions are a promising technology for quantum computing and many demonstrations of the necessary techniques have already been made including long coherence times\cite{Olmschenk:07}, fast readout\cite{Olmschenk:07}, and entangling ion-ion gates\cite{Kirchmair:09, Hayes:10}.  Useful quantum information processing with trapped ions requires scaling these techniques to large numbers of ions.  One possible method for addressing the difficulties in this scaling is the MUSIQC architecture\cite{Monroe:14}, where multiple ion traps containing a small number of ions are coupled together via photon-mediated ion-ion entanglement.  We are working on many fronts to implement this architecture using mixed species ion chains of  \(^{138}\)Ba\(^+\) and \(^{171}\)Yb\(^+\) to address problems with field crosstalk and ion temperature.
+\end{abstract}
+	
+\section{Introduction}
+	In the MUSIQC architecture, an expandable number of Elementary Logic Units (ELUs), microfabricated traps holding linear chains of 10 to 100 ions, are linked together using a photonic interface to form a large-scale system\cite{Monroe:14}. Local quantum gates are performed using motional coupling between ions in the same trap. Several ions in each chain are reserved for performing a slower entanglement operation between ions in different ion traps coupled by optical fiber.  This long distance entanglement will be accomplished using photon-mediated ion-ion entanglement, in which a pair of ions are projected into an entangled Bell state by a combined measurement of their emitted single photons\cite{Casabone:13}.  The necessary photon measurements can be performed using fiber switches and fiber beamsplitters once both traps are coupled to optical fibers.  We further intend to separate the fast motional coupling and the slower remote ion entanglement to different ion species whose atomic transitions are widely separated in frequency.  Remote entanglement attempts and laser cooling ions of one species then will not cause decoherence in the other ion species.  In this paper we describe our recent work on co-trapping ytterbium and barium ions in laser-cooled linear chains, barium ion-photon entanglement, and enhanced light collection from trapped ions.
+
+\section{Experimental Setup}
+	We simultaneously trap \(^{138}\)Ba\(^+\) and Yb\(^+\) ions in a 4-rod linear Paul trap.  The barium ions are laser cooled and detected using a frequency-doubled 986nm External Cavity Diode Laser (ECDL) and a 650nm ECDL (see Figure 1).  Ytterbium ions are then loaded from an atomic beam by charge exchange with barium ions\cite{Church:93} and are not addressed by any lasers.  They are cooled sympathetically by Coulomb interactions with the Doppler-cold barium ions.  An Electron Multiplying Charge Coupled Device (EMCCD) camera with a wide field of view images the 493nm fluorescence of the barium ions, while the positions of the ytterbium ions can be inferred from the location of gaps in the barium ion chain.  The species of the dark ions has been confirmed to be ytterbium by measuring the mass shift of the secular frequencies.  Figure 2 shows an example of the data collected from such a mixed-species ion chain.
+
+\begin{figure}[ht!]
+	\includegraphics[width=0.48\textwidth]{energylevels-BaYb-wavy}
+	\caption{Relevant energy level structure of barium and ytterbium (not to scale).  Barium is Doppler cooled by 493nm and 650nm light, while state detection is accomplished by ``shelving'' using a 1762nm source and ``deshelving'' using a 614nm source.  The ytterbium hyperfine levels are initialized and detected using a cooling cycle created with 369nm and 935nm light.}
+\end{figure}
+
+\begin{figure}[ht!]
+	\includegraphics[width=0.48\textwidth]{BaYb}
+	\caption{Typical data from a chain of two \(^{138}\)Ba\(^+\) ions and one \(Yb^+\) ions.  The barium ions are fluorescing under laser cooling, while the ytterbium ion is dark.  The Yb\(^+\) ion is in the middle in the top panel, the right in the middle panel, and the left in the bottom panel.}
+\end{figure}
+
+	Quantum information can be stored in the ground state Zeeman levels of \(^{138}\)Ba\(^+\) ions and the ground-state, magnetic-field-insensitive hyperfine levels of \(^{171}\)Yb\(^+\).  The coherence of the hyperfine levels of ytterbium is long lived and stable against most environmental interference\cite{Olmschenk:07}.  The magnetically sensitive Zeeman levels of barium are poor qubits for long term quantum information storage, but are correlated with the polarization and frequency of the 493nm emitted photons.  Therefore, the photon-mediated remote entanglement operation can easily be performed between qubits of this type.  Once entanglement is created between remote barium ions, it can be transferred to the stable ytterbium hyperfine levels using local gates and then used during fast quantum computation with the ytterbium ions.  Since no quantum information is stored in barium ions for an extended period of time, they can be continuously laser cooled without causing decoherence of the entire device.
+
+	Readout and initialization of the qubit state are easily performed in \(^{171}\)Yb\(^+\) because of its hyperfine structure\cite{Olmschenk:07}.  Either task can be accomplished by switching the microwave drive of the Electro-Optic Modulator (EOM) that provides the frequency sideband that addresses the F=0 hyperfine state (see Figure 1).  When the frequency modulation is turned off, ions will be optically pumped into the F=0, m\(_F\)=0 qubit state.  Detection can also be implemented straightforwardly using this microwave switch by detecting 369nm fluorescence emitted while the EOM is disabled and the F=0 level is outside the cooling cycle.  
+
+	In barium, the initial Zeeman state is prepared by polarization instead of frequency based optical pumping.  For example, \(\sigma^+\) polarized 493nm light will drive ground state population in barium ions to the m\(_I\)=\(+\frac{1}{2}\) Zeeman qubit state.  We use a novel polarization technique to reduce laser power requirements.  Only one 493nm beam is incident on the trapped ions and its polarization can rapidly be switched from linear to circular by a Pockels cell to perform either cooling or initialization, respectively.  State detection of the barium Zeeman states is accomplished by selectively transferring or ``shelving'' one Zeeman state to the \(5D_{5/2}\) manifold using a narrow 1762nm laser (see Figure 1).  The \(5D_{5/2}\) level of barium is outside of the cooling cycle and has a long lifetime of approximately 30 seconds\cite{Gurell:07}, which allows easy detection of successful shelving events by collecting fluorescence. Single qubit operations can be performed on either species by applying coherent RF or microwaves at appropriate frequencies (10-100MHz for \(^{138}\)Ba\(^+\), depending on the applied magnetic field, and about 12.6GHz for \(^{171}\)Yb\(^+\)), or by driving stimulated Raman transitions.
+
+	A modelocked 1064nm Nd:YVO4 laser will be used to perform stimulated Raman transitions and transfer remote ion-ion entanglement from barium to ytterbium.  The bandwidth of the pulses (approximately 100 GHz) can easily span the 12.6 GHz hyperfine splitting of ytterbium to drive Raman transitions between these states\cite{Hayes:10}.  In order to address both barium and ytterbium, the second (532nm) and third (355nm) harmonics of the laser will be used.  The third harmonic is ideal for minimizing photon scattering and Stark shifts in ytterbium operations\cite{Campbell:10}, and the second harmonic is near enough to barium's longer wavelength transitions to efficiently drive the Raman transition.  The modelocked laser was home-built and produces 2W of 1064nm light.  It is modelocked using a semiconductor saturable absorber based on \cite{Schlatter:04, Sun:10}, and produces 17ps pulses at a 150MHz repetition rate as measured by an autocorrelator.  Its output will be power and repetition rate stabilized by feedback to two Acousto-Optic Modulators  used to create the frequency separation necessary for Raman transitions.  This laser will also be used to perform entangling gates between multiple ytterbium ions as a part of quantum computing protocols.
+
+	Performing remote ion-ion entanglement requires the collection and partial Bell state measurement of fluorescence from each ions' cooling transition.  Using barium for this task is advantageous because its relevant atomic transition is at a relatively low wavelength among ion species that can be easily trapped and laser cooled.  We have coupled light from its 493nm cooling transition to remote traps using commercial optical fiber  (Nufern HP-460) and have demonstrated that the necessary interference measurement to generate ion-ion entanglement can be performed using commercial fiber beam splitters (Thorlabs FC488-50B-APC).  Either a polarization or a frequency photonic qubit is possible, depending on other experimental concerns\cite{Luo:09}.
+
+\section{Results}
+\subsection{Mixed Species Chains}
+	To utilize the advantages of this mixed species quantum computing proposal it is necessary to maintain a low ion chain temperature while cooling only one species of ion.  We have begun investigating both the fraction and ordering of cooled barium ions necessary to maintain this condition.  The ordering of the species in our trap is currently random, but could be controlled through the use of a microfabricated surface trap with many DC control electrodes \cite{Shu:14, Wright:13}.  
+
+\begin{figure}
+	\includegraphics[width=0.48\textwidth]{Ba-temperature}
+	\includegraphics[width=0.48\textwidth]{BaYb-temperature}
+	\caption{Decaying Rabi flops on a single Ba ion (top) and a chain of one Ba and one Yb ion (bottom).  The data fits to a total radial motional occupation number of \(\Sigma_i \bar{n}_i\) = 330(20) and 1600(200), respectively.}
+\end{figure}
+
+	In chains with large number of ions, it is difficult and time consuming to measure the thermal occupation number of each mode through direct sideband measurements.  Instead, we have been attempting to measure the approximate temperature of the entire chain through two different types of measurements.  The first method relies on the decay of Rabi flop contrast of a carrier transition.  At the temperature these chains currently reach, this decay is expected to be mainly due to interference of higher motional occupation number carrier transitions rather than laser noise.  As a result, the shelving probability (\(P_{shelved}\)), in the case of a single addressed motional degree of freedom (DOF), can be fit to the expression:
+
+\begin{eqnarray}
+P_{shelved} & = & \frac{1}{2}\left( 1 - \sum\limits_{n=0}^\infty p_n \cos( 2 \Omega_{n,n} t ) \right), with \\
+p_n & = & \frac{1}{\bar{n}+1}\left(\frac{\bar{n}}{\bar{n}+1}\right)^n \\
+\Omega_{n,n} & = & \Omega_0 L_n( \eta^2 ) \approx \Omega_0 (1 - \eta^2 n),
+\end{eqnarray}
+
+where \(p_n\) is the probability of occupation of the n\(^{th}\) excited motional level, \(\bar{n}\) is the average motional occupation number, \(\Omega_{n,n}\) is the Rabi frequency for the carrier transition from motional excited level n to n, \(\Omega_0\) is the Rabi frequency for the ground motional state carrier transition, \(L_n\) is the Laguerre polynomial of order n, and \(\eta\) is the Lamb-Dicke parameter for the motional mode.  This expression can be extended to multiple motional DOFs, and a parameter \(\Sigma_i \eta_i^2 \bar{n}_i\), where the sum is over addressed motional modes of the chain, can be fit from the data.  Due to beam alignment in our experiment, only the radial modes contribute, and there are 2 DOFs per ion in the chain.  The Lamb-Dicke parameters for the two radial modes are similar and we approximate them as equal in order to fit \(\Sigma_i \bar{n}_i\) to the data.  A single barium ion has \(\Sigma_i \bar{n}_i\) = 330(20), while a one barium, one ytterbium ion chain has \(\Sigma_i \bar{n}_i\) = 1600(200) (see Figure 3).  Our radial secular frequencies are both approximately 1.6MHz, and therefore the temperature we measure is an order of magnitude above the expected Doppler limit.  The motional occupation number of the chain should be twice the single ion because of the increased number of DOFs, but is in fact significantly hotter.  The reason for the increased temperature is not known, but may be related to the mass difference between the two ions.  We plan to continue investigating this discrepancy for increasing chain lengths and for different ion species configurations.  The 1762nm laser can be focused such that only one barium ion is strongly addressed in the chain, which will allow us to scale this experiment to chains including multiple barium ions.
+
+	A novel method for approximating the temperature and heating rate of the ion chains involves measuring the probability of the reordering of the barium and ytterbium ions in the chain as a function of uncooled ``dark'' time where the ions heat due to electric field noise.  Solving the classical, differential equation of motion for this probability over random initial conditions reveals that the probability has a steep slope as a function of ion temperature.  Fitting the dark time in the collected data to the ion temperature used in the simulations allows us to extract the initial ion temperature and heating rate.  Collecting data on the slope of this functions as a quick diagnostic temperature measurement that can be used to fine tune experimental parameters.  We have made initial estimates of the temperatures of chains up to 9 ions in length and find that they are also significantly hotter than expected.
+
+\subsection{Planar Surface Ion Traps}
+	Implementing this system using planar surface traps (including those designed and produced by GTRI\cite{Wright:13}, Sandia National Laboratory\cite{Allcock:12}, and others\cite{Daniilidis:11}), has several other advantages.  The large number of independent DC control voltages allows for the fine positioning of ions, and allows for the shuttling of ions between different trapping regions.  We have successfully demonstrated loading chains of ions in a separate loading region while also cooling ions in a ``quantum'' information region in the Sandia Y-trap.  The loading region can serve as a reserve to replace ions lost through background gas collisions.  Arbitrary species order chains can be built up from separate loading or storage regions for barium and ytterbium.  We have implemented a simple technique for controlling the necessary DC electrodes using a FPGA-controlled Digital Analog Converter (DAC) system using DACs with a large number of output channels (32) to reduce cost\cite{Graham:14}.
+
+\subsection{Ion-Photon Entanglement}
+	The first step to performing remote ion-ion entanglement is to demonstrate collection and measurement of photons entangled with the state of a trapped ion.  We have recently demonstrated creation of a maximally entangled ion-photon Bell state with fidelity \(F \ge 0.84(1)\) \cite{Auchter:14}.  The probability, \(P\), for achieving and measuring this entanglement during each experimental run is limited by a number of factors.
+
+\begin{equation}
+	P = P_{exc} f  \eta \frac{\Omega}{4 \pi} f_{gate} T
+\end{equation}
+
+where the relevant factors (in our experiment) are \(P_{exc}\) = Probability of excitation (\(\approx\) 0.2), \(f\) = Branching ratio to ground state from \(6P_{1/2}\) state of \(Ba^+\) (\(\approx\) 0.75), \(\eta\) = Quantum efficiency of photon detection (\(\approx\) 0.2), \(\Omega\) = Fluorescence collection solid angle (\(\approx 0.02 * 4 \pi\)), \(f_{gate}\) = Fraction of emitted photons in detection gating (\(\approx\) 0.8), and \(T\) = transmission fidelity (\(\approx\) 0.3).  These limit the ion-photon entanglement rate to \(\approx\) 2.5Hz given our repetition rate of approximately 17kHz.  However,  the resulting entanglement rate for remote ion-ion entanglement will be much lower because two ions must be simultaneously entangled with photons, and therefore these limiting factors are squared.  The easiest factor to improve in this expression is the collection solid angle through the use of optical cavities in vacuum \cite{Sterk:12}, diffractive optics \cite{Clark:14, Jechow:11}, or improved collection optics.   We have designed an ion trap incorporating a parabolic mirror similar to our previous spherical mirror design\cite{Shu:11}.  Using this trap, we have measured light collection rates as high as \(\Omega = 0.4 * 4 \pi\), which will improve this rate by a factor of 400.  Further, we can improve the excitation probability to unity by using a frequency doubled modelocked Ti:Sapphire laser.
+
+\section{Conclusions}
+Barium and ytterbium both have useful properties for realizing different parts of the MUSIQC quantum computer architecture.  Using both species simultaneously allows tasks to be separated between the two species to avoid problems with field crosstalk and ion heating.  We have successfully trapped both species simultaneously and implemented state detection, initial temperature measurements and barium ion-photon entanglement.   We are working towards implementing entangling gates between the different ion species in a single trap as well as between remote barium ions via photon-mediated ion-ion entanglement.
+
+\begin{acknowledgements}
+The authors would like to thank Matthew R. Hoffman, Spencer R. Williams, and Anupriya Jayakumar for useful conversations.  We would also like to acknowledge support from IARPA through the MQCO program and the NSF under grant number PHY-1067054.
+\end{acknowledgements}
+
+\bibliographystyle{unsrt}
+\bibliography{paper}{}
+
+\end{document}
+

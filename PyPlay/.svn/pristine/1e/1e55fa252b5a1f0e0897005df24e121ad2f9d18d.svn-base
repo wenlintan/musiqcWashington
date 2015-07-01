@@ -1,0 +1,6 @@
+
+project wf ;
+
+exe analyze : main.cpp load_gtri.cpp fem_data.cpp /HDF5//HDF5 /boost//headers
+	;
+

@@ -1,0 +1,56 @@
+
+import numpy
+import numpy.linalg
+from sympy import *
+
+amu = 1.6e-27
+e = 1.6e-19
+oofpez= 9e9
+
+def radial_scan( nions, masses, wx, wy, waxial ):
+    zpos = symbols( ' '.join( 'z'+str(i) for i in range(nions) ) )
+    axial_trap = sum( m * amu * waxial**2 / 2 * zpos[i]**2 
+        for i, m in enumerate( masses ) )
+    coulomb = sum( oofpez * e**2 / 2 * sqrt( 1 / (zpos[j] - zpos[k])**2 ) 
+        for k in range(1, nions) for j in range(k) )
+
+    eqns = [ diff( axial_trap + coulomb, zpos[i] ) for i in range(nions) ]
+    initial = [10e-6 * (i - (nions-1) / 2.0) for i in range(nions)]
+    axial_positions = nsolve( eqns, zpos, initial )
+    print( axial_positions )
+    
+    xpos = symbols( ' '.join( 'x'+str(i) for i in range(nions) ) )
+    ypos = symbols( ' '.join( 'y'+str(i) for i in range(nions) ) )
+    radial_trap = sum( 
+        m * amu * wx**2 /2 * xpos[i]**2 + m * amu * wy**2 /2 * ypos[i]**2
+        for i, m in enumerate( masses ) )
+    full_coulomb = sum( oofpez * e**2 / 2 * 
+        sqrt( 1 / ((xpos[i] - xpos[j])**2 + (ypos[i] - ypos[j])**2 +
+            (zpos[i] - zpos[j])**2) )
+        for j in range(1, nions) for i in range(j) )
+
+    rpos = xpos + ypos
+    Vx = numpy.array([[ 
+        ( diff( diff(1 / sqrt( amu*masses[i] * amu*masses[j] ) * 
+        (axial_trap + radial_trap + full_coulomb), xpos[i]), xpos[j] )
+        .subs( zip( rpos, [0.0]*2*nions ) )
+        .subs( zip( zpos, axial_positions ) )).evalf()
+        for j in range(nions)] for i in range(nions)], dtype=float)
+    ws, vs = numpy.linalg.eig( Vx )
+    print( numpy.sqrt(ws) / 2 / numpy.pi )
+    print( vs )
+
+    Vy = numpy.array([[ 
+        ( diff( diff(1 / sqrt( amu*masses[i] * amu*masses[j] ) * 
+        (axial_trap + radial_trap + full_coulomb), ypos[i]), ypos[j] )
+        .subs( zip( rpos, [0.0]*2*nions ) )
+        .subs( zip( zpos, axial_positions ) )).evalf()
+        for j in range(nions)] for i in range(nions)], dtype=float)
+    ws, vs = numpy.linalg.eig( Vy )
+    print( numpy.sqrt(ws) / 2 / numpy.pi )
+    print( vs )
+
+if __name__ == "__main__":
+    radial_scan( 3, [174, 138, 138],#, 138, 138, 138], 
+        2*pi*1.3e6, 2*pi*1.3e6, 2*pi*0.3e6 )
+

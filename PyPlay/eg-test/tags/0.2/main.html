@@ -1,0 +1,362 @@
+<html>
+<head>
+<script id='fragment' type='x-shader/x-fragment'>
+#ifdef GL_ES
+	precision mediump float;
+#endif
+
+varying vec3 frag_color;
+void main(void) {
+	gl_FragColor = vec4(frag_color, 1.0);
+}
+</script>
+
+<script id='vertex' type='x-shader/x-vertex'>
+attribute vec3 vertex, color;
+varying vec3 frag_color;
+
+uniform mat4 modelview, projection;
+
+void main(void) {
+	gl_Position = projection*modelview*vec4(vertex, 1.0);
+	frag_color = color;
+}
+</script>
+
+<script type='text/javascript'>
+function getShader(gl, id) {
+	var shaderScript = document.getElementById(id);
+	if (!shaderScript) {
+		return null;
+	}
+
+	var str = "";
+	var k = shaderScript.firstChild;
+	while (k) {
+		if (k.nodeType == 3)
+			str += k.textContent;
+		k = k.nextSibling;
+	}
+
+	var shader;
+	if (shaderScript.type == "x-shader/x-fragment") {
+		shader = gl.createShader(gl.FRAGMENT_SHADER);
+	} else if (shaderScript.type == "x-shader/x-vertex") {
+		shader = gl.createShader(gl.VERTEX_SHADER);
+	} else {
+		return null;
+	}
+
+	gl.shaderSource(shader, str);
+	gl.compileShader(shader);
+
+	if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+		alert(gl.getShaderInfoLog(shader));
+		return null;
+	}
+
+	return shader;
+}
+
+function setShader( gl, vertex_id, frag_id ) {
+	var fragmentShader = getShader(gl, frag_id);
+	var vertexShader = getShader(gl, vertex_id);
+
+	shaderProgram = gl.createProgram();
+	gl.attachShader(shaderProgram, vertexShader);
+	gl.attachShader(shaderProgram, fragmentShader);
+	gl.linkProgram(shaderProgram);
+
+	if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+		alert("Could not initialise shaders");
+		return null;
+	}
+
+	gl.useProgram(shaderProgram);
+	
+	shaderProgram.vertexAttrib = gl.getAttribLocation(shaderProgram, "vertex");
+    gl.enableVertexAttribArray(shaderProgram.vertexAttrib);
+	
+	shaderProgram.colorAttrib = gl.getAttribLocation(shaderProgram, "color");
+	gl.enableVertexAttribArray(shaderProgram.colorAttrib);
+	
+	shaderProgram.modelviewUniform = gl.getUniformLocation(shaderProgram, "modelview");
+	shaderProgram.projectionUniform = gl.getUniformLocation(shaderProgram, "projection");	
+	return shaderProgram;
+}
+
+function getTexture( gl, src ) {
+	gl.tileTexture = gl.createTexture();
+    gl.tileTexture.image = new Image();
+    gl.tileTexture.image.onload = function() {
+		setTexture(gl, gl.tileTexture)
+    }
+
+    gl.tileTexture.image.src = src;
+}
+
+function setTexture( gl, tex ) {
+	gl.bindTexture(gl.TEXTURE_2D, tex);
+	gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, tex.image);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+    gl.bindTexture(gl.TEXTURE_2D, null);
+}
+
+function setBuffer( gl, tile_dim, dim ) {	
+	var vertices = [];
+	var indices = [];
+	var colors = [];
+	var blocks = [];
+	
+	var d = tile_dim;
+	var offsets = [ 
+			[0, 0, 0], [d, 0, 0], [d, d, 0], [0, d, 0],		// front
+			[0, 0, d], [d, 0, d], [d, d, d], [0, d, d], 	// back
+			
+			[0, 0, 0], [0, d, 0], [0, d, d], [0, 0, d],		// left
+			[d, 0, 0], [d, d, 0], [d, d, d], [d, 0, d],		// right
+			
+			[0, 0, 0], [d, 0, 0], [d, 0, d], [0, 0, d],		// bottom
+			[0, d, 0], [d, d, 0], [d, d, d], [0, d, d]		// top
+		];
+		
+	var normals_list = [
+			0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+			0, 0, +1, 0, 0, +1, 0, 0, +1, 0, 0, +1,
+			
+			-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+			+1, 0, 0, +1, 0, 0, +1, 0, 0, +1, 0, 0,
+			
+			0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+			0, +1, 0, 0, +1, 0, 0, +1, 0, 0, +1, 0
+		];
+		
+	var colors_list = [
+			1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+			1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+			
+			0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+			0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+			
+			0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+			0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+		];
+		
+	var index_offsets = [ 
+			0, 1, 2,  		0, 2, 3,
+			4, 5, 6,   		4, 6, 7,
+			8, 9, 10,  		8, 10, 11,
+			12, 13, 14,		12, 14, 15,
+			16, 17, 18,		16, 18, 19,
+			20, 21, 22, 	20, 22, 23
+		];
+		
+	for(i=0; i<dim; i++) for(j=0; j<dim; ++j) for(k=0; k<dim; ++k) {
+		var base = vertices.length / 3;
+		for( o in offsets ) {
+			vertices.push( i*tile_dim + offsets[o][0] );
+			vertices.push( j*tile_dim + offsets[o][1] );
+			vertices.push( k*tile_dim + offsets[o][2] );
+			blocks.push( i + j*dim + k*dim*dim );
+		}
+		colors = colors.concat( colors_list );
+
+		for( o in index_offsets ) {
+			indices.push( base + index_offsets[o] );
+		}
+	}
+	
+	vertexBuffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+	
+	vertexBuffer.itemSize = 3;
+	vertexBuffer.numItems = vertices.length;
+	
+	vertexBuffer.colors = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer.colors);
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+	
+	vertexBuffer.colorSize = 3;
+	vertexBuffer.numColors = colors.length;
+	
+	vertexBuffer.indices = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, vertexBuffer.indices);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+	vertexBuffer.numIndices = indices.length;
+	
+	return vertexBuffer;
+}
+
+function buildProjection( fov, aspect, znear, zfar ) {
+	var f = 1.0 / Math.tan(fov/2.0);
+	return [
+		f / aspect, 	0.0, 	0.0, 							0.0,
+		0.0, 			f, 		0.0, 							0.0,
+		0.0, 			0.0, 	(zfar+znear) / (znear-zfar), 	-1.0,
+		0.0, 			0.0, 	2*zfar*znear / (znear - zfar), 	0.0
+	];
+}
+
+function buildModelview( pos, look ) {
+	var up = [ 0.0, 1.0, 0.0 ];
+	var right = [ 
+			look[1]*up[2] - look[2]*up[1],
+			look[2]*up[0] - look[0]*up[2],
+			look[0]*up[1] - look[1]*up[0]
+		];
+		
+	var right_len = Math.sqrt(right[0]*right[0] + right[1]*right[1] + right[2]*right[2]);
+	right = [ right[0] / right_len, right[1] / right_len, right[2] / right_len ];
+		
+	up = [
+			right[1]*look[2] - right[2]*look[1],
+			right[2]*look[0] - right[0]*look[2],
+			right[0]*look[1] - right[1]*look[0]
+		];
+		
+	pos = [
+			-pos[0]*right[0] - pos[1]*right[1] - pos[2]*right[2],
+			-pos[0]*up[0] - pos[1]*up[1] - pos[2]*up[2],
+			-pos[0]*look[0] - pos[1]*look[1] - pos[2]*look[2]
+		];
+		
+	return [
+			right[0], 	up[0], 		look[0], 	0.0,
+			right[1],	up[1],		look[1], 	0.0,
+			right[2],	up[2],		look[2],	0.0,
+			pos[0],		pos[1],		pos[2],		1.0
+		];
+}
+
+function checkError( gl, fn_name ) {
+	var err = gl.getError();
+	if( err != gl.NO_ERROR ) {
+		alert( "Error: " + err + " in " + fn_name );
+	}
+}
+
+function draw( gl, shader, buffer ) {
+	gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+	checkError(gl, "clear");
+
+	gl.modelview = buildModelview( gl.position, gl.look );
+	gl.uniformMatrix4fv(shader.modelviewUniform, false, new Float32Array(gl.modelview));	
+	gl.uniformMatrix4fv(shader.projectionUniform, false, new Float32Array(gl.projection));
+	
+	gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+	gl.vertexAttribPointer(shader.vertexAttrib, buffer.itemSize, gl.FLOAT, false, 0, 0);
+	
+	gl.bindBuffer(gl.ARRAY_BUFFER, buffer.colors);
+	gl.vertexAttribPointer(shader.colorAttrib, buffer.colorSize, gl.FLOAT, false, 0, 0);
+	checkError(gl, "bind");
+	
+	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer.indices);
+	checkError(gl, "indicesbind");
+	
+	gl.drawElements(gl.TRIANGLES, buffer.numIndices, gl.UNSIGNED_SHORT, 0);
+	checkError(gl, "draw");
+}
+
+function onKeyDown(gl, event) {
+	var scale = 0.01;
+	switch (event.keyCode) {
+		case 38:  /* Up */
+			gl.position[0] -= gl.look[0]*scale;
+			gl.position[1] -= gl.look[1]*scale;
+			gl.position[2] -= gl.look[2]*scale;
+			break;
+		case 40:  /* Down */
+			gl.position[0] += gl.look[0]*scale;
+			gl.position[1] += gl.look[1]*scale;
+			gl.position[2] += gl.look[2]*scale;
+			break;
+		case 37:  /* Left */
+			gl.position[0] += 0.01;
+			break;
+		case 39:  /* Right */
+			gl.position[0] -= 0.01;
+			break;
+	}
+}
+
+function onMouseMove(gl, event) {
+	var x, y;
+
+	// Get the mouse position relative to the canvas element.
+	if (event.layerX || event.layerX == 0) { // Firefox
+		x = event.layerX;
+		y = event.layerY;
+	} else if (event.offsetX || event.offsetX == 0) { // Opera
+		x = event.offsetX;
+		y = event.offsetY;
+	}
+	
+	if(!gl.oldx) {
+		gl.oldx = x;
+		gl.oldy = y;
+		return;
+	}
+	
+	var deltax = x - gl.oldx;
+	var deltay = y - gl.oldy;
+	gl.oldx = x;
+	gl.oldy = y;
+	
+	var scale = 0.005
+	gl.look = [
+			Math.cos(deltax*scale)*gl.look[0] + Math.sin(deltax*scale)*gl.look[2],
+			gl.look[1],
+			-Math.sin(deltax*scale)*gl.look[0] + Math.cos(deltax*scale)*gl.look[2]
+		];
+		
+	gl.look = [
+			gl.look[0],
+			Math.cos(deltay*scale)*gl.look[1] - Math.sin(deltay*scale)*gl.look[2],
+			Math.sin(deltay*scale)*gl.look[1] + Math.cos(deltay*scale)*gl.look[2]
+		];
+}
+
+function log( txt ) {
+	document.getElementById('log').innerHTML = txt;
+}
+
+function start() {
+	var canvas = document.getElementById('canvas');
+	canvas.width = window.innerWidth - 25;
+	canvas.height = window.innerHeight - 75;
+	
+	var gl = canvas.getContext('experimental-webgl');
+	if(!gl) {
+		alert("No gl!");
+	}
+	
+	gl.viewport(0, 0, canvas.width, canvas.height);
+	gl.projection = buildProjection( Math.PI/2.0, canvas.width / canvas.height, 0.1, 100.0 );
+	gl.position = [0.0, 0.0, 0.0];
+	gl.look = [0.0, 0.0, -1.0];
+	
+	gl.clearColor(0.0, 0.0, 0.0, 1.0);
+	gl.clearDepth(1.0)
+	gl.enable(gl.DEPTH_TEST);
+	gl.depthFunc(gl.LEQUAL);
+
+	var shader = setShader( gl, "vertex", "fragment" );
+	var buffer = setBuffer( gl, 1.0, 16 );
+	checkError(gl, "setup");
+	log("setup complete");
+	
+	window.addEventListener('keydown', function(ev){ onKeyDown(gl, ev) }, true);
+	canvas.addEventListener('mousemove', function(ev){ onMouseMove(gl, ev) }, false);
+	setInterval( function(){ draw(gl, shader, buffer) }, 15 );	
+}
+</script>
+
+</head>
+<body onload='start()'>
+<canvas id='canvas' width='300' height='300'></canvas>
+<p id='log'></p>
+</body>
+<html>

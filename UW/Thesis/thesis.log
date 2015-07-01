@@ -1,0 +1,1285 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.4)  4 MAR 2015 08:38
+entering extended mode
+**thesis.tex
+(C:\ExperimentRelated\UW\Thesis\thesis.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\ExperimentRelated\UW\Thesis\uwthesis.cls
+Document Class: uwthesis 2012/06/19
+\tf@not=\write3
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk11.clo"
+File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\botmargin=\dimen103
+\@@wholepage=\box26
+
+Formatting for twoside printing.
+\@Chair=\count88
+\@Sign=\count89
+\abs@savebox=\box27
+) (C:\ExperimentRelated\UW\Thesis\header.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks15
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count103
+\mult@box=\box30
+\multicol@leftmargin=\dimen115
+\c@unbalance=\count104
+\c@collectmore=\count105
+\doublecol@number=\count106
+\multicoltolerance=\count107
+\multicolpretolerance=\count108
+\full@width=\dimen116
+\page@free=\dimen117
+\premulticols=\dimen118
+\postmulticols=\dimen119
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box31
+\last@line=\box32
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count109
+\c@finalcolumnbadness=\count110
+\last@try=\dimen120
+\multicolovershoot=\dimen121
+\multicolundershoot=\dimen122
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\multicol@sort@counter=\count111
+)
+\c@prop=\count112
+\c@thm=\count113
+\c@dfn=\count114
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen123
+\extrarowheight=\dimen124
+\NC@list=\toks26
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+\TX@col@width=\dimen125
+\TX@old@table=\dimen126
+\TX@old@col=\dimen127
+\TX@target=\dimen128
+\TX@delta=\dimen129
+\TX@cols=\count115
+\TX@ftn=\toks27
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count116
+\rotFPtop=\skip53
+\rotFPbot=\skip54
+\rot@float@box=\box56
+\rot@mess@toks=\toks28
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count117
+\c@@ppsavesec=\count118
+\c@@ppsaveapp=\count119
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count120
+\float@exts=\toks29
+\float@box=\box57
+\@float@everytoks=\toks30
+\@floatcapt=\box58
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks31
+\verbatim@line=\toks32
+\verbatim@in@stream=\read1
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen130
+\Hy@linkcounter=\count121
+\Hy@pagecounter=\count122
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count123
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count124
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen131
+\Fld@menulength=\count125
+\Field@Width=\dimen132
+\Fld@charsize=\dimen133
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count126
+\c@Item=\count127
+\c@Hfootnote=\count128
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count129
+\c@bookmark@seq@number=\count130
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip55
+)
+No file thesis.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count131
+\scratchdimen=\dimen134
+\scratchbox=\box59
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen135
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks34
+)
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 15.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count137
+)
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
+\@outlinefile=\write4
+
+[1
+
+
+{C:/Users/amonktweet/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 37.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 37.
+ [2]
+(C:\ExperimentRelated\UW\Thesis\abstract.tex) [3
+
+] [4
+
+
+]
+\tf@toc=\write5
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.44 \listoffigures
+                    [1
+
+]
+\tf@lof=\write6
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 \listoftables
+                   [2
+
+]
+\tf@lot=\write7
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \newpage
+              [3
+
+] (C:\ExperimentRelated\UW\Thesis\abbreviations.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 15.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 15.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.55 }
+       [4] (C:\ExperimentRelated\UW\Thesis\acknowledgements.tex) [5
+
+] [6
+
+
+]
+<<I>>
+[1
+
+]
+<<1>>
+(C:\ExperimentRelated\UW\Thesis\qcomp/qcomp.tex
+
+LaTeX Warning: Citation `Devoret:13' on page 2 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Kloeffell:13' on page 2 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Saffman:10' on page 2 undefined on input line 4.
+
+
+LaTeX Warning: Reference `fig:bqp' on page 2 undefined on input line 7.
+
+[2
+
+]
+<qcomp/Graphics/BQP_complexity_class_diagram.png, id=65, 401.5pt x 401.5pt>
+File: qcomp/Graphics/BQP_complexity_class_diagram.png Graphic file (type png)
+
+<use qcomp/Graphics/BQP_complexity_class_diagram.png>
+Package pdftex.def Info: qcomp/Graphics/BQP_complexity_class_diagram.png used o
+n input line 11.
+(pdftex.def)             Requested size: 173.71535pt x 173.71986pt.
+
+
+LaTeX Warning: Reference `fig:bqp' on page 3 undefined on input line 16.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <C:/ExperimentRelated/UW/Thesis/qcomp/Graphics/BQP_complexity_class_diagram
+.png>]
+
+LaTeX Warning: Citation `Islam:13' on page 4 undefined on input line 22.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+
+LaTeX Warning: Citation `DiVincenzo:00' on page 5 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Monz:11' on page 5 undefined on input line 32.
+
+[5]
+
+LaTeX Warning: Citation `Olmschenk:07' on page 6 undefined on input line 40.
+
+
+LaTeX Warning: Citation `Mount:13' on page 6 undefined on input line 40.
+
+
+LaTeX Warning: Citation `Mount:13' on page 6 undefined on input line 44.
+
+
+LaTeX Warning: Citation `Noek:13' on page 6 undefined on input line 48.
+
+[6] <qcomp/Graphics/StateMeasurement.pdf, id=94, 589.00049pt x 444.4605pt>
+File: qcomp/Graphics/StateMeasurement.pdf Graphic file (type pdf)
+
+<use qcomp/Graphics/StateMeasurement.pdf>
+Package pdftex.def Info: qcomp/Graphics/StateMeasurement.pdf used on input line
+ 52.
+(pdftex.def)             Requested size: 260.57964pt x 196.64154pt.
+
+
+LaTeX Warning: Reference `fig:bloch' on page 7 undefined on input line 63.
+
+[7 <C:/ExperimentRelated/UW/Thesis/qcomp/Graphics/StateMeasurement.pdf>]
+<qcomp/Graphics/Bloch_Sphere.png, id=144, 589.0005pt x 444.4605pt>
+File: qcomp/Graphics/Bloch_Sphere.png Graphic file (type png)
+
+<use qcomp/Graphics/Bloch_Sphere.png>
+Package pdftex.def Info: qcomp/Graphics/Bloch_Sphere.png used on input line 73.
+
+(pdftex.def)             Requested size: 304.00517pt x 229.41174pt.
+
+Overfull \hbox (12.95216pt too wide) in paragraph at lines 78--79
+[]\OT1/cmr/m/n/10.95 Rotations are a con-ve-nient ba-sis for de-scrib-ing op-er
+-a-tions on qubits be-cause all decoherence-
+ []
+
+[8 <C:/ExperimentRelated/UW/Thesis/qcomp/Graphics/Bloch_Sphere.png>]
+
+LaTeX Warning: Reference `eqn:dota' on page 9 undefined on input line 108.
+
+
+LaTeX Warning: Reference `eqn:dotb' on page 9 undefined on input line 108.
+
+[9]
+
+LaTeX Warning: Reference `eqn:wdot' on page 10 undefined on input line 117.
+
+[10]
+
+LaTeX Warning: Citation `Cirac:95' on page 11 undefined on input line 138.
+
+
+LaTeX Warning: Citation `Sorensen:00' on page 11 undefined on input line 138.
+
+
+LaTeX Warning: Citation `GarciaRipoll:03' on page 11 undefined on input line 13
+8.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+
+LaTeX Warning: Citation `Shor:95' on page 12 undefined on input line 153.
+
+
+LaTeX Warning: Citation `Oi:06' on page 12 undefined on input line 153.
+
+
+LaTeX Warning: Reference `sec:musiqc' on page 12 undefined on input line 155.
+
+[12]) [13]
+<<2>>
+(C:\ExperimentRelated\UW\Thesis\musiqc/musiqc.tex [14
+
+]
+
+LaTeX Warning: Citation `Moehring:11' on page 15 undefined on input line 13.
+
+
+LaTeX Warning: Citation `Bowler:12' on page 15 undefined on input line 13.
+
+
+LaTeX Warning: Citation `Bowler:12' on page 15 undefined on input line 13.
+
+[15]
+
+LaTeX Warning: Citation `Olkhovets:04' on page 16 undefined on input line 19.
+
+
+LaTeX Warning: Citation `Monroe:14' on page 16 undefined on input line 23.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+[17] <musiqc/Graphics/remote-entanglement.png, id=205, 401.5pt x 401.5pt>
+File: musiqc/Graphics/remote-entanglement.png Graphic file (type png)
+
+<use musiqc/Graphics/remote-entanglement.png>
+Package pdftex.def Info: musiqc/Graphics/remote-entanglement.png used on input 
+line 46.
+(pdftex.def)             Requested size: 260.57964pt x 260.59819pt.
+
+
+LaTeX Warning: Citation `Auchter:14' on page 18 undefined on input line 55.
+
+[18 <C:/ExperimentRelated/UW/Thesis/musiqc/Graphics/remote-entanglement.png>]
+
+LaTeX Warning: Citation `Sterk:12' on page 19 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Clark:14' on page 19 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Shu:11' on page 19 undefined on input line 57.
+
+
+LaTeX Warning: Citation `Lin:13' on page 19 undefined on input line 66.
+
+[19]
+
+LaTeX Warning: Citation `Lin:13' on page 20 undefined on input line 68.
+
+
+LaTeX Warning: Citation `Roos:00' on page 20 undefined on input line 68.
+
+
+LaTeX Warning: Reference `sec:qcomp' on page 20 undefined on input line 68.
+
+
+LaTeX Warning: Reference `sec:trap' on page 20 undefined on input line 72.
+
+
+LaTeX Warning: Reference `sec:ioncool' on page 20 undefined on input line 72.
+
+[20]) [21]
+<<II>>
+[22
+
+]
+<<3>>
+(C:\ExperimentRelated\UW\Thesis\trap/trap.tex
+
+LaTeX Warning: Citation `Sawyer:12' on page 23 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Britton:12' on page 23 undefined on input line 10.
+
+
+LaTeX Warning: Citation `Paul:90' on page 23 undefined on input line 10.
+
+<trap/Graphics/PaulTrap.pdf, id=233, 293.41621pt x 125.7498pt>
+File: trap/Graphics/PaulTrap.pdf Graphic file (type pdf)
+
+<use trap/Graphics/PaulTrap.pdf>
+Package pdftex.def Info: trap/Graphics/PaulTrap.pdf used on input line 19.
+(pdftex.def)             Requested size: 347.43732pt x 148.90536pt.
+
+
+LaTeX Warning: Reference `fig:paultrap' on page 23 undefined on input line 24.
+
+[23
+
+]
+
+LaTeX Warning: Reference `eq:pot_dc' on page 24 undefined on input line 38.
+
+[24 <C:/ExperimentRelated/UW/Thesis/trap/Graphics/PaulTrap.pdf>]
+
+LaTeX Warning: Reference `fig:mathieu' on page 25 undefined on input line 59.
+
+<trap/Graphics/PaulTrap-ion_motion.pdf, id=261, 397.485pt x 202.07596pt>
+File: trap/Graphics/PaulTrap-ion_motion.pdf Graphic file (type pdf)
+
+<use trap/Graphics/PaulTrap-ion_motion.pdf>
+Package pdftex.def Info: trap/Graphics/PaulTrap-ion_motion.pdf used on input li
+ne 63.
+(pdftex.def)             Requested size: 347.43732pt x 176.63718pt.
+ [25]
+
+LaTeX Warning: Reference `fig:paultrap' on page 26 undefined on input line 71.
+
+
+Underfull \vbox (badness 5077) has occurred while \output is active []
+
+ [26 <C:/ExperimentRelated/UW/Thesis/trap/Graphics/PaulTrap-ion_motion.pdf>]
+
+LaTeX Warning: Citation `Shu:11' on page 27 undefined on input line 77.
+
+
+LaTeX Warning: Citation `Allcock:12' on page 27 undefined on input line 82.
+
+
+LaTeX Warning: Citation `Daniilidis:11' on page 27 undefined on input line 82.
+
+
+LaTeX Warning: Citation `Wright:13' on page 27 undefined on input line 82.
+
+[27] <trap/Graphics/chiptrap-chamber.pdf, id=293, 465.03629pt x 653.64201pt>
+File: trap/Graphics/chiptrap-chamber.pdf Graphic file (type pdf)
+
+<use trap/Graphics/chiptrap-chamber.pdf>
+Package pdftex.def Info: trap/Graphics/chiptrap-chamber.pdf used on input line 
+90.
+(pdftex.def)             Requested size: 304.00517pt x 427.29587pt.
+ [28] [29 <C:/ExperimentRelated/UW/Thesis/trap/Graphics/chiptrap-chamber.pdf>] 
+[30]) [31] [32]
+<<4>>
+(C:\ExperimentRelated\UW\Thesis\ioncool/ioncool.tex
+<ioncool/Graphics/neutral-Ba.png, id=332, 401.5pt x 602.25pt>
+File: ioncool/Graphics/neutral-Ba.png Graphic file (type png)
+
+<use ioncool/Graphics/neutral-Ba.png>
+Package pdftex.def Info: ioncool/Graphics/neutral-Ba.png used on input line 15.
+
+(pdftex.def)             Requested size: 301.1261pt x 451.72314pt.
+
+
+LaTeX Warning: Citation `Karlsson:99' on page 33 undefined on input line 16.
+
+
+LaTeX Warning: Citation `Karlsson:99' on page 33 undefined on input line 16.
+
+
+LaTeX Warning: Reference `fig:neutralba' on page 33 undefined on input line 19.
+
+
+[33
+
+] [34 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/neutral-Ba.png>]
+
+LaTeX Warning: Citation `Harter:14' on page 35 undefined on input line 23.
+
+[35] <ioncool/Graphics/neutral-Yb.png, id=350, 401.5pt x 602.25pt>
+File: ioncool/Graphics/neutral-Yb.png Graphic file (type png)
+
+<use ioncool/Graphics/neutral-Yb.png>
+Package pdftex.def Info: ioncool/Graphics/neutral-Yb.png used on input line 29.
+
+(pdftex.def)             Requested size: 301.1261pt x 451.72314pt.
+
+
+LaTeX Warning: Reference `fig:neutralyb' on page 36 undefined on input line 36.
+
+
+[36] [37 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/neutral-Yb.png>]
+<ioncool/Graphics/DopplerCooling.pdf, id=362, 589.00049pt x 444.4605pt>
+File: ioncool/Graphics/DopplerCooling.pdf Graphic file (type pdf)
+
+<use ioncool/Graphics/DopplerCooling.pdf>
+Package pdftex.def Info: ioncool/Graphics/DopplerCooling.pdf used on input line
+ 70.
+(pdftex.def)             Requested size: 347.43732pt x 262.18872pt.
+ [38] [39 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/DopplerCooling.pdf>]
+
+<ioncool/Graphics/ionized-Ba.png, id=425, 401.5pt x 602.25pt>
+File: ioncool/Graphics/ionized-Ba.png Graphic file (type png)
+
+<use ioncool/Graphics/ionized-Ba.png>
+Package pdftex.def Info: ioncool/Graphics/ionized-Ba.png used on input line 81.
+
+(pdftex.def)             Requested size: 301.1261pt x 451.72314pt.
+
+
+LaTeX Warning: Citation `Karlsson:99' on page 40 undefined on input line 82.
+
+
+LaTeX Warning: Citation `Karlsson:99' on page 40 undefined on input line 82.
+
+
+LaTeX Warning: Reference `fig:optics' on page 40 undefined on input line 86.
+
+<ioncool/Graphics/optics-layout.png, id=426, 401.5pt x 602.25pt>
+File: ioncool/Graphics/optics-layout.png Graphic file (type png)
+
+<use ioncool/Graphics/optics-layout.png>
+Package pdftex.def Info: ioncool/Graphics/optics-layout.png used on input line 
+90.
+(pdftex.def)             Requested size: 281.39728pt x 422.07715pt.
+ [40] [41 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/ionized-Ba.png>]
+<ioncool/Graphics/ionized-Yb.png, id=437, 401.5pt x 602.25pt>
+File: ioncool/Graphics/ionized-Yb.png Graphic file (type png)
+
+<use ioncool/Graphics/ionized-Yb.png>
+Package pdftex.def Info: ioncool/Graphics/ionized-Yb.png used on input line 101
+.
+(pdftex.def)             Requested size: 301.1261pt x 451.72314pt.
+
+
+LaTeX Warning: Reference `sec:divincenzo' on page 42 undefined on input line 10
+9.
+
+[42] [43 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/optics-layout.png>]
+[44 <C:/ExperimentRelated/UW/Thesis/ioncool/Graphics/ionized-Yb.png>] [45]
+[46]
+
+LaTeX Warning: Reference `fig:ionizedba' on page 47 undefined on input line 129
+.
+
+
+LaTeX Warning: Reference `fig:ionizedba' on page 47 undefined on input line 133
+.
+
+) [47]
+<<III>>
+[48
+
+]
+<<5>>
+(C:\ExperimentRelated\UW\Thesis\surface/surface.tex [49
+
+]
+
+LaTeX Warning: Citation `Blakestad:09' on page 50 undefined on input line 17.
+
+
+LaTeX Warning: Citation `Blakestad:11' on page 50 undefined on input line 17.
+
+
+LaTeX Warning: Citation `Niedermayr:14' on page 50 undefined on input line 19.
+
+
+LaTeX Warning: Citation `Labaziewicz:08' on page 50 undefined on input line 19.
+
+
+
+LaTeX Warning: Citation `Chiaverini:14' on page 50 undefined on input line 19.
+
+
+LaTeX Warning: Citation `Safavi:11' on page 50 undefined on input line 19.
+
+
+LaTeX Warning: Citation `Hite:12' on page 50 undefined on input line 19.
+
+[50]
+<surface/Graphics/LifetimeLoadingHole.pdf, id=483, 587.19376pt x 442.65375pt>
+File: surface/Graphics/LifetimeLoadingHole.pdf Graphic file (type pdf)
+
+<use surface/Graphics/LifetimeLoadingHole.pdf>
+Package pdftex.def Info: surface/Graphics/LifetimeLoadingHole.pdf used on input
+ line 25.
+(pdftex.def)             Requested size: 390.86284pt x 294.65147pt.
+
+<surface/Graphics/LifetimeMidarm.pdf, id=484, 587.19376pt x 442.65375pt>
+File: surface/Graphics/LifetimeMidarm.pdf Graphic file (type pdf)
+
+<use surface/Graphics/LifetimeMidarm.pdf>
+Package pdftex.def Info: surface/Graphics/LifetimeMidarm.pdf used on input line
+ 26.
+(pdftex.def)             Requested size: 390.86284pt x 294.65147pt.
+
+
+LaTeX Warning: Float too large for page by 71.27048pt on input line 29.
+
+
+LaTeX Warning: Reference `fig:lifetime' on page 51 undefined on input line 31.
+
+
+LaTeX Warning: Reference `sec:paul' on page 51 undefined on input line 36.
+
+
+LaTeX Warning: Citation `Ibaraki:11' on page 51 undefined on input line 36.
+
+
+LaTeX Warning: Citation `Mount:13' on page 51 undefined on input line 36.
+
+
+LaTeX Warning: Reference `eqn:mathieu-soln' on page 51 undefined on input line 
+36.
+
+
+LaTeX Warning: Reference `fig:tickle' on page 51 undefined on input line 46.
+
+[51] [52 <C:/ExperimentRelated/UW/Thesis/surface/Graphics/LifetimeLoadingHole.p
+df> <C:/ExperimentRelated/UW/Thesis/surface/Graphics/LifetimeMidarm.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/ExperimentRelated/UW/Thesis/surface/Graph
+ics/LifetimeMidarm.pdf): PDF inclusion: multiple pdfs with page group included 
+in a single page
+>] <surface/Graphics/axial/crop171.jpg, id=579, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop171.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop171.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop171.jpg used on input line 
+55.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop173.jpg, id=580, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop173.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop173.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop173.jpg used on input line 
+56.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop176.jpg, id=581, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop176.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop176.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop176.jpg used on input line 
+57.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop178.jpg, id=582, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop178.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop178.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop178.jpg used on input line 
+58.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop181.jpg, id=583, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop181.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop181.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop181.jpg used on input line 
+60.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop183.jpg, id=584, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop183.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop183.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop183.jpg used on input line 
+61.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop185.jpg, id=585, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop185.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop185.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop185.jpg used on input line 
+62.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+<surface/Graphics/axial/crop187.jpg, id=586, 200.75pt x 200.75pt>
+File: surface/Graphics/axial/crop187.jpg Graphic file (type jpg)
+
+<use surface/Graphics/axial/crop187.jpg>
+Package pdftex.def Info: surface/Graphics/axial/crop187.jpg used on input line 
+63.
+(pdftex.def)             Requested size: 43.43214pt x 43.42996pt.
+
+Underfull \hbox (badness 10000) in alignment at lines 54--65
+[][][][] 
+ []
+
+) [53] [54 <C:/ExperimentRelated/UW/Thesis/surface/Graphics/axial/crop171.jpg> 
+<C:/ExperimentRelated/UW/Thesis/surface/Graphics/axial/crop173.jpg> <C:/Experim
+entRelated/UW/Thesis/surface/Graphics/axial/crop176.jpg> <C:/ExperimentRelated/
+UW/Thesis/surface/Graphics/axial/crop178.jpg> <C:/ExperimentRelated/UW/Thesis/s
+urface/Graphics/axial/crop181.jpg> <C:/ExperimentRelated/UW/Thesis/surface/Grap
+hics/axial/crop183.jpg> <C:/ExperimentRelated/UW/Thesis/surface/Graphics/axial/
+crop185.jpg> <C:/ExperimentRelated/UW/Thesis/surface/Graphics/axial/crop187.jpg
+>]
+<<6>>
+(C:\ExperimentRelated\UW\Thesis\modes/modes.tex [55
+
+]
+
+LaTeX Warning: Reference `sec:qcomp' on page 56 undefined on input line 24.
+
+[56]
+
+LaTeX Warning: Reference `sec:initread' on page 57 undefined on input line 35.
+
+
+LaTeX Warning: Reference `fig:freqscan' on page 57 undefined on input line 37.
+
+<modes/Graphics/FullScan.pdf, id=612, 587.19376pt x 442.65375pt>
+File: modes/Graphics/FullScan.pdf Graphic file (type pdf)
+
+<use modes/Graphics/FullScan.pdf>
+Package pdftex.def Info: modes/Graphics/FullScan.pdf used on input line 41.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+ [57] [58 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/FullScan.pdf>] [59]
+
+LaTeX Warning: Reference `fig:rabi-heating' on page 60 undefined on input line 
+62.
+
+<modes/Graphics/HeatingRateT0Orange.pdf, id=672, 587.19376pt x 442.65375pt>
+File: modes/Graphics/HeatingRateT0Orange.pdf Graphic file (type pdf)
+
+<use modes/Graphics/HeatingRateT0Orange.pdf>
+Package pdftex.def Info: modes/Graphics/HeatingRateT0Orange.pdf used on input l
+ine 66.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+<modes/Graphics/HeatingRateT50000Orange.pdf, id=673, 587.19376pt x 442.65375pt>
+File: modes/Graphics/HeatingRateT50000Orange.pdf Graphic file (type pdf)
+<use modes/Graphics/HeatingRateT50000Orange.pdf>
+Package pdftex.def Info: modes/Graphics/HeatingRateT50000Orange.pdf used on inp
+ut line 67.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+
+LaTeX Warning: Float too large for page by 5.79385pt on input line 70.
+
+
+LaTeX Warning: Reference `fig:heating-nonoise' on page 60 undefined on input li
+ne 72.
+
+<modes/Graphics/HeatingRate.pdf, id=674, 587.19376pt x 442.65375pt>
+File: modes/Graphics/HeatingRate.pdf Graphic file (type pdf)
+
+<use modes/Graphics/HeatingRate.pdf>
+Package pdftex.def Info: modes/Graphics/HeatingRate.pdf used on input line 76.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+Overfull \hbox (1.3177pt too wide) detected at line 86
+[]\OML/cmm/m/it/10.95 P[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/
+10.95 ) = [][] []\OML/cmm/m/it/10.95 e[][] \OMS/cmsy/m/n/10.95  [][] []
+ []
+
+[60] [61 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/HeatingRateT0Orange.pdf
+> <C:/ExperimentRelated/UW/Thesis/modes/Graphics/HeatingRateT50000Orange.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/ExperimentRelated/UW/Thesis/modes/Graphic
+s/HeatingRateT50000Orange.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+>] [62 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/HeatingRate.pdf>]
+
+LaTeX Warning: Reference `fig:heating' on page 63 undefined on input line 89.
+
+<modes/Graphics/HeatingRateNoise.pdf, id=834, 589.00049pt x 444.4605pt>
+File: modes/Graphics/HeatingRateNoise.pdf Graphic file (type pdf)
+
+<use modes/Graphics/HeatingRateNoise.pdf>
+Package pdftex.def Info: modes/Graphics/HeatingRateNoise.pdf used on input line
+ 93.
+(pdftex.def)             Requested size: 347.43732pt x 262.18872pt.
+
+Underfull \vbox (badness 3009) has occurred while \output is active []
+
+ [63 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/HeatingRateNoise.pdf>] [64]
+
+<modes/Graphics/RadialScanBYBY.pdf, id=907, 587.19376pt x 442.65375pt>
+File: modes/Graphics/RadialScanBYBY.pdf Graphic file (type pdf)
+
+<use modes/Graphics/RadialScanBYBY.pdf>
+Package pdftex.def Info: modes/Graphics/RadialScanBYBY.pdf used on input line 1
+31.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+<modes/Graphics/RadialScanBBYY.pdf, id=908, 587.19376pt x 442.65375pt>
+File: modes/Graphics/RadialScanBBYY.pdf Graphic file (type pdf)
+
+<use modes/Graphics/RadialScanBBYY.pdf>
+Package pdftex.def Info: modes/Graphics/RadialScanBBYY.pdf used on input line 1
+32.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+
+LaTeX Warning: Float too large for page by 5.18553pt on input line 135.
+
+
+LaTeX Warning: Reference `fig:radial-byby' on page 65 undefined on input line 1
+37.
+
+[65] [66 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/RadialScanBYBY.pdf> <C:
+/ExperimentRelated/UW/Thesis/modes/Graphics/RadialScanBBYY.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/ExperimentRelated/UW/Thesis/modes/Graphic
+s/RadialScanBBYY.pdf): PDF inclusion: multiple pdfs with page group included in
+ a single page
+>]
+
+LaTeX Warning: Reference `eqn:sidebands' on page 67 undefined on input line 142
+.
+
+
+LaTeX Warning: Reference `fig:radial-byby' on page 67 undefined on input line 1
+46.
+
+
+LaTeX Warning: Reference `tab:byby' on page 67 undefined on input line 146.
+
+[67]
+
+LaTeX Warning: Reference `tab:bbyy' on page 68 undefined on input line 169.
+
+
+LaTeX Warning: Reference `fig:radial-byby' on page 68 undefined on input line 1
+69.
+
+[68]
+<modes/Graphics/RadialNBarEigenvectors.pdf, id=1014, 587.19376pt x 442.65375pt>
+File: modes/Graphics/RadialNBarEigenvectors.pdf Graphic file (type pdf)
+<use modes/Graphics/RadialNBarEigenvectors.pdf>
+Package pdftex.def Info: modes/Graphics/RadialNBarEigenvectors.pdf used on inpu
+t line 196.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+ [69] [70 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/RadialNBarEigenvectors
+.pdf>]
+
+LaTeX Warning: Reference `fig:reorderingpos' on page 71 undefined on input line
+ 214.
+
+[71]
+<modes/Graphics/ReorderingPositions.pdf, id=1091, 587.19376pt x 442.65375pt>
+File: modes/Graphics/ReorderingPositions.pdf Graphic file (type pdf)
+
+<use modes/Graphics/ReorderingPositions.pdf>
+Package pdftex.def Info: modes/Graphics/ReorderingPositions.pdf used on input l
+ine 218.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+<modes/Graphics/Reordering81.pdf, id=1092, 587.19376pt x 442.65375pt>
+File: modes/Graphics/Reordering81.pdf Graphic file (type pdf)
+
+<use modes/Graphics/Reordering81.pdf>
+Package pdftex.def Info: modes/Graphics/Reordering81.pdf used on input line 225
+.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+<modes/Graphics/Reordering61.pdf, id=1093, 587.19376pt x 442.65375pt>
+File: modes/Graphics/Reordering61.pdf Graphic file (type pdf)
+
+<use modes/Graphics/Reordering61.pdf>
+Package pdftex.def Info: modes/Graphics/Reordering61.pdf used on input line 226
+.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+
+LaTeX Warning: Float too large for page by 66.99388pt on input line 229.
+
+
+LaTeX Warning: Reference `fig:reordering81' on page 72 undefined on input line 
+233.
+
+
+Underfull \vbox (badness 7631) has occurred while \output is active []
+
+ [72 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/ReorderingPositions.pdf>] [
+73 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/Reordering81.pdf> <C:/Experim
+entRelated/UW/Thesis/modes/Graphics/Reordering61.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/ExperimentRelated/UW/Thesis/modes/Graphic
+s/Reordering61.pdf): PDF inclusion: multiple pdfs with page group included in a
+ single page
+>] <modes/Graphics/ReorderingFreq.pdf, id=1229, 589.00049pt x 444.4605pt>
+File: modes/Graphics/ReorderingFreq.pdf Graphic file (type pdf)
+
+<use modes/Graphics/ReorderingFreq.pdf>
+Package pdftex.def Info: modes/Graphics/ReorderingFreq.pdf used on input line 2
+39.
+(pdftex.def)             Requested size: 347.43732pt x 262.18872pt.
+
+
+LaTeX Warning: Reference `fig:reordering-freq' on page 74 undefined on input li
+ne 244.
+
+
+LaTeX Warning: Reference `sec:qcomp' on page 74 undefined on input line 246.
+
+[74] [75 <C:/ExperimentRelated/UW/Thesis/modes/Graphics/ReorderingFreq.pdf>])
+[76]
+<<7>>
+(C:\ExperimentRelated\UW\Thesis\raman/raman.tex [77
+
+]
+
+LaTeX Warning: Reference `fig:zeeman-rabi' on page 78 undefined on input line 1
+5.
+
+<raman/Graphics/ZeemanRabi.pdf, id=1300, 587.19376pt x 442.65375pt>
+File: raman/Graphics/ZeemanRabi.pdf Graphic file (type pdf)
+
+<use raman/Graphics/ZeemanRabi.pdf>
+Package pdftex.def Info: raman/Graphics/ZeemanRabi.pdf used on input line 19.
+(pdftex.def)             Requested size: 347.43732pt x 261.91316pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78 <C:/ExperimentRelated/UW/Thesis/raman/Graphics/ZeemanRabi.pdf>] [79]
+
+LaTeX Warning: Citation `Schlatter:04' on page 80 undefined on input line 35.
+
+
+LaTeX Warning: Citation `Sun:10' on page 80 undefined on input line 35.
+
+[80]
+
+LaTeX Warning: Citation `Hayes:10' on page 81 undefined on input line 53.
+
+
+LaTeX Warning: Citation `Campbell:10' on page 81 undefined on input line 53.
+
+[81] [82])
+No file thesis.bbl.
+[83]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+ [84
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+ (C:\ExperimentRelated\UW\Thesis\thesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  3010F4B62BCB20F816F8AEFC7E2D84C0;2096.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+ ) 
+Here is how much of TeX's memory you used:
+ 7122 strings out of 493921
+ 103382 string characters out of 3147268
+ 190133 words of memory out of 3000000
+ 10044 multiletter control sequences out of 15000+200000
+ 10864 words of font info for 40 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 29i,13n,28p,1791b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/symbols/msbm7.pfb>
+Output written on thesis.pdf (94 pages, 1361315 bytes).
+PDF statistics:
+ 1480 PDF objects out of 1728 (max. 8388607)
+ 203 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+

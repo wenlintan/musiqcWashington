@@ -1,0 +1,421 @@
+# This is a hand-generated set of preterminal rules.
+# It specifies a simple tag set which will be handled by the S2
+# grammar and which can (though doesn't necessarily need to be)
+# handled by the S1 grammar.
+#
+# The weights given here may be changed, but no new vocabulary
+# items are to be added.
+
+# Miscellaneous items that don't fit into any of our simple tags are
+# given to Misc.  You will want to develop your own tags for these!
+
+# Singular and mass nouns.  Notice that only the
+# ones that start with consonants get our Noun tag.
+1	Noun	castle
+1	Noun	king
+1	Noun	defeater
+1	Noun	sovereign
+1	Noun	servant
+1	Noun	corner
+1	Noun	land
+1	Noun	quest
+1	Noun	chalice
+1	Noun	master
+1	Noun	horse
+1	Noun	fruit
+1	Noun	swallow
+1	Noun	sun
+1	Noun	winter
+1	Noun	coconut
+1	Noun	pound
+1	Noun	husk
+1	Noun	home
+1	Noun	weight
+1	Noun	story
+
+# Determiners.
+1	Det	a
+1	Det	another
+1	Det	any
+1	Det	each
+1	Det	every
+1	Det	no
+1	Det	that
+1	Det	the
+1	Det	this
+
+# Prepositions.
+1	Prep	above
+1	Prep	across
+1	Prep	at
+1	Prep	below
+1	Prep	by
+1	Prep	for
+1	Prep	from
+1	Prep	into
+1	Prep	near
+1	Prep	of
+1	Prep	on
+1	Prep	over
+1	Prep	through
+1	Prep	with
+
+# Proper nouns.  Note that our Proper tag is just for people.
+1	Proper	Arthur
+1	Proper	Guinevere
+1	Proper	Sir Lancelot
+1	Proper	Sir Bedevere
+1	Proper	Zoot
+1	Proper	Dingo
+1	Proper	Patsy
+1	Proper	Uther Pendragon
+
+# Verbs (third person singular present).
+# Note that only transitive verbs get our VerbT tag,
+# and some of those could also function as intransitives!
+1	VerbT	has
+1	VerbT	covers
+1	VerbT	is
+1	VerbT	drinks
+1	VerbT	carries
+1	VerbT	rides
+
+# End-of-sentence.
+1	Misc	!
+1	Misc	.
+1	Misc	?
+
+# Pauses.
+1	Misc	,
+1	Misc	...
+1	Misc	--
+1	Misc	;
+1	Misc	:
+
+# Coordinating conjunctions.
+1	Conj	and
+1	Conj	but
+1	Conj	or
+1	Conj	either
+1	Conj	nor
+1	Conj	neither
+1	Conj	so
+1	Misc	and
+1	Misc	but
+1	Misc	or
+1	Misc	either
+1	Misc	nor
+1	Misc	neither
+1	Misc	so
+
+# Numbers.
+1	Adjective	eight
+1	Adjective	five
+1	Adjective	one
+1	Adjective	5.5
+1	Adjective	sixty
+1	Adjective	5,000
+1	Misc	eight
+1	Misc	five
+1	Misc	one
+1	Misc	5.5
+1	Misc	sixty
+1	Misc	5,000
+
+# Expletive.
+1	Misc	there
+
+# Subordinating conjunctions.
+1	Conj	that
+1	Conj	so
+1	Conj	while
+1	Conj	because
+1	Conj	if
+1	Adjective	that
+1	Misc	that
+1	Misc	so
+1	Misc	while
+1	Misc	because
+1	Misc	if
+
+1	Misc	Verb
+
+# Modals.
+1	Verb	can
+1	Verb	could
+1	Verb	may
+1	Verb	might
+1	Verb	must
+1	Verb	ought
+1	Verb	shall
+1	Verb	should
+1	Verb	will
+1	Verb	would
+1	Misc	can
+1	Misc	could
+1	Misc	may
+1	Misc	might
+1	Misc	must
+1	Misc	ought
+1	Misc	shall
+1	Misc	should
+1	Misc	will
+1	Misc	would
+
+
+# Adjectives.
+1	Adjective	bloody
+1	Adjective	weary
+1	Adjective	unable
+1	Adjective	trusty
+1	Adjective	further
+1	Adjective	sacred
+1	Adjective	tropical
+1	Adjective	indigenous
+1	Adjective	temperate
+1	Adjective	hot
+1	Adjective	lucky
+1	Adjective	simple
+1	Adjective	tiny
+1	Adjective	hard	
+1	Adjective	sensational
+1	Adjective	comparable
+1	Adjective	angolian
+1	Adjective	yellow
+1	Adjective	plodding
+1	Misc	bloody
+1	Misc	weary
+1	Misc	unable
+1	Misc	trusty
+1	Misc	further
+1	Misc	sacred
+1	Misc	tropical
+1	Misc	indigenous
+1	Misc	temperate
+1	Misc	hot
+1	Misc	lucky
+1	Misc	simple
+1	Misc	tiny
+1	Misc	hard	
+1	Misc	sensational
+1	Misc	comparable
+1	Misc	angolian
+1	Misc	yellow
+1	Misc	plodding
+
+# Comparative adjectives.
+1	Misc	bloodier
+1	Misc	wearier
+1	Misc	trustier
+1	Misc	hotter
+1	Misc	simpler
+1	Misc	tinier
+1	Misc	harder
+
+# Superlative adjectives.
+1	Misc	bloodiest
+1	Misc	weariest
+1	Misc	trustiest
+1	Misc	hottest
+1	Misc	simplest
+1	Misc	tiniest
+1	Misc	hardest
+
+# Plural nouns.
+1	Noun	coconuts
+1	Noun	halves
+1	Noun	snows
+1	Noun	mountains
+1	Noun	areas
+1	Noun	strangers
+1	Noun	inches
+1	Noun	snakes
+1	Noun	ants
+1	Noun	nights
+
+# More proper nouns, not people.
+
+1	Proper	Camelot
+1	Proper	England
+1	Proper	Holy Grail
+1	Proper	Round Table
+
+# Plural proper nouns.
+1	Proper	Britons
+1	Proper	Saxons
+
+# Personal pronouns.
+1	Noun	he
+1	Noun	her
+1	Noun	him
+1	Noun	it
+1	Noun	one
+1	Noun	she
+1	Noun	them
+1	Noun	they
+1	Misc	he
+1	Misc	her
+1	Misc	him
+1	Misc	it
+1	Misc	one
+1	Misc	she
+1	Misc	them
+1	Misc	they
+
+
+# Possessive personal pronouns
+1	Adjective	her
+1	Adjective	his
+1	Adjective	its
+1	Adjective	their
+1	Misc	her
+1	Misc	his
+1	Misc	its
+1	Misc	their
+
+# Adverbs.
+1	Adv	again
+1	Adv	already
+1	Adv	currently
+1	Adv	frequently
+1	Adv	precisely
+1	Adv	south
+1	Adv	successfully
+1	Adv	unfortunately
+1	Misc	again
+1	Misc	already
+1	Misc	currently
+1	Misc	frequently
+1	Misc	precisely
+1	Misc	south
+1	Misc	successfully
+1	Misc	unfortunately
+
+# 'do'/'does'
+1	Verb	do
+1	Verb	does
+1	Misc	do
+1	Misc	does
+
+# 'to'
+1	Prep	to
+1	Misc	to
+
+# 'not'
+1	Verb	not
+1	Misc	not
+
+# Verbs (base form).
+1	Verb	have
+1	Verb	speak
+1	Verb	cover
+1	Verb	be
+1	Verb	ride
+1	Verb	drink
+1	Verb	grow
+1	Verb	carry
+1	Verb	suggest
+1	Verb	migrate
+1	Verb	know
+
+# Verbs (past tense).
+1	Verb	had
+1	Verb	spoke
+1	Verb	covered
+1	Verb	was
+1	Verb	were
+1	Verb	rode
+1	Verb	drank
+1	Verb	grew
+1	Verb	carried
+1	Verb	suggested
+1	Verb	migrated
+1	Verb	knew
+
+# Verbs (present participles).
+1	Verb	having
+1	Verb	speaking
+1	Verb	covering
+1	Verb	being
+1	Verb	riding
+1	Verb	drinking
+1	Verb	growing
+1	Verb	carrying
+1	Verb	suggesting
+1	Verb	migrating
+1	Verb	knowing
+1	Noun	having
+1	Noun	speaking
+1	Noun	covering
+1	Noun	being
+1	Noun	riding
+1	Noun	drinking
+1	Noun	growing
+1	Noun	carrying
+1	Noun	suggesting
+1	Noun	migrating
+1	Noun	knowing
+
+# Verbs (past participle).
+1	Verb	had
+1	Verb	spoken
+1	Verb	covered
+1	Verb	been
+1	Verb	ridden
+1	Verb	drunk
+1	Verb	grown
+1	Verb	carried
+1	Verb	suggested
+1	Verb	migrated
+1	Verb	known
+
+# More third person singular verbs.
+1	Verb	speaks
+1	Verb	grows
+1	Verb	goes
+1	Verb	migrates
+1	Verb	suggests
+1	Verb	knows
+1	VerbT	knows
+
+# Verbs (present, plural, third person).
+1	Verb	have
+1	Verb	speak
+1	Verb	cover
+1	Verb	are
+1	Verb	ride
+1	Verb	drink
+1	Verb	grow
+1	Verb	carry
+1	Verb	suggest
+1	Verb	migrate
+1	Verb	know
+
+# Wh-determiners.
+1	Misc	that
+1	Misc	what
+1	Misc	which
+
+# Wh-pronouns.
+1	Wh	what
+1	Wh	who
+1	Misc	what
+1	Misc	who
+
+# Wh possessive pronoun.
+1	Wh	whose
+1	Misc	whose
+
+# Wh-adverbs
+1	Wh	how
+1	Wh	when
+1	Wh	where
+1	Wh	why
+1	Misc	how
+1	Misc	when
+1	Misc	where
+1	Misc	why
+
+
+# Possessive marker.
+1	Misc	's

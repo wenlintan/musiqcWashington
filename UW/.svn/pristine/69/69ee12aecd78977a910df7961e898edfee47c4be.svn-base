@@ -1,0 +1,105 @@
+\documentclass[11pt, twoside]{uwthesis}
+\input{header}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{alltt}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage{float}
+\usepackage{verbatim}
+
+
+\begin{document}
+
+\newcommand{\ion}{$^{+}$}
+\newcommand{\degree}{$^{\circ}$}
+\newcommand{\baseven}{$^{137}$Ba$^{+}$}
+\newcommand{\ba}{$^{138}$Ba$^{+}$}
+\newcommand{\curdir}{theory}
+
+\prelimpages
+
+\Title{Mixed Species Ion Chains for Scalable Quantum Computation}
+\Author{John Albert Wright}
+\Year{2015}
+\Program{Department of Physics}
+
+\Chair{Boris Blinov}{Associate Professor}{Department of Physics}
+\Signature{Subhadeep Gupta}
+\Signature{Xiaodong Xu}
+
+\titlepage
+
+\newpage
+\copyrightpage
+
+\abstract{
+\input{abstract}
+}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
+\begin{center}
+{\bf\Large ABBREVIATIONS}
+\end{center}
+\input{abbreviations}
+
+\acknowledgments{
+\input{acknowledgements}
+}
+
+\textpages
+
+\part{Quantum Computation in Ion Traps}
+
+\chapter{Quantum Computation}
+\renewcommand{\curdir}{qcomp}
+\label{sec:qcomp}
+\input{qcomp/qcomp}
+\chapter{Scalable Ion Trap Quantum Computation}
+\renewcommand{\curdir}{musiqc}
+\label{sec:musiqc}
+\input{musiqc/musiqc}
+
+
+\part{Trapping Barium and Ytterbium Ions}
+
+\chapter{Paul and Surface Traps}
+\renewcommand{\curdir}{trap}
+\label{sec:trap}
+\input{trap/trap}
+\chapter{Working with Barium and Ytterbium}
+\renewcommand{\curdir}{ioncool}
+\label{sec:ioncool}
+\input{ioncool/ioncool}
+
+
+\part{Measurements of Mixed Species Ion Chains}
+
+\chapter{Surface Traps}
+\renewcommand{\curdir}{surface}
+\label{sec:surface}
+\input{surface/surface}
+\chapter{Mixed Species Normal Modes}
+\renewcommand{\curdir}{modes}
+\label{sec:modes}
+\input{modes/modes}
+\chapter{Quantum Operations}
+\renewcommand{\curdir}{raman}
+\label{sec:raman}
+\input{raman/raman}
+
+\begin{appendices}
+
+\end{appendices}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{thesis}
+
+\vita{John Albert Wright was born on May 9$^{th}$, 1988 to Juli and William Wright in Chapel Hill, North Carolina.  He eventually moved to Indianapolis and graduated from North Central High School in 2006.  Continuing his education, he received a Bachelor of Science degree majoring in Physics, Math, and Computer Science from Purdue University in West Lafayette, Indiana in 2010.  He joined Boris Blinov's ion trapping group in July, 2010.}
+\end{document} 

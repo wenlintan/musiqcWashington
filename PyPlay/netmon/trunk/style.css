@@ -1,0 +1,239 @@
+
+.tabs {
+	width: 95%;
+	margin: auto;
+}
+
+.widget {
+	border-radius: 4px;
+	background-color: #ddd;
+	border: 2px solid #bbb;
+	padding: 2px;
+}
+
+.widget-control-bar {
+	border-radius: 4px;
+	padding: 0px;
+	margin: 1px;
+	overflow: hidden;
+
+	background-color: #eeaa00;
+	background: -webkit-gradient(linear, 
+		left top, left bottom, from(#d90), to(#fb0));
+	background: -moz-linear-gradient(top,  #d90,  #fb0);
+	background: linear-gradient(top, #d90, #fb0);
+
+	border: 2px solid #c80;
+	border-bottom: 0px;
+}
+
+.widget-control {
+	list-style: none;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 4px;
+	margin: 3px 2px 3px 2px;
+	background-color: #eee;
+	-moz-box-shadow: 3px 3px 5px #555;
+	-webkit-box-shadow: 3px 3px 5px #555;
+	box-shadow: 3px 3px 5px #555;
+	padding: .2em .2em;
+	font: bold 12pt "Times New Roman";
+	color: #930;
+}
+
+.widget-control.widget-selected {
+	position: relative;
+	top: 3px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #ddd;
+	color: #33d;
+}
+
+.widget-content {
+	border-radius: 4px;
+	background-color: #dddddd;
+	margin: 0.5em 0em 0em 0em;
+}
+
+.tab.widget-selected {
+	border-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.tab a {
+	text-align: center;
+	text-decoration: none;
+}
+
+.pane-display {
+}
+
+.pane-hide {
+	position: absolute;
+	left: -1500px;
+}
+
+.plot {
+	margin: 0.3em 0.3em;
+	padding: 0.3em 0.3em;
+	background: #eee;
+	border-radius: 4px;
+	border: 1px solid #fdb;
+}
+
+.plot-label {
+	margin: 0em 2em;
+	font: bold 12pt "Times New Roman";
+}
+
+.plot-canvas {
+	display: inline-block;
+}
+
+.legend {
+	display: inline-block;
+	vertical-align: top;
+	margin: 1em 0em 0em 0em;
+}
+
+.legend-item .legend-color {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	border-radius: 4px;
+	border: 1px solid black;
+}
+
+.legend-item .legend-label {
+	position: relative;
+	top: -3px;
+	margin: 0em 0.5em 0em 0.5em;
+}
+
+.client {
+	margin: 0.5em 1em;
+	padding: 0.3em 0.3em;
+	background: #fed;
+	border-radius: 4px;
+	border: 1px solid #fdb;
+	cursor: pointer;
+}
+
+#inactive-clients .client {
+	background: #eee;
+	padding: 0.3em 1em;
+	cursor: default;
+}
+
+.client-closed-icon {
+	width: 0;
+	height: 0;
+	border-top: 0.3em solid transparent;
+	border-bottom: 0.3em solid transparent;
+	border-left: 0.5em solid #777;
+	display: inline-block;
+	margin: 0em 0.5em;
+}
+
+#inactive-clients .client-closed-icon {
+	display: none;
+}
+
+.client-name {
+	display: inline-block;
+	font: bold 12pt "Times New Roman";
+}
+
+.client-mac:before {
+	content: "(";
+}
+
+.client-mac {
+	display: inline-block;
+	font: 10pt "Times New Roman";
+	color: gray;
+	margin: 0em 0.1em;
+}
+
+.client-mac:after {
+	content: ")";
+}
+
+.client-ip:before {
+	content: "at ";
+}
+
+.client-ip {
+	display: inline-block;
+	font: 12pt "Times New Roman";
+	margin: 0em 0.5em;
+}
+
+.client-wake {
+	display: inline-block;
+	background: #fed;
+	margin: 0.1em 0em;
+}
+
+#active-clients .client-wake {
+	display: none;
+}
+
+.connection-item {
+	border-radius: 4px;
+	border: 1px solid black;
+	padding: 2px;
+	margin: 2px;
+	overflow: hidden;
+}
+
+.connection-item.blocked {
+	background: #eee;
+}
+
+.connection-item.incoming {
+	background: #ecc;
+}
+
+.connection-item.outgoing {
+	background: #cec;
+}
+
+.connection-src {
+	display: inline-block;
+	width: 10em;
+}
+
+.connection-dest:after {
+	content: ":"
+}
+
+.connection-port {
+	display: inline-block;
+	font-style: italic;
+	font-size: 10pt;
+}
+
+.connection-proto {
+	margin: 0em 3em;
+	text-transform: lowercase;
+	font-variant: small-caps;
+}
+
+.connection-date {
+	float: right;
+}
+
+.connection-time {
+	float: right;
+	margin: 0em 1em;
+}
+
+.template {
+	display: none;
+}
+

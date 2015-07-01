@@ -1,0 +1,51 @@
+
+<html><head>
+<script>
+
+function draw_complexity( canvas, ctx ) {
+	ctx.translate( canvas.width/2, canvas.height/2 );
+	ctx.beginPath();
+	ctx.arc( 0, 0, 180, 0, 2*Math.PI );
+	ctx.stroke();
+
+	ctx.font = "bold 20px Times New Roman";
+	ctx.textBaseline = "middle";
+	ctx.textAlign = "center";
+	ctx.fillText( "PSPACE", 0, -165 );
+
+	ctx.beginPath();
+	ctx.arc( 0, 0, 130, 0, 2*Math.PI );
+	ctx.stroke();
+
+	ctx.fillText( "NP", 0, -120 );
+
+	ctx.beginPath();
+	ctx.arc( 0, 0, 40, 0, 2*Math.PI );
+	ctx.stroke()
+
+	ctx.fillText( "P", 0, -25 );
+
+	ctx.fillText( "BQP", 0, -70 );
+	
+	ctx.scale( 2, 1 )
+	ctx.beginPath()
+	ctx.setLineDash( [4] );
+	ctx.lineWidth = 3;
+	ctx.arc( 0, 0, 80, 0, 2*Math.PI );
+	ctx.stroke()
+
+	ctx.scale( 0.5, 1 )
+
+}
+
+window.onload = function() {
+	var canvas = document.getElementById( "complexity" );
+	var ctx = canvas.getContext( "2d" );
+	draw_complexity( canvas, ctx );
+}
+
+
+</script>
+</head><body>
+<canvas id="complexity" width="400px" height="400px"></canvas>
+</body></html>

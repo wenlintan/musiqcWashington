@@ -1,0 +1,185 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){ $("#header").load("header.html"); });
+
+        cv_data = [
+            {   title: "Education",
+                content: [
+                    {   type: ".entry",
+                        date: "2010--March 2015",
+                        position: "Physics Ph.D.",
+                        grade: "3.81/4.00",
+                        organization: "University of Washington",
+                        location: "Seattle, WA",
+                        desc: 'Experimental <a href="/trap/">Ion Trapping</a> with Applications in Quantum Computation'
+                    },
+                    {
+                        type: ".entry",
+                        date: "2006--2010",
+                        position: "Bachelor of Science",
+                        grade: "3.96/4.00",
+                        organization: "Purdue University",
+                        location: "West Lafayette, IN",
+                        desc: "Majored in Physics, Computer Science, and Math"
+                    }
+                ]
+            },
+            {   title: "Work Experience",
+                content: [
+                    {
+                        type: ".entry",
+                        date: "2010--Present",
+                        position: "Research Assistant",
+                        organization: "University of Washington",
+                        location: "Seattle, WA",
+                        desc: 'Built an UHV <a href="/trap/">ion trapping</a> apparatus for Barium and Ytterbium ions including frequency stabilized lasers for cooling and quantum operations.',
+                        details: [
+                                "Laid out and aligned entire optical setup for ion trapping including fast power, frequency, and polarization control of ionization, cooling, and quantum operations lasers for two ion species;",
+                                "Designed and fabricated custom lasers and embedded electronics for laser stabilization and electrostatic trap control;",
+                                "Supervised several undergraduate researchers responsible for electronics design and construction."
+                            ]
+                    },
+                    {
+                        type: ".entry",
+                        date: "2006--2010",
+                        position: "Undergraduate Research Assistant",
+                        organization: "Purdue University",
+                        location: "West Lafayette, IN",
+                        desc: "Wrote software for simulation and analysis of the Very Energetic Radiation Imaging Telescope Array System and Large Synoptic Survey Telescope.",
+                        details: [
+                                "Automated simulations of gamma ray showers on medium size computing clusters, modified simulation code to track all gamma ray shower particles, and developed visualization software for demonstration and debugging;",
+                                "Wrote image analysis routines for tracking sources in images from the Large Synoptic Survey Telescope."
+                            ]
+                    }
+                ]
+            },
+            {   title: "Technical Proficiencies",
+                content: [
+                    {
+                        type: ".item",
+                        name: "Programming Languages",
+                        desc: "<i>Proficient:</i> C, C++, Python<br/> <i>Experienced:</i> C#, Verilog, Haskell, Javascript"
+                    },
+                    {
+                        type: ".item",
+                        name: "Design/Analysis Software",
+                        desc: "<i>Proficient:</i> LabView, Quartus, Mathematica,GSL, OpenGL, PETSc, MPI<br/> <i>Experienced:</i> SolidWorks, OpticStudio, OpenCV"
+                    },
+                    {
+                        type: ".item",
+                        name: "Embedded Systems",
+                        desc: "NI-DAQ, Altera FPGAs (Cyclone series), Analog Devices Microcontrollers (ARM7 CPUs), Analog Devices DACs and DDSs, Arduino"
+                    }
+                ]
+
+            },
+            {   title: "Skills",
+                content: [
+                    {
+                        type: ".item",
+                        name: "Embedded Control",
+                        desc: "Implemented control solutions using Analog Devices ARM7 CPUs (ADuC7020 family) and simple Arduino microcontrollers.  Built PWM temperature controllers, stepper motor drivers, and piezoelectric actuator drivers with serial interfaces."
+                    }, 
+                    {
+                        type: ".item",
+                        name: "FPGA/Fast Control",
+                        desc: "Automated complicated experiments with 100 MHz timing requirements using both National Instruments technologies and purpose-built FPGA solutions.  Wrote Verilog applications for photon counting and fact DC control with an Ethernet interface using ARP and UDP."
+                    },
+                    {
+                        type: ".item",
+                        name: "Physics Simulation",
+                        desc: 'Performed electrostatic modeling of trap geometries as well as ion molecular dynamics simulations of trap stability <a href="/proj/electrostatics">here</a>.  Worked with parallel algorithms using free, open-source tools to rapidly evaluate trapping strategies.'
+                    },
+                    {
+                        type: ".item",
+                        name: "Electronics Prototyping",
+                        desc: "Laid out, printed, populated, and tested custom PCBs for temperature control, laser frequency stabilization, and fast many-channel DACs with embedded control."
+                    },
+                    {
+                        type: ".item",
+                        name: "Laser Design",
+                        desc: "Designed, machined, and aligned external-cavity, diode lasers used for ionization and cooling and a diode-pumped mode-locked YAG laser used for quantum operations.}"
+                    },
+                    {
+                        type: ".item",
+                        name: "Optical Layout",
+                        desc: "Coupled and optimized various optical systems including Acousto-optic modulators, Electro-optic modulators, Pockels cells, single-mode fiber couplers, optical cavities, and optical isolators."
+                    },
+                    {
+                        type: ".item",
+                        name: "Vacuum Systems",
+                        desc: "Designed and assembled several CF UHV vacuum systems with ion and titanium sublimation pumps that consistently reached 5 &times; 10<sup>-11</sup> torr."
+                    }
+                ]
+            },
+            {
+                title: "Interests",
+                content: [
+                    {
+                        type: ".item",
+                        name: "Graphics Programming",
+                        desc: 'Used OpenGL and WebGL to implement physically accurate graphical simulations of space scenes <a href="/proj/space/">here</a> and to view the results of electrostatic simulations.'
+                    },
+                    {
+                        type: ".item",
+                        name: "Machine Learning",
+                        desc: "Wrote custom speech recognition system using Hidden Markov Models to preform phoneme alignment and triphone Gaussian Mixture Models to recognize phonemes http://pymud.net/speech/."
+                    },
+                    {
+                        type: ".item",
+                        name: "Science Outreach",
+                        desc: "Volunteered with local organizations including Dawg Days and Paws on Science to show demonstrations of models of ion trapping and quantum information."
+                    }
+                ]
+            },
+            {
+                title: "Publications",
+                content: [
+                    {
+                        type: ".item",
+                        name: "",
+                        desc: "R. D. Graham, S.-P. Chen, T. Sakrejda, J. Wright, Z. Zhou, and B. B. Blinov. A system for trapping barium ions in a microfabricated surface trap. <i>AIP Advances</i>, 4(5):~, 2014."
+                    },
+                    {
+                        type: ".item",
+                        name: "",
+                        desc: "T. Noel, M. Dietrich, N. Kurz, G. Shu, J. Wright, and B. Blinov. Adiabatic passage in the presence of noise. <i>Phys. Rev. A</i>, 85:023401, Feb 2012."
+                    }
+                ]
+            }
+        ];
+
+        $.get( "section.html" )
+            .success( function( template ) {
+                cv_data.forEach( function( data ) {
+                    var res = $(template);
+                    res.find( ".title" ).text( data.title );
+                    data.content.forEach( function(content) {
+                        var c = res.find( ".template" + content.type ).clone();
+                        for( prop in content ) {
+                            if( $.isArray( content[prop] ) )
+                                content[prop].forEach( function(li) {
+                                    c.find( "." + prop ).append( $("<li>").html(li) );
+                                });
+                            else
+                                c.find( "." + prop ).html( content[prop] );
+                        }
+
+                        c.removeClass( "template" );
+                        res.find( ".content" ).append( c );
+                    } );
+                    $("#content").append( res );
+                } );
+            } );
+    </script>
+</head>
+
+<body>
+<div id="header"></div>
+<div id="content"></div>
+</body>
+</html>
+

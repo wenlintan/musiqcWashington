@@ -1,0 +1,22 @@
+
+project planet : requirements <include>boost ;
+
+# Make the definition of the python-extension rule available
+import python ;
+
+python-extension planet 
+	: perlin.cpp /boost//python/<link>static
+	;
+
+python-extension roam 
+	: roam.cpp water.cpp /boost//python/<link>static
+	;
+
+exe test
+	: test_list.cpp
+	;
+
+install install-test : test : <location>"." ;
+install install-bin : planet : <location>"." ;
+install install-roam : roam : <location>"." ;
+

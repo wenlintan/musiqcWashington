@@ -1,0 +1,215 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{braket}
+\usepackage{mathtools}
+
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm   % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 21.94cm 
+
+%\pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt		 	% sets leading space for paragraphs
+
+\begin{document}         
+\title{Detecting and Quantifying Entanglement in Bipartite and Multipartite Systems}
+\author{John Wright \\ \emph{Department of Physics, University of Washington, Seattle, Washington 98105, USA}}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+Proposed methods for detecting entanglement include the Clauser-Horne-Shimony-Holt inequality, so called
+Geneva and Hefei inequalities, as well as entanglement witnesses.  A set of mixed and pure, entangled and 
+separable polarization states are prepared by parametric down conversion and their entanglement is 
+classified using these detection methods.  Although these methods sometimes allow detection of entanglement, they 
+do not quantify the degree of entanglement and they require at least some knowledge of the initial state 
+in order to function.
+\end{abstract}
+
+\section{Introduction}
+Quantum entanglement allows quantum computation to achieve its remarkable speed increase over all classical
+algorithms, but it can be a difficult resource to measure and quantify.  Entangled systems are also being
+used to measure quantum decoherence into environmental degrees of freedom and perform quantum eraser
+experiments.  In any quantum experiment, having full knowledge of the state of the system, including
+couplings caused by noise and the infidelity of quantum operations, is difficult, but necessary in order
+to understand these processes.  The obvious solution is quantum state tomography which measures the 
+fraction of the population in every state of the density matrix.  However, the size of the density matrix 
+grows exponentially with the size of the system and many terms in the density matrix may be exponentially 
+suppressed (requiring exponentially many measurements to resolve them).  Measurements also need to be taken
+in most of the possible bases of the system.  It is clear that performing state tomography on even
+moderately sized quantum systems is currently infeasible.  Instead simple measurements that at least
+quantify properties of systems, such as the degree of entanglement, can be made.  Ideally these measurements
+should require measurement in fewer bases, which may be experimentally costly.  Originally most
+methods for detecting entanglement were based on Bell's inequality and involved measuring the degree of local 
+realism violation, but recently new methods based on entanglement witness operators have been developed.
+These methods will be experimentally demonstrated using polarization entangled photons.
+
+\section{Experimental Apparatus and State Generation}
+A 351nm pump beam is incident on a nonlinear BBO crystal with phase matching conditions set such that horizonatlly 
+polarized incoming photons are converted into two vertically polarized photons, immediately followed by a 
+similar crystal oriented orthogonally. Therefore an arbitrary incoming state \( \alpha \ket{H} + \beta \ket{V} \) 
+is converted into the entangled state \( \alpha \ket{VV} + \beta \ket{HH} \).  The resulting state is described as 
+\[ \ket{\psi(\theta, \phi)}  = \cos (\theta) \ket{HH} + \sin (\theta) e^{i\phi} \ket{VV}, \]
+where \( \theta \) is set by the initial polarization of the incoming light and \( \phi \) is set by tilting a 
+quarter wave plate about its optic axis to selectively retard the vertical polarization state.  Two BBO
+crystals, again orthogonally oriented, compensate for phase delays between the photons created at different
+locations inside the first crystal\cite{altepeter05}.
+
+In order to generate both mixed and separable states quartz crystals were used as quantum decoherers.
+The coherence length of the entangled photons was reduced by introducing interference filters before
+the measurement photodiodes and the length of the quartz piece was chosen to be sufficiently long to completely
+decohere photons propogating along the extraordinary ray from those propogating along the ordinary
+ray.  The quartz crystals are orthogonal, so only photons in the states \( \ket{VV}\bra{HH} \)
+and \( \ket{HH}\bra{VV} \) remain coherent.  Note that this decoherence corresponds to entangling the 
+polarization state information with frequency 
+information which is not resolved by the photodiodes, and thus appears as decoherence in the resulting
+measurements\cite{kwiat00}.  A quarter wave plate and half wave plate before a polarizing beam splitter
+in each beam path allow the polarization to be measured in any desired basis.  Avalanche photodiodes are
+connected to coincidence detecting electronics to perform the final measurement.
+
+To characterize the results of various entanglement detection schemes the processes described above are used to
+create the set of states described by 
+\( \rho(\theta) = 
+\lambda(\cos (\theta) \ket{HH} + \sin (\theta) \ket{VV})(\cos (\theta) \bra{HH} + \sin (\theta) \bra{VV}) + 
+(1 - \lambda)\ket{HV}\bra{HV} )\),
+ or written out in the basis \(\ket{HV}\), \(\ket{HH}\), \(\ket{VV}\), \(\ket{VH}\):
+
+\[ \left( \begin{array}{cccc}
+1 - \lambda	& 0										& 0										& 0 \\
+0			& \lambda\cos ^2 (\theta)				& \lambda\cos (\theta) \sin (\theta)	& 0 \\
+0			& \lambda\cos (\theta) \sin (\theta)	& \lambda\sin ^2 (\theta)				& 0 \\ 
+0			& 0										& 0										& 0 \\
+\end{array} \right) \]
+
+It is clear from evaluating \(Tr[\rho(\theta)^2]\) that this system is always mixed except in the trivial
+case \(\lambda = 0, 1\).  Showing that a given density matrix is entangled is generally much harder, but
+can be done by evaluating the eigenvalues of the partial transpose of \(\rho\)\cite{horodecki96}.  
+These will be calculated later, and it can be shown that these states are entangled 
+for \(0^{\circ} < \theta < 180^{\circ}.\)
+
+Since the CHSH inequality is the most well-known of these measurements it will be used as a basis
+of comparison for the others.  For this reason the value of \( \lambda \) is chosen such that the modified CHSH 
+inequality given below has the value 0. These states have the maximum possible value of this inequality 
+that can still be explained by local realism, and thus are not proven to be entangled by the test.
+
+\section{CHSH and Bell Inequalitites}
+Bell's inequality (in the CHSH form) states a limit for any state that is described by a local hidden variable
+theory. Two measurement bases (1 and 2) in each of the branches of the experiment (A and B) are chosen, and the 
+correlations between the measurements are bounded by 
+\(C[A_1, B_1] + C[A_1, B_2] + C[A_2, B_1] - C[A_2, B_2] \leq 2\).  
+In this original form, these correlations correspond to the expectation value of the product of the two 
+measurements where the measured values are assumed to be +1 or -1.  In the context of polarization
+optics and photodiodes, the above inequality can be shown to be equivalent to the more easily measured result
+\[P_{A_1,B_1} + P_{A_1,B_2} + P_{A_2,B_1} - P_{A_2,B_2} - (P_{A_1} + P_{B_1}) \leq 0,\] where the P values
+represent probabilities of coincidence under the relevant measurement settings.  The probabilities are
+derived from raw coincidence rates by measuring a complete set of bases to estimate the total coincidence
+rate, then dividing by this value and relying on the fair sampling assumption\cite{clauser69}.  The
+probabilities that involve only one measurement can be calculated by summing probabilities
+measured with orthogonal bases in the other arm or by removing the polarizer there.  Any state
+which violates these inequalities cannot be described by local realism and obviously must be entangled, but
+the converse is not necessarily true as the experimental results will clearly show.
+
+All other inequalities that follow from local realism and require measurements in only two bases in the two
+arms of the experiment can be shown to reduce to the CHSH inequality.  However, in the case where measurements
+are taken in three bases an inequivalent inequality can be derived\cite{collins04}:
+\[P_{A_1,B_1} + P_{A_2,B_1} + P_{A_3,B_1} + P_{A_1,B_2} + P_{A_2,B_2} + P_{A_1,B_3} -
+P_{A_3,B_2} - P_{A_2,B_3} - P_{A_1} - 2P_{B_1} - P_{B_2} \leq 0.\]
+This Geneva inequality correctly identifies entangled states that the CHSH inequality does not, and 
+therefore clearly does not reduce to the CHSH inequality.
+
+Detection bases must be determined before either of these quantities can be measured, and this choice may have 
+optimal values for given input states.  For example, the well-known Bell test angles 0, 45, 22.5, and 67.5 degrees 
+(for A1, A2, B1, B2 respectively) are optimal for the maximally entangled Bell states.  The
+Bell test angles maximize violation of the tradition CHSH inequality with the value \(2\sqrt{2}\).  The 
+optimal CHSH angles can be found analytically, but no such relationship has been discovered
+for the Geneva inequality.
+
+As shown in Fig. 2(a) \cite{altepeter05} the Geneva inequality proves that \( \rho(\theta) \) is entangled
+for \(0 \leq \theta \leq 30^{\circ}\) and \(60^{\circ} \leq \theta \leq 90^{\circ}\).  This set of states was
+chosen such that CHSH never detects its entanglement and the Geneva inequality also fails to do so near 
+\(45^{\circ}\).  The measurement bases for the Geneva inequality were found by performing a random search of 
+the three measurement angles while maximizing the inequality, so numerical imprecision likely accounts of the 
+rounded behaviour of the predicted values near \(30^{\circ}\) and \(90^{\circ}\).  The experimental data is 
+shown with errors bars demonstrating the bounds on the fidelity of the generated state.  Neither of these methods
+is guaranteed to detect entanglement as shown, and neither quantifies the degree of entanglement present.
+
+\section{Partial Transposition and Entanglement Witnesses}
+Another method for detecting, but not quantizing entanglement is the entanglement witness.  The entanglement 
+witness, W, is a Hermitian operator such that for any entangled state 
+\(\ket{\alpha}\), \(\bra{\alpha}W\ket{\alpha} \geq 0\).  For the case of bipartite systems, the
+entanglement witness operator can be derived from the partial transposition of the density matrix.  
+The partial transpose with respect to the A measurements can be written as 
+\( \rho^{T_A} = T(\rho) \otimes I \) which when acted on our density matrix produces
+\( \rho^{T_A} \sum_{i,j,k,l} c_{k,l}^{i,j} \ket{A_i}\bra{A_j} \otimes \ket{B_k}\bra{B_l} =
+\sum_{i,j,k,l} c_{k,l}^{i,j} \ket{A_j}\bra{A_i} \otimes \ket{B_k}\bra{B_l} \).  
+Once again the determination of the relevant measurement (in this case the witness operator) depends 
+on knowledge of the initial state, and thus is not directly applicable to arbitrary initial states. 
+For the case of bipartite systems, it has been proven that a state is separable iff its partial transpose is a
+positive operator\cite{horodecki96}. That is, for all projectors P: \[ Tr[\rho^{T_A} P] \geq 0 \]
+
+For our general input state \(\rho(\theta)\), the partial transposition is given in the same basis as above
+by:
+
+\[ \left( \begin{array}{cccc}
+1 - \lambda							& 0				& 0				& \lambda\cos (\theta) \sin (\theta)	\\
+0									& \lambda\cos ^2 (\theta)		& 0										& 0 \\
+0									& 0								& \lambda\sin ^2 (\theta)				& 0 \\ 
+\lambda\cos (\theta) \sin (\theta)	& 0								& 0										& 0 \\
+\end{array} \right) \]
+
+The eigenvalues of this density matrix are \(\lambda \cos^2 (\theta), \lambda \sin^2 (\theta),
+\frac{1}{4} (2 - 2\lambda \pm \sqrt{2} \sqrt{2 - 4\lambda + 3\lambda^2 - \lambda^2 \cos (4\theta)}.\)  For each 
+value of \(\theta\), the minimum eigenvalue (\(\lambda_{min} (\theta)\)) is taken and the projector onto the 
+corresponding eigenvector (\(\rho^{T_A}\ket{e(\theta)}\bra{e(\theta)} = \ket{e(\theta)}\bra{e(\theta)}^{T_A} \)) 
+serves as an entanglement witness.  It is clear that measuring
+the projection of \(\rho^{T_A}\) onto this ket will minimize \( Tr[\rho^{T_A} P] \).  Further, it can be shown
+that \(\ket{e(\theta)}\) is independent of \(\theta\) and can be written \(\ket{e}.\)  
+In Fig. 2(b) \cite{altepeter05} it is shown that this entanglement witness correctly predicts entanglement
+for this set of input states.
+
+For the set of input states chosen in this experiment, the Hefei inequality gives the same results as
+the entanglement witness experiment.  The Hefei inequality states that for two sets of three mutually
+complementary observables \(\{A_i\}\) and \(\{B_i\}\) such that \(A_1A_2A_3 = B_1B_2B_3\), a bipartite state
+is separable iff\cite{yu03} 
+\[ \sqrt{Tr[\rho(A_1B_1 + A_2B_2)]^2 + Tr[\rho(A_3 + B_3)]^2} - Tr[\rho A_3B_3] \leq 1. \]
+In this case the left hand side can be shown to be a function of \(\lambda_{min} (\theta)\) and once 
+again entanglement is correctly
+predicted.  The Hefei inequality is no more powerful than the entanglement witness, and given the correct
+choices of measurements both can determine entanglement conclusively.  Both are also unable to quantify
+the amount of entanglement present.
+
+\section{Conclusions}
+None of the methods presented here are particularly compelling.  They all require previous knowledge of the state of
+the system, have not been shown to generalize well to higher dimensional systems, and do not quantify the degree 
+of entanglement
+present in the system.  Altepeter, et al. conclude that the best option is to perform the full quantum state 
+tomography\cite{altepeter05}, but this requires measurement in many different bases and as discussed above 
+scales exponentially to higher dimensional systems.  Of the options presented, the entanglement witness and
+Hefei inequality
+provides the most conclusive information and are relatively easy to measure in bipartite states.  
+As future developments are made in quantum computing, and the degree of complexity in quantum systems grows, 
+new tools to analyze them will be needed.
+
+\begin{thebibliography}{99}
+\bibitem{altepeter05} J.B. Altepeter \emph{et al.}, Phys. Rev. Lett. 95, 033601 (2005).
+
+\bibitem{kwiat00} P. G. Kwiat, A. J. Berglund, J. B. Altepeter, and A. G. White, 
+	"Experimental verification of decoherence-free subspaces", Science 290, 498 (2000).
+	
+\bibitem{clauser69} J. F. Clauser, M.A. Horne, A. Shimony, and R. A. Holt,
+	Phys. Rev. Lett. 23, 880 (1969).
+	
+\bibitem{collins04} D. Collins and N. Gisin, J. Phys. A 37, 1775 (2004).
+
+\bibitem{horodecki96} M. Horodecki, P. Horodecki, and R. Horodecki, Phys. Lett. A 223, 1 (1996).
+
+\bibitem{yu03} S. Yu, J.-W. Pan, Z.-B. Chen, and Y.-D. Zhang, Phys. Rev.
+	Lett. 91, 217903 (2003).
+\end{thebibliography}
+
+\end{document}
+
