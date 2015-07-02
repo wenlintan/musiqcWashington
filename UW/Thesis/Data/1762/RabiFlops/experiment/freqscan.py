@@ -121,7 +121,6 @@ class Experiment:
                     ion_order = [ d > threshold for d in data ]
 					
 					#--------------NEW CODE-----------------------
-					TOLERANCE = 0.0005 #ASK TOMASZ WHAT HE WANTS FOR ERROR TOLERANCE HERE
 					for i in  range(len(nsucc)):
 						if ion_order[i]:
 							nsucc[i]+=1 #counts number of successes (bright)
