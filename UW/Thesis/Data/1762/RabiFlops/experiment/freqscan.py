@@ -107,7 +107,6 @@ class Experiment:
             experiment.setup( freq_src, ni )
             print( ion_positions )
 
-
             ##########################################
             #CHANGES BEING MADE BELOW-----------------
             ##########################################			
@@ -119,14 +118,13 @@ class Experiment:
                     data = self.build_data( 
                         camera, ion_positions, camera.get_image() )
                     ion_order = [ d > threshold for d in data ]
-					
+
                     #--------------NEW CODE-----------------------
                     for i in  range(len(nsucc)):
                         if ion_order[i]:
                             nsucc[i]+=1 #counts number of successes (bright)
-					
-					
-                    #NOTE: LOOK INTO POSSIBILITY OF USING A DICTIONARY HERE
+
+                    # #NOTE: LOOK INTO POSSIBILITY OF USING A DICTIONARY HERE
                     if indicator+1==20: #since it starts at 0 need to add 1
                         nsucc = [x/float(indicator+1) for x in nsucc] #array holding proportion of successes for each ion respectively
                         props = [np.abs(0.5 - x) for x in nsucc] 
@@ -207,8 +205,7 @@ class Experiment:
 
                     time.sleep( 0.2 )
                     indicator+=1 #new code
-              
-              
+
         finally:
             camera.shutdown()
 
@@ -223,7 +220,7 @@ class Experiment:
                     val += image[ (p[1] + oy) * camera.width + p[0] + ox ]
             data.append( val )
         return data
-	
+
     def binStdrderr(self, n,p,z=1.0):
     #finds standard error for a binomial distribution
     #n = # of runs, p = proportion of successes
