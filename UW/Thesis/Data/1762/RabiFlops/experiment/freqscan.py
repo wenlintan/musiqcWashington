@@ -111,33 +111,33 @@ class Experiment:
             #CHANGES BEING MADE BELOW-----------------
             ##########################################			
             while experiment.step( freq_src, ni ):
-                num_successes = [0 for i in ion_positions] # number of successes for each ion
-                indicator = 0 #number of time it has run
-                while indicator<nruns: #allows dynamic nruns switching
+                num_succ = [0 for i in ion_positions] # number of successes for each ion
+                index = 0 #number of time it has run
+                while index<nruns: #allows dynamic nruns switching
                     data = self.build_data( 
                         camera, ion_positions, camera.get_image() )
                     ion_order = [ d > threshold for d in data ]
 
                     #--------------NEW CODE-----------------------
-                    for i in  range(len(num_successes)):
+                    for i in  range(len(num_succ)):
                         if ion_order[i]:
-                            num_successes[i]+=1 #counts number of successes (bright) for corresponding ion in that position
+                            num_succ[i]+=1 #counts number of successes (bright) for corresponding ion in that position
 
-                    if indicator+1==20: #since it starts at 0 need to add 1
-                        num_successes = [x/float(indicator+1) for x in num_successes] #array holding proportion of successes for each ion respectively
+                    if index+1==20: #since it starts at 0 need to add 1
+                        num_succ = [x/float(index+1) for x in num_succ] #array holding proportion of successes for each ion respectively
                         #subtracts from 0.5 so that we can find which is closest to 50%
-                        min_mod_prop = np.abs(0.5-num_successes[0]) #minimum modified proportion (the smallest is the one closest to 50%)
-                        proportion_of_successes = num_successes[0] #this is the actual proportion we want (could replace this variable
+                        min_prop = np.abs(0.5-num_succ[0]) #minimum modified proportion (the smallest is the one closest to 50%)
+                        prop_succ = num_succ[0] #this is the actual proportion we want (could replace this variable
                         #using props[0]+.5
 
                         #--------finds proportion closest to 50%------------------
-                        for i in range(len(num_successes)):
-                            modified_prop = np.abs(0.5-num_successes[i])
-                            if min_mod_prop > modified_prop:
-                                min_mod_prop = modified_prop
-                                proportion_of_successes = num_successes[i]
+                        for i in range(len(num_succ)):
+                            mod_prop = np.abs(0.5-num_succ[i])
+                            if min_prop > mod_prop:
+                                min_prop = mod_prop
+                                prop_succ = num_succ[i]
 
-                        binomial_StdErr = self.binStdrderr(indicator+1,proportion_of_successes) #finds binomial standard error
+                        binomial_StdErr = self.binStdrderr(index+1,prop_succ) #finds binomial standard error
                         if binomial_StdErr<0.05:
                             nruns = 20 #this will force the program to break out of this while loop
                             #T print binomial_StdErr, nruns
@@ -203,7 +203,7 @@ class Experiment:
                     d.close()
 
                     time.sleep( 0.2 )
-                    indicator+=1 #new code
+                    index+=1 #new code
 
         finally:
             camera.shutdown()
