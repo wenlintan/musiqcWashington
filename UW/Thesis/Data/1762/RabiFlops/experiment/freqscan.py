@@ -89,6 +89,8 @@ class Experiment:
 
         output = open( out, 'w' )
         ion_order = []
+        ion_configs = {} #dictionary to hold different ion configurations (keys) and their reordering time (values)
+        ion_configs[str(desired_order)] = 0.0 #don't need a reordering time for the desired ordering
         desired_bright_number = sum(map(lambda x: 1 if x else 0, desired_order))
 
         try:
@@ -151,14 +153,20 @@ class Experiment:
                     threshold = np.mean(bg) + 3*np.std(bg)
 
                     while ion_order != desired_order:
-                    #seems this loop is designed to allow ions to reorganize
-                    #by turning off cooling lasers
+                        #seems this loop is designed to allow ions to reorganize
+                        #by turning off cooling lasers
+
+                        ion_key =  ['1' if x else '0' for x in ion_order] #these create the key for our ion_configs dictionary
+                        ion_key = ''.join(ion_key) # and turns it into a string so the dictionary can use it
+                        if not ion_key in ion_configs and ion_key!=str(desired_order):
+                            ion_configs[ion_key] = reorder_time #this initializes the unseen ion order to reorder time of 0.5
+
                         curr_bright_number = sum(map(lambda x: 1 if x else 0, ion_order))
                         if curr_bright_number == desired_bright_number:
                             
                             r = NiSimpleDriver( self.RedChan )
                             r.write_single( False )
-                            time.sleep( reorder_time )
+                            time.sleep(ion_configs[ion_key]) #ion_configs[ion_key] accesses the reorder time stored there
                             r.write_single( True )
                             r.close()
                         time.sleep( 1.0 )
@@ -173,12 +181,12 @@ class Experiment:
 
                         if any( prev_order ):
                             if prev_order == ion_order:
-                                reorder_time *= 1.1
+                                ion_configs[ion_key] *= 1.1
                             else:
-                                reorder_time *= 0.9
-                            print( "New reorder time: {}".format( reorder_time ) )
-                        if reorder_time < 0.1:  reorder_time = 0.1
-                        if reorder_time > 10.0: reorder_time = 10.0
+                                ion_configs[ion_key] *= 0.9
+                            print( "New reorder time: {}".format( ion_configs[ion_key] ) )
+                        if ion_configs[ion_key] < 0.1:  ion_configs[ion_key] = 0.1
+                        if ion_configs[ion_key] > 10.0: ion_configs[ion_key] = 10.0
                         
                         if conn is not None:
                             outdata = [str( experiment.control_var() )]
