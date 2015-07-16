@@ -120,7 +120,6 @@ class Experiment:
                         camera, ion_positions, camera.get_image() )
                     ion_order = [ d > threshold for d in data ]
 
-                    #--------------NEW CODE-----------------------
                     for i in  range(len(num_succ)):
                         if ion_order[i]:
                             num_succ[i]+=1 #counts number of successes (bright) for corresponding ion in that position
@@ -146,7 +145,7 @@ class Experiment:
                         else:
                             nruns = 50
                             #T print binomial_StdErr, nruns
-                    #---------------end new code section--------------------
+
                     bg.append( data[-1] )
                     if len( bg ) > 1000:
                         bg = bg[100:]
