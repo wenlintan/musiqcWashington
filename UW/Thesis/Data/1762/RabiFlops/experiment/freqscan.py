@@ -162,7 +162,7 @@ class Experiment:
                             time.sleep( reorder_time )
                             r.write_single( True )
                             r.close()
-                        time.sleep( 0.5 )
+                        time.sleep( 1.0 )
 
                         camera.get_image()
                         data = self.build_data( 
