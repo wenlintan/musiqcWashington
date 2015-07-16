@@ -111,40 +111,39 @@ class Experiment:
             #CHANGES BEING MADE BELOW-----------------
             ##########################################			
             while experiment.step( freq_src, ni ):
-                nsucc = [0 for i in ion_positions] # number of successes for each ion
+                num_successes = [0 for i in ion_positions] # number of successes for each ion
                 indicator = 0 #number of time it has run
                 while indicator<nruns: #allows dynamic nruns switching
-                #for i in range( nruns ): #old code
                     data = self.build_data( 
                         camera, ion_positions, camera.get_image() )
                     ion_order = [ d > threshold for d in data ]
 
                     #--------------NEW CODE-----------------------
-                    for i in  range(len(nsucc)):
+                    for i in  range(len(num_successes)):
                         if ion_order[i]:
-                            nsucc[i]+=1 #counts number of successes (bright)
+                            num_successes[i]+=1 #counts number of successes (bright) for corresponding ion in that position
 
-                    # #NOTE: LOOK INTO POSSIBILITY OF USING A DICTIONARY HERE
                     if indicator+1==20: #since it starts at 0 need to add 1
-                        nsucc = [x/float(indicator+1) for x in nsucc] #array holding proportion of successes for each ion respectively
-                        props = [np.abs(0.5 - x) for x in nsucc] 
-                        #props holds the value = proportion of successes of the 20 runs
-                        #and subtracts from 0.5 so that we can find which is closest to 50%
-                        minp = props[0] #minimum modified proportions (the smallest is the one closest to 50%
-                        pHat = nsucc[0] #this is the actual proportion we want (could replace this variable
+                        num_successes = [x/float(indicator+1) for x in num_successes] #array holding proportion of successes for each ion respectively
+                        #subtracts from 0.5 so that we can find which is closest to 50%
+                        min_mod_prop = np.abs(0.5-num_successes[0]) #minimum modified proportion (the smallest is the one closest to 50%)
+                        proportion_of_successes = num_successes[0] #this is the actual proportion we want (could replace this variable
                         #using props[0]+.5
-                        #--------finds min------------------
-                        for i in range(len(nsucc)):
-                            if minp > props[i]:
-                                minp = props[i]
-                                pHat = nsucc[i]
-                        bStdE = self.binStdrderr(indicator+1,pHat) #finds binomial standard error
-                        if bStdE<0.05:
+
+                        #--------finds proportion closest to 50%------------------
+                        for i in range(len(num_successes)):
+                            modified_prop = np.abs(0.5-num_successes[i])
+                            if min_mod_prop > modified_prop:
+                                min_mod_prop = modified_prop
+                                proportion_of_successes = num_successes[i]
+
+                        binomial_StdErr = self.binStdrderr(indicator+1,proportion_of_successes) #finds binomial standard error
+                        if binomial_StdErr<0.05:
                             nruns = 20 #this will force the program to break out of this while loop
-                            print bStdE, nruns
+                            #T print binomial_StdErr, nruns
                         else:
                             nruns = 50
-                            print bStdE, nruns
+                            #T print binomial_StdErr, nruns
                     #---------------end new code section--------------------
                     bg.append( data[-1] )
                     if len( bg ) > 1000:
