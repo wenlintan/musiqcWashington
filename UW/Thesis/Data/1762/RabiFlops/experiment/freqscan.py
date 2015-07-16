@@ -158,7 +158,7 @@ class Experiment:
 
                         ion_key =  ['1' if x else '0' for x in ion_order] #these create the key for our ion_configs dictionary
                         ion_key = ''.join(ion_key) # and turns it into a string so the dictionary can use it
-                        if not ion_key in ion_configs and ion_key!=str(desired_order):
+                        if ion_key not in ion_configs.keys() and ion_key!=str(desired_order):
                             ion_configs[ion_key] = reorder_time #this initializes the unseen ion order to reorder time of 0.5
 
                         curr_bright_number = sum(map(lambda x: 1 if x else 0, ion_order))
@@ -183,6 +183,10 @@ class Experiment:
                             if prev_order == ion_order:
                                 ion_configs[ion_key] *= 1.1
                             else:
+                                ion_key =  ['1' if x else '0' for x in ion_order] #these create the key for our ion_configs dictionary
+                                ion_key = ''.join(ion_key) # and turns it into a string so the dictionary can use it
+                                if ion_key not in ion_configs.keys() and ion_key!=str(desired_order):
+                                    ion_configs[ion_key] = reorder_time #this initializes the unseen ion order to reorder time of 0.5
                                 ion_configs[ion_key] *= 0.9
                             print( "New reorder time: {}".format( ion_configs[ion_key] ) )
                         if ion_configs[ion_key] < 0.1:  ion_configs[ion_key] = 0.1
