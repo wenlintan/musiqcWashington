@@ -109,9 +109,6 @@ class Experiment:
             experiment.setup( freq_src, ni )
             print( ion_positions )
 
-            ##########################################
-            #CHANGES BEING MADE BELOW-----------------
-            ##########################################			
             while experiment.step( freq_src, ni ):
                 num_succ = [0 for i in ion_positions] # number of successes for each ion
                 index = 0 #number of time it has run
@@ -174,6 +171,7 @@ class Experiment:
                     ni.run()
                     data.extend( self.build_data( 
                         camera, ion_positions, camera.get_image() ) )
+                    #data = [ion before 1762, ion before 1762, ..., fake ion before, ion after 1762, ion after 1762,..., fake ion after 1762]
 
                     outdata = [str( experiment.control_var() )]
                     outdata.extend( str(d) for d in data )
@@ -191,11 +189,6 @@ class Experiment:
                     ion_order = [ d > threshold for d in data[len(data)/2:]] #this goes from 1/2 data to the last point("fake ion")
                     #it's the result of using the 1762
 
-                    #FIXME!!!!!!!!!!!!!!!!!!!!!! probably should change the if statement to check if the ion position
-                    #is one from the desired order then use that ion_position for the calculations, otherwise it is supposed
-                    #to be a dark ion and should always be zero (although this shouldn't affect anything because if the
-                    #difference has been done correctly there should always be something closer to 0.5 than 1 or 0
-                    
                     for i in range(len(num_succ)):
                         if ion_order[i]:
                             num_succ[i]+=1 #counts number of successes (bright) for corresponding ion in that position
@@ -209,17 +202,18 @@ class Experiment:
                         #--------finds proportion closest to 50%------------------
                         for i in range(len(num_succ)):
                             mod_prop = np.abs(0.5-num_succ[i])
-                            if min_prop > mod_prop:
+                            if min_prop > mod_prop: #if still not functioning add in an "and str(desired_order)[i] == 1" to try
+                                #to get rid of outliers that could be introduced by dark ions
                                 min_prop = mod_prop
                                 prop_succ = num_succ[i]
 
                         binomial_StdErr = self.binStdrderr(index+1,prop_succ) #finds binomial standard error
                         if binomial_StdErr<0.05:
                             nruns = 20 #this will force the program to break out of this while loop
-                            #T print binomial_StdErr, nruns
+                            print binomial_StdErr, nruns
                         else:
                             nruns = 50
-                            #T print binomial_StdErr, nruns
+                            print binomial_StdErr, nruns
                     time.sleep( 0.2 )
                     index+=1 #new code
 
