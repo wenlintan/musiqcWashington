@@ -113,38 +113,12 @@ class Experiment:
             #CHANGES BEING MADE BELOW-----------------
             ##########################################			
             while experiment.step( freq_src, ni ):
-                num_succ = [0 for i in ion_positions] # number of successes for each ion
+                num_succ = [0 for j in range(desired_bright_number)] # number of successes for each ion
                 index = 0 #number of time it has run
                 while index<nruns: #allows dynamic nruns switching
                     data = self.build_data( 
                         camera, ion_positions, camera.get_image() )
                     ion_order = [ d > threshold for d in data ]
-
-                    for i in  range(len(num_succ)):
-                        if ion_order[i]:
-                            num_succ[i]+=1 #counts number of successes (bright) for corresponding ion in that position
-
-                    if index+1==20: #since it starts at 0 need to add 1
-                        num_succ = [x/float(index+1) for x in num_succ] #array holding proportion of successes for each ion respectively
-                        #subtracts from 0.5 so that we can find which is closest to 50%
-                        min_prop = np.abs(0.5-num_succ[0]) #minimum modified proportion (the smallest is the one closest to 50%)
-                        prop_succ = num_succ[0] #this is the actual proportion we want (could replace this variable
-                        #using props[0]+.5
-
-                        #--------finds proportion closest to 50%------------------
-                        for i in range(len(num_succ)):
-                            mod_prop = np.abs(0.5-num_succ[i])
-                            if min_prop > mod_prop:
-                                min_prop = mod_prop
-                                prop_succ = num_succ[i]
-
-                        binomial_StdErr = self.binStdrderr(index+1,prop_succ) #finds binomial standard error
-                        if binomial_StdErr<0.05:
-                            nruns = 20 #this will force the program to break out of this while loop
-                            #T print binomial_StdErr, nruns
-                        else:
-                            nruns = 50
-                            #T print binomial_StdErr, nruns
 
                     bg.append( data[-1] )
                     if len( bg ) > 1000:
@@ -213,6 +187,42 @@ class Experiment:
                     d.write_single( True )
                     d.close()
 
+                    #ASSUMPTION: at this point the data should reflect the desired ion order,
+                    #therefore, we should not need to worry about positions when it comes to just counting the successes/failures
+                    #since num_succ now only contains enough places for the desired number of bright ions, this is an
+                    #important assumption
+                    ion_order = [ d > threshold for d in data[len(data)/2:-1]] #this goes from 1/2 data to before the last point("fake ion")
+                    #it's the result of using the 1762
+
+                    #FIXME!!!!!!!!!!!!!!!!!!!!!! probably should change the if statement to check if the ion position
+                    #is one from the desired order then use that ion_position for the calculations, otherwise it is supposed
+                    #to be a dark ion and should always be zero (although this shouldn't affect anything because if the
+                    #difference has been done correctly there should always be something closer to 0.5 than 1 or 0
+                    #HMMMMMMMMMMMMMMMMMMMMMMMMM
+                    for i in range(len(num_succ)):
+                        if ion_order[i]:
+                            num_succ[i]+=1 #counts number of successes (bright) for corresponding ion in that position
+
+                    if index+1==20: #since it starts at 0 need to add 1
+                        num_succ = [x/float(index+1) for x in num_succ] #array holding proportion of successes for each ion respectively
+                        #subtracts from 0.5 so that we can find which is closest to 50%
+                        min_prop = np.abs(0.5-num_succ[0]) #minimum modified proportion (the smallest is the one closest to 50%)
+                        prop_succ = num_succ[0] #this is the actual proportion we want
+
+                        #--------finds proportion closest to 50%------------------
+                        for i in range(len(num_succ)):
+                            mod_prop = np.abs(0.5-num_succ[i])
+                            if min_prop > mod_prop:
+                                min_prop = mod_prop
+                                prop_succ = num_succ[i]
+
+                        binomial_StdErr = self.binStdrderr(index+1,prop_succ) #finds binomial standard error
+                        if binomial_StdErr<0.05:
+                            nruns = 20 #this will force the program to break out of this while loop
+                            #T print binomial_StdErr, nruns
+                        else:
+                            nruns = 50
+                            #T print binomial_StdErr, nruns
                     time.sleep( 0.2 )
                     index+=1 #new code
 
